@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'test';
+    return view('home',['asics'=>\App\Models\Asic::with('producer')->get()]);
 });
 Route::resource('/alg',\App\Http\Controllers\AlgorythmController::class);
 Route::resource('/coin',\App\Http\Controllers\CoinController::class);

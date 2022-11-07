@@ -14,6 +14,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         \App\Models\User::class => 'App\Http\Admin\Users',
         \App\Models\Asic::class => 'App\Http\Admin\Asics',
         \App\Models\Producer::class => 'App\Http\Admin\Producers',
+        \App\Models\Algorythm::class => 'App\Http\Admin\Algorythms',
     ];
 
     /**

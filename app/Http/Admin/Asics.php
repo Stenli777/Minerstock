@@ -7,6 +7,7 @@ use AdminColumnFilter;
 use AdminDisplay;
 use AdminForm;
 use AdminFormElement;
+use App\Models\Producer;
 use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
@@ -119,7 +120,18 @@ class Asics extends Section implements Initializable
         $form = AdminForm::card()->addBody([
             AdminFormElement::columns()->addColumn([
                 AdminFormElement::text('name', 'Введите название асика')->required(),
-                AdminFormElement::select('producer_id', 'Производитель' , \App\Models\Producer::all()->toArray()),
+                AdminFormElement::select('producer_id', 'Производитель', Producer::class)->setDisplay('name'),
+                AdminFormElement::text('hashrate', 'Введите хэшрейт асика')->required(),
+                AdminFormElement::select('algorythm_id', 'Алгоритм', Algorythm::class)->setDisplay('name'),
+                AdminFormElement::date('sales_data_start', 'Введите дату старта продаж асика'),
+                AdminFormElement::text('consumption', 'Введите потребление асика')->required(),
+                AdminFormElement::text('packing_size', 'Введите размер упаковки'),
+                AdminFormElement::text('weight_brutto', 'Введите вес вместе с упаковкой'),
+                AdminFormElement::text('dimensions', 'Введите габариты асика')->required(),
+                AdminFormElement::text('weight_netto', 'Введите вес асика')->required(),
+                AdminFormElement::text('noise', 'Введите шум асика')->required(),
+                AdminFormElement::text('chips', 'Введите количество чипов в асике'),
+                AdminFormElement::text('img', 'выберите изображение асика'),
 //                AdminFormElement::text('password', 'Пароль')->required(),
 //                AdminFormElement::html('<hr>'),
 //                AdminFormElement::datetime('created_at', 'Дата регистрации')->setVisible(true)->setReadonly(false),
