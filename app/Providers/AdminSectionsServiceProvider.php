@@ -15,6 +15,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         \App\Models\Asic::class => 'App\Http\Admin\Asics',
         \App\Models\Producer::class => 'App\Http\Admin\Producers',
         \App\Models\Algorythm::class => 'App\Http\Admin\Algorythms',
+        \App\Models\Coin::class => 'App\Http\Admin\Coins',
     ];
 
     /**
@@ -25,8 +26,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
      */
     public function boot(\SleepingOwl\Admin\Admin $admin)
     {
-    	//
-
+//        $this->app->call([$this, 'registerNavigation']);
         parent::boot($admin);
     }
 }

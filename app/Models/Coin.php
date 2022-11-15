@@ -12,5 +12,8 @@ class Coin extends Model
     public function algorythm(){
         return $this->belongsTo(Algorythm::class);
     }
+    public function wtm_coin(){
+        return $this->hasMany(WtmCoin::class,'tag','short_name');
+    }
 
 }

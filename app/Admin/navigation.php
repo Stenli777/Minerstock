@@ -37,17 +37,8 @@ return [
     [
         'title' => 'Крипто',
         'icon' => 'fa fa-table fa-group',
+        'id' => 'parent-section',
         'pages' => [
-//            [
-//                'title' => 'Асики',
-//                'icon' => 'fa fa-plug',
-//                'url' => route('admin.information')
-//            ],
-//            [
-//                'title'    => 'Асики',
-//                'priority' => 200,
-//                'model'    => App\Models\Asic::class,
-//            ],
             [
                 'title' => 'Монеты',
                 'icon' => 'fa fa-qrcode',

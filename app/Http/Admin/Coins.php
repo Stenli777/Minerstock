@@ -7,6 +7,8 @@ use AdminColumnFilter;
 use AdminDisplay;
 use AdminForm;
 use AdminFormElement;
+use App\Models\Algorythm;
+use App\Models\Producer;
 use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
@@ -18,13 +20,13 @@ use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
 
 /**
- * Class Users
+ * Class Coins
  *
- * @property \App\Models\User $model
+ * @property \App\Models\Coin $model
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Users extends Section implements Initializable
+class Coins extends Section implements Initializable
 {
     /**
      * @var bool
@@ -46,7 +48,7 @@ class Users extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o')->setTitle('Пользователи');
+        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o')->setTitle('Монеты');
     }
 
     /**
@@ -58,26 +60,9 @@ class Users extends Section implements Initializable
     {
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('name', 'Имя', 'created_at')
-                ->setSearchCallback(function($column, $query, $search){
-                    return $query
-                        ->orWhere('name', 'like', '%'.$search.'%')
-                        ->orWhere('created_at', 'like', '%'.$search.'%')
-                    ;
-                })
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('created_at', $direction);
-                })
-            ,
-            AdminColumn::text('email', 'Email'),
-            AdminColumn::boolean('name', 'On'),
-            AdminColumn::text('created_at', 'Создано / Обновлено', 'updated_at')
-                ->setWidth('160px')
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('updated_at', $direction);
-                })
-                ->setSearchable(false)
-            ,
+            AdminColumn::link('name', 'Название'),
+            AdminColumn::link('short_name', 'Короткое название'),
+            AdminColumn::text('algorythm.name', 'Алгоритм'),
         ];
 
         $display = AdminDisplay::datatables()
@@ -91,7 +76,7 @@ class Users extends Section implements Initializable
 
         $display->setColumnFilters([
             AdminColumnFilter::select()
-                ->setModelForOptions(\App\Models\User::class, 'name')
+                ->setModelForOptions(\App\Models\Coin::class, 'name')
                 ->setLoadOptionsQueryPreparer(function($element, $query) {
                     return $query;
                 })
@@ -115,17 +100,10 @@ class Users extends Section implements Initializable
     {
         $form = AdminForm::card()->addBody([
             AdminFormElement::columns()->addColumn([
-                AdminFormElement::text('name', 'Введите ваше имя')->required(),
-                AdminFormElement::text('email', 'Введите ваш email')->required(),
-                AdminFormElement::text('password', 'Пароль')->required(),
-                AdminFormElement::html('<hr>'),
-                AdminFormElement::datetime('created_at', 'Дата регистрации')
-                    ->setVisible(true)
-                    ->setReadonly(false),
-//                AdminFormElement::text('id', 'ID')->setReadonly(true),
+                AdminFormElement::text('name', 'Введите полное название')->required(),
+                AdminFormElement::text('short_name', 'Введите короткое название')->required(),
+                AdminFormElement::select('algorythm_id', 'Алгоритм', Algorythm::class)->setDisplay('name'),
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
-
-
             ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
         ]);
 

@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 Route::resource('/alg',\App\Http\Controllers\AlgorythmController::class);
 Route::resource('/coin',\App\Http\Controllers\CoinController::class);
+Route::resource('/asic',\App\Http\Controllers\AsicController::class);

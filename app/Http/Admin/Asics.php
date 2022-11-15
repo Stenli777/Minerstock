@@ -47,7 +47,7 @@ class Asics extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o');
+        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o')->setTitle('Асики')->getParent();
     }
 
     /**
@@ -60,34 +60,17 @@ class Asics extends Section implements Initializable
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
             AdminColumn::text('producer.name', 'Производитель'),
+            AdminColumn::text('name', 'Название'),
             AdminColumn::text('algorythm.name', 'Алгоритм'),
-            AdminColumn::link('name', 'Имя', 'created_at')
-                ->setSearchCallback(function($column, $query, $search){
-                    return $query
-                        ->orWhere('name', 'like', '%'.$search.'%')
-                        ->orWhere('created_at', 'like', '%'.$search.'%')
-                        ;
-                })
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('created_at', $direction);
-                })
-            ,
-            AdminColumn::text('email', 'Email'),
-            AdminColumn::boolean('name', 'On'),
-            AdminColumn::text('created_at', 'Создано / Обновлено', 'updated_at')
-                ->setWidth('160px')
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('updated_at', $direction);
-                })
-                ->setSearchable(false)
-            ,
+            AdminColumn::text('hashrate', 'Хэшрейт'),
+            AdminColumn::text('consumption', 'Потребление'),
         ];
 
         $display = AdminDisplay::datatables()
             ->setName('firstdatatables')
             ->setOrder([[0, 'asc']])
             ->setDisplaySearch(true)
-            ->with('producer', 'algorythm')
+            ->with('producer','algorythm')
             ->paginate(25)
             ->setColumns($columns)
             ->setHtmlAttribute('class', 'table-primary table-hover th-center')
@@ -101,7 +84,7 @@ class Asics extends Section implements Initializable
                 })
                 ->setDisplay('name')
                 ->setColumnName('name')
-                ->setPlaceholder('All names')
+                ->setPlaceholder('Все асики')
             ,
         ]);
         $display->getColumnFilters()->setPlacement('card.heading');
@@ -118,12 +101,15 @@ class Asics extends Section implements Initializable
     public function onEdit($id = null, $payload = [])
     {
         $form = AdminForm::card()->addBody([
-            AdminFormElement::columns()->addColumn([
+            AdminFormElement::columns()->addColumn(
+            [
                 AdminFormElement::text('name', 'Введите название асика')->required(),
                 AdminFormElement::select('producer_id', 'Производитель', Producer::class)->setDisplay('name'),
                 AdminFormElement::text('hashrate', 'Введите хэшрейт асика')->required(),
-                AdminFormElement::select('algorythm_id', 'Алгоритм', Algorythm::class)->setDisplay('name'),
+                AdminFormElement::select('algorythm_id', 'Алгоритм', \App\Models\Algorythm::class)->setDisplay('name'),
                 AdminFormElement::date('sales_data_start', 'Введите дату старта продаж асика'),
+                AdminFormElement::image('img', 'выберите изображение асика'),
+            ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
                 AdminFormElement::text('consumption', 'Введите потребление асика')->required(),
                 AdminFormElement::text('packing_size', 'Введите размер упаковки'),
                 AdminFormElement::text('weight_brutto', 'Введите вес вместе с упаковкой'),
@@ -131,14 +117,6 @@ class Asics extends Section implements Initializable
                 AdminFormElement::text('weight_netto', 'Введите вес асика')->required(),
                 AdminFormElement::text('noise', 'Введите шум асика')->required(),
                 AdminFormElement::text('chips', 'Введите количество чипов в асике'),
-                AdminFormElement::text('img', 'выберите изображение асика'),
-//                AdminFormElement::text('password', 'Пароль')->required(),
-//                AdminFormElement::html('<hr>'),
-//                AdminFormElement::datetime('created_at', 'Дата регистрации')->setVisible(true)->setReadonly(false),
-//                AdminFormElement::text('id', 'ID')->setReadonly(true),
-            ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
-
-
             ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
         ]);
 
