@@ -1,7 +1,16 @@
-.body {
-    font-family: Gilroy Regular!important;
+@font-face {
+    font-family: Gilroy Regular;
+    src: url('/css/font/Gilroy-Regular.eot');
+    src: url('/css/font/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/css/font/Gilroy-Regular.woff') format('woff'),
+    url('/css/font/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+body {
+    font-family: Gilroy Regular!important;
+}
 
 
 
@@ -43,12 +52,4 @@ card-img-catalog{
 
 }
 
-@font-face {
-    font-family: Gilroy Regular;
-    src: url('css/font/Gilroy-Regular.eot');
-    src: url('css/font/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
-    url('css/font/Gilroy-Regular.woff') format('woff'),
-    url('css/font/Gilroy-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+

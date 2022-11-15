@@ -21,6 +21,9 @@
                     </div>
             @endforeach
         </div>
+        <div class="container justify-content-center d-flex py-3">
+        {{ $asics->links() }}
+        </div>
     </div>
 </div>
 </div>

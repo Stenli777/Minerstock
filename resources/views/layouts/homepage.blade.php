@@ -23,22 +23,22 @@
 <body class="antialiased">
 {{--Навигационное меню--}}
 <div class="container-fluid" style="background: rgb(0,32,76);background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);">
-    <div class="row">
+    <div class="row d-flex align-content-center" style="height:96px">
         <div class="col-4">
-            <ul class="nav justify-content-left"style="height: 96px;">
+            <ul class="nav justify-content-left" style="height:100%">
                 <li class="nav-item" >
-                    <a class="nav-link active pt-4 pb-4 pl-8" href="#">Главная</a>
+                    <a class="nav-link active" href="#">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link pt-4 pb-4 pl-8" href="#">Майнеры</a>
+                    <a class="nav-link" href="#">Майнеры</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled pt-4 pb-4 pl-8" href="#">Майнинг отели</a>
+                    <a class="nav-link disabled" href="#">Майнинг отели</a>
                 </li>
             </ul>
         </div>
         <div class="col-4">
-<h4 class="pt-3 pb-3 pl-8">Mine Info - справочник по майнерам</h4>
+<h4>Mine Info - справочник по майнерам</h4>
         </div>
         <div class="col-4">
 
