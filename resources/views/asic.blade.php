@@ -15,6 +15,16 @@
                 <p>Алгоритм: {{$asic->algorythm->name}}</p>
                 <p>Потребление: {{$asic->consumption}} Вт</p>
                 <p>Старт продаж: {{$asic->sales_data_start}}</p>
+                <div class="row">
+                    <div class="col">
+                        <p>Стоимость кВт/ч</p>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="4.7 руб">
+                    </div>
+                </div>
+
+
             </div>
             <div class="col-sm-4">
                 <p>Габариты с упаковкой: {{$asic->packing_size}}</p>
@@ -23,6 +33,7 @@
                 <p>Вес асика: {{$asic->weight_netto}} кг.</p>
                 <p>Шум: {{$asic->noise}} Дб</p>
                 <p>Количество чипов: {{$asic->chips}}</p>
+                <button type="button" class="btn btn-primary btn-lg btn-block mt-3">Рассчитать доходность</button>
             </div>
         </div>
     </div>
@@ -33,7 +44,27 @@
         </div>
     </div>
     <div class="container">
-        <h1>Добыча асика</h1>
+        <div class="row d-flex align-content-center">
+            <div class="col">
+                <h3 class="font-weight-bold">Добыча асика</h3>
+            </div>
+            <div class="col">
+                <div class="row d-flex flex-row-reverse mb-3">
+
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Вкладками</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Сравнение по монетам</a>
+                        </li>
+                    </ul>
+                    <p class="mr-5 mt-2 align-middle">Внешний вид</p>
+                </div>
+            </div>
+
+        </div>
+
         <ul class="nav nav-tabs">
             @foreach($algorythmCoin as $algorythmCoin1)
             <li class="nav-item">
@@ -95,51 +126,52 @@
             </tr>
         </table>
     </div>
+
     <div class="container-fluid">
         <div class="separator">
             <h1>Другое оборудование на {{$asic->algorythm->name}}</h1>
         </div>
-    <div class="container">
-        <div class="row">
-    <a href="/asic/{{$asic->id}}">
-                <div class="col-sm-3">
-                    <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
-                        {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
-                        <div class="card-body">
-                            <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
-                            <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
-                                <br>Алгоритм: {{$asic->algorythm->name}}</p>
-                            <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
+        <div class="container">
+            <div class="row">
+                <a href="/asic/{{$asic->id}}">
+                    <div class="col-sm-3">
+                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
+                            {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
+                            <div class="card-body">
+                                <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
+                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
+                                    <br>Алгоритм: {{$asic->algorythm->name}}</p>
+                                <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-    <a href="/asic/{{$asic->id}}">
-                <div class="col-sm-3">
-                    <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
-                        {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
-                        <div class="card-body">
-                            <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
-                            <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
-                                <br>Алгоритм: {{$asic->algorythm->name}}</p>
-                            <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
+                </a>
+                <a href="/asic/{{$asic->id}}">
+                    <div class="col-sm-3">
+                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
+                            {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
+                            <div class="card-body">
+                                <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
+                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
+                                    <br>Алгоритм: {{$asic->algorythm->name}}</p>
+                                <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-    <a href="/asic/{{$asic->id}}">
-                <div class="col-sm-3">
-                    <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
-                        {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
-                        <div class="card-body">
-                            <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
-                            <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
-                                <br>Алгоритм: {{$asic->algorythm->name}}</p>
-                            <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
+                </a>
+                <a href="/asic/{{$asic->id}}">
+                    <div class="col-sm-3">
+                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
+                            {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
+                            <div class="card-body">
+                                <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
+                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
+                                    <br>Алгоритм: {{$asic->algorythm->name}}</p>
+                                <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
 @stop
