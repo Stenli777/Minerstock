@@ -50,7 +50,7 @@ class Asic extends Model
     public function algorythm(){
         return $this->belongsTo(Algorythm::class);
     }
-    public function coin(){
-        return $this->hasMany(Coin::class);
+    public function coins(){
+        return $this->hasMany(Coin::class,'algorythm_id','algorythm_id');
     }
 }

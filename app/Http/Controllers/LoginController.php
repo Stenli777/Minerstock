@@ -19,7 +19,7 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
+        $credentials['password'] = \Hash::make($credentials['password']);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 

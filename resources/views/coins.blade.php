@@ -1,0 +1,46 @@
+@extends('layouts.homepage')
+@section('main')
+    <div class="container-fluid asic-back">
+        <div class="container-fluid">
+            <div class="container">
+                <h1>Монеты</h1>
+                <div class="row">
+
+                        <div class="row d-flex flex-row-reverse mb-3">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Плиткой</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Списком</a>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="row">
+                    @foreach($coins as $coin)
+                        <div class="col-3">
+                            <div class="card" style="width: 17rem; margin-bottom:1rem;">
+                                <div class="text-center" style="">
+{{--                                    <img class="card-img-top" src="/{{$coin->img}}" alt="изображение {{$coin->name}} {{$coin->short_name}}">--}}
+                                </div>
+                                <div class="card-body">
+                                    <a href="/asic/{{$coin->id}}"><h6 class="card-title">{{$coin->name}} {{$coin->short_name}}</h6></a>
+                                    <a href="/asic/{{$coin->id}}" class="btn btn-primary btn-block">Перейти</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="container justify-content-center d-flex py-3">
+                    {{$coins->links() }}
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+@stop
+
+

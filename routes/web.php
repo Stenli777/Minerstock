@@ -25,3 +25,6 @@ Route::post('/login',[\App\Http\Controllers\LoginController::class,'authenticate
 Route::get('/catalog', function () {
     return view('catalog',['asics'=>\App\Models\Asic::with('producer')->paginate(12)]);
 });
+Route::get('/coins', function () {
+    return view('coins',['coins'=>\App\Models\Coin::with('algorythm')->paginate(12)]);
+});

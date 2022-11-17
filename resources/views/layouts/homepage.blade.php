@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/jquery-3.6.1.min.js"></script>
     <script src="/js/bootstrap.bundle.js"></script>
+
     <title>Laravel</title>
     <style>
     </style>
@@ -17,10 +19,13 @@
         <div class="col-4">
             <ul class="nav justify-content-left" style="height:100%">
                 <li class="nav-item" >
-                    <a class="nav-link active" href="#">Главная</a>
+                    <a class="nav-link active" href="http://minerstock.ru/">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Майнеры</a>
+                    <a class="nav-link" href="http://minerstock.ru/catalog">Майнеры</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://minerstock.ru/coins">Монеты</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Майнинг отели</a>

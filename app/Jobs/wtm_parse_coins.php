@@ -46,6 +46,7 @@ class wtm_parse_coins implements ShouldQueue
             $data = new WtmCoin($coin);
             $data->save();
         }
+
         $response = Http::get('https://whattomine.com/coins.json');
 //        Log::info(var_export($response->json(),true));
         $coinsCoin = $response->json('coins');

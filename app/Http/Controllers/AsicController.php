@@ -47,13 +47,12 @@ class AsicController extends Controller
      */
     public function show($id)
     {
-        $model = Asic::with('producer','algorythm')->find($id);
+        $model = Asic::with('producer','algorythm','coins')->find($id);
 //        $coin = Coin::with('wtm_coin')->where('id',[1,2,3,4,5])->get();
-        $coin = Coin::with('wtm_coin')->find(1);
-        $algorythmCoin = Coin::with('wtm_coin')->where('algorythm_id',$model->algorythm_id)->get();
-
-        $wtm_coin = $coin->wtm_coin()->orderByDesc('id')->first();
-        return view('asic',['asic'=>$model,'coin'=>$coin,'wtm_coin'=>$wtm_coin,'algorythmCoin'=>$algorythmCoin]);
+//        $coin = Coin::with('wtm_coin')->find(1);
+//        $algorythmCoin = Coin::with('wtm_coin')->where('algorythm_id',$model->algorythm_id)->get();
+//        $wtm_coin = $coin->wtm_coin()->orderByDesc('id')->first();
+        return view('asic',['asic'=>$model]);
     }
 
     /**
