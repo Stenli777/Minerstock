@@ -19,11 +19,11 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        $credentials['password'] = \Hash::make($credentials['password']);
+//        $credentials['password'] = \Hash::make($credentials['password']);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('admin');
         }
 
         return back()->withErrors([

@@ -53,4 +53,18 @@ class Asic extends Model
     public function coins(){
         return $this->hasMany(Coin::class,'algorythm_id','algorythm_id');
     }
+//    public function expenses($expenses = 2){
+//        $expenses = 2.0;
+//        return $this->consumption / 1000 * $expenses * 24;
+//    }
+//    public function profit(){
+//        $usdt = 62;
+//        $coinPrice = 20000;
+//        $short = $this->shortHashrate();
+//        return static::minePerDay($this->hashrate) - $this->expenses();
+//    }
+//
+//    private function minePerDay($this->hashrate) {
+//        return (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 32 * $this->wtm_coin->difficulty);
+//    }
 }

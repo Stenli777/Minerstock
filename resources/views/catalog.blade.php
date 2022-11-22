@@ -8,6 +8,9 @@
             <div class="col-3">
                 <div>
                     <p class="font-weight-bold mt-3">Фильтры</p>
+{{--Поиск--}}
+                    <p class="font-weight-bold mt-3">Поиск</p>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Поиск по фразе">
 {{--Производитель--}}
                     <p class="font-weight-bold mt-3">Производитель</p>
                         <select class="custom-select">

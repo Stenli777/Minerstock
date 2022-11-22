@@ -58,7 +58,7 @@
                     <div class="tab-pane fade show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                @foreach($asic->coins as $k=>$coin)
+                                @foreach($asic->coins->where('coin_active',true) as $k=>$coin)
                                     <a class="nav-item nav-link {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}-tab" data-toggle="tab" href="#nav-{{$coin->short_name}}" role="tab" aria-controls="nav-{{$coin->short_name}}" aria-selected="{{$k==0?'true':'false'}}">{{$coin->name}}({{$coin->short_name}})</a>
                                 @endforeach
                             </div>
@@ -83,13 +83,19 @@
                                             <td>
                                                 Пересчет на Рубли
                                             </td>
+{{--                                            <td>--}}
+{{--                                                Расходы--}}
+{{--                                            </td>--}}
+{{--                                            <td>--}}
+{{--                                                Прибыль--}}
+{{--                                            </td>--}}
                                         </tr>
                                         <tr>
                                             <td>
                                                 День
                                             </td>
                                             <td>
-                                                {{$coin->name}} ({{$coin->short_name}}
+                                                {{$coin->name}} ({{$coin->short_name}})
                                             </td>
                                             <td>
                                                 {{number_format($coin->minePerDay($asic->hashrate),8)}}
@@ -100,6 +106,12 @@
                                             <td>
                                                 {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5,2)}}
                                             </td>
+{{--                                            <td>--}}
+{{--                                                {{$asic->expenses()}}--}}
+{{--                                            </td>--}}
+{{--                                            <td>--}}
+{{--                                                {{$asic->profit()}}--}}
+{{--                                            </td>--}}
                                         </tr>
                                         <tr>
                                             <td>
@@ -117,6 +129,12 @@
                                             <td>
                                                 {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5 * 30.5,2)}}
                                             </td>
+{{--                                            <td>--}}
+{{--                                                {{$asic->expenses() * 30.5}}--}}
+{{--                                            </td>--}}
+{{--                                            <td>--}}
+{{--                                                {{$asic->profit() * 30.5}}--}}
+{{--                                            </td>--}}
                                         </tr>
                                     </table>
                                 </div>
@@ -139,7 +157,7 @@
                                     Пересчет на Рубли
                                 </td>
                             </tr>
-                            @foreach($asic->coins as $k=>$coin)
+                            @foreach($asic->coins->where('coin_active',true) as $k=>$coin)
                                 <tr>
                                     <td>
                                         {{$coin->name}} ({{$coin->short_name}})

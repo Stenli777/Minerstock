@@ -8,6 +8,7 @@ use AdminDisplay;
 use AdminForm;
 use AdminFormElement;
 use App\Models\Algorythm;
+use App\Models\Coin;
 use App\Models\Producer;
 use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
@@ -63,6 +64,7 @@ class Coins extends Section implements Initializable
             AdminColumn::link('name', 'Название'),
             AdminColumn::link('short_name', 'Короткое название'),
             AdminColumn::text('algorythm.name', 'Алгоритм'),
+            AdminColumn::text('coin_active', 'Активность'),
         ];
 
         $display = AdminDisplay::datatables()
@@ -103,6 +105,8 @@ class Coins extends Section implements Initializable
                 AdminFormElement::text('name', 'Введите полное название')->required(),
                 AdminFormElement::text('short_name', 'Введите короткое название')->required(),
                 AdminFormElement::select('algorythm_id', 'Алгоритм', Algorythm::class)->setDisplay('name'),
+//                AdminFormElement::number('coin_active', 'Активность')->required(),
+                AdminFormElement::select('coin_active', 'Активность', [0,1])->setDisplay('name'),
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
             ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
         ]);
