@@ -39,7 +39,7 @@ class CreateTableWtmCoins extends Migration
             $table->integer('profitability');
             $table->integer('profitability24');
             $table->boolean('lagging');
-            $table->timestamp('timestamp');
+            $table->timestamp('timestamp')->nullable();
         });
     }
 
