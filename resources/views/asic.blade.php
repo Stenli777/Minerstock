@@ -1,20 +1,63 @@
 @extends('layouts.homepage')
 @section('main')
     <div class="container-fluid asic-back">
-    <div class="container">
+    <div class="container asic-page">
         <h1>{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</h1>
         <div class="row">
 
-            <div class="col-sm-4">
-                <img src="/{{$asic->img}}" style="border: 1px solid;max-width:300px; border-radius: 20px;padding: 20px">
+            <div class="col-sm-6">
+                <img src="/{{$asic->img}}" style="background-color: white; border: 1px solid;max-width:433px; border-radius: 20px;padding: 20px">
             </div>
             <div class="col-sm-4">
-                <p>Хэшрейт: {{$asic->humanHashrate()}}</p>
-                <p>Энергоэффективность: {{$asic->efficiency()}}</p>
-                <p>Производитель: {{$asic->producer->name}}</p>
-                <p>Алгоритм: {{$asic->algorythm->name}}</p>
-                <p>Потребление: {{$asic->consumption}} Вт</p>
-                <p>Старт продаж: {{$asic->sales_data_start}}</p>
+                <h2>Характеристики асика</h2>
+                <div class="row">
+                    <div class="col-8">Хэшрейт: </div>
+                    <div class="col">{{$asic->humanHashrate()}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Энергоэффективность: </div>
+                    <div class="col">{{$asic->efficiency()}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Производитель: </div>
+                    <div class="col">{{$asic->producer->name}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Алгоритм: </div>
+                    <div class="col">{{$asic->algorythm->name}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Потребление: </div>
+                    <div class="col">{{$asic->consumption}} Вт</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Старт продаж: </div>
+                    <div class="col">{{$asic->sales_data_start}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Габариты с упаковкой: </div>
+                    <div class="col">{{$asic->packing_size}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Вес с упаковкой: </div>
+                    <div class="col">{{$asic->weight_brutto}} кг.</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Габариты асика: </div>
+                    <div class="col">{{$asic->dimensions}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Вес асика: </div>
+                    <div class="col">{{$asic->weight_netto}} кг.</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Шум: </div>
+                    <div class="col">{{$asic->noise}} Дб</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">Количество чипов: </div>
+                    <div class="col">{{$asic->chips}}</div>
+                </div>
                 <div class="row">
                     <div class="col">
                         <p>Стоимость кВт/ч</p>
@@ -22,19 +65,20 @@
                     <div class="col">
                         <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="4.7 руб">
                     </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block mt-3">Рассчитать доходность</button>
                 </div>
 
 
             </div>
-            <div class="col-sm-4">
-                <p>Габариты с упаковкой: {{$asic->packing_size}}</p>
-                <p>Вес с упаковкой: {{$asic->weight_brutto}} кг.</p>
-                <p>Габариты асика: {{$asic->dimensions}}</p>
-                <p>Вес асика: {{$asic->weight_netto}} кг.</p>
-                <p>Шум: {{$asic->noise}} Дб</p>
-                <p>Количество чипов: {{$asic->chips}}</p>
-                <button type="button" class="btn btn-primary btn-lg btn-block mt-3">Рассчитать доходность</button>
-            </div>
+{{--            <div class="col-sm-4">--}}
+{{--                <p>Габариты с упаковкой: {{$asic->packing_size}}</p>--}}
+{{--                <p>Вес с упаковкой: {{$asic->weight_brutto}} кг.</p>--}}
+{{--                <p>Габариты асика: {{$asic->dimensions}}</p>--}}
+{{--                <p>Вес асика: {{$asic->weight_netto}} кг.</p>--}}
+{{--                <p>Шум: {{$asic->noise}} Дб</p>--}}
+{{--                <p>Количество чипов: {{$asic->chips}}</p>--}}
+{{--                <button type="button" class="btn btn-primary btn-lg btn-block mt-3">Рассчитать доходность</button>--}}
+{{--            </div>--}}
         </div>
     </div>
     </div>
