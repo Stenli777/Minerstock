@@ -52,7 +52,8 @@ class AsicController extends Controller
 //        $coin = Coin::with('wtm_coin')->find(1);
 //        $algorythmCoin = Coin::with('wtm_coin')->where('algorythm_id',$model->algorythm_id)->get();
 //        $wtm_coin = $coin->wtm_coin()->orderByDesc('id')->first();
-        return view('asic',['asic'=>$model]);
+//        var_dump($request->breadcrums);
+        return view('asic',['asic'=>$model,'asics'=>Asic::where([['algorythm_id',$model->algorythm_id],['id','!=',$model->id]])->paginate(12)]);
     }
 
     /**

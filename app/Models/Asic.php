@@ -53,6 +53,14 @@ class Asic extends Model
     public function coins(){
         return $this->hasMany(Coin::class,'algorythm_id','algorythm_id');
     }
+    public function save(array $options = []){
+        $hash = implode($this->shortHashrate());
+        $producer = $this->producer->name;
+        $this->title = "ASIC майнер $producer $this->name $hash" . "H/s";
+        $this->description = "Информация, характеристики и доходность ASIC майнера $producer $this->name $hash" . "H/s";
+        $this->h1 = "ASIC майнер $producer $this->name $hash" . "H/s";
+        parent::save($options);
+    }
 //    public function expenses($expenses = 2){
 //        $expenses = 2.0;
 //        return $this->consumption / 1000 * $expenses * 24;

@@ -1,12 +1,13 @@
 @extends('layouts.homepage')
 @section('main')
+    {{ Breadcrumbs::render('asic',$asic) }}
     <div class="container-fluid asic-back">
     <div class="container asic-page">
         <h1>{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</h1>
         <div class="row">
 
             <div class="col-sm-6">
-                <img src="/{{$asic->img}}" style="background-color: white; border: 1px solid;max-width:433px; border-radius: 20px;padding: 20px">
+                <img src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" style="background-color: white; border: 1px solid;max-width:433px; border-radius: 20px;padding: 20px">
             </div>
             <div class="col-sm-4">
                 <h2>Характеристики асика</h2>
@@ -94,129 +95,137 @@
             <div class="col">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-link active" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab" aria-controls="nav-tabs" aria-selected="true">Вкладками</a>
-                        <a class="nav-link" href="#view_table" id="nav_table" data-toggle="tab" role="tab" aria-controls="nav-table" aria-selected="true">Сравнение по монетам</a>
+                        <a class="nav-link active" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab" aria-controls="nav-tabs" data-target="#nav-tabs" aria-selected="true">Вкладками</a>
+                        <a class="nav-link" href="#view_table" id="nav_table" data-toggle="tab" role="tab" aria-controls="nav-table" data-target="#nav-table" aria-selected="false">Сравнение по монетам</a>
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                @foreach($asic->coins->where('coin_active',true) as $k=>$coin)
+                                @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
                                     <a class="nav-item nav-link {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}-tab" data-toggle="tab" href="#nav-{{$coin->short_name}}" role="tab" aria-controls="nav-{{$coin->short_name}}" aria-selected="{{$k==0?'true':'false'}}">{{$coin->name}}({{$coin->short_name}})</a>
                                 @endforeach
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
-                            @foreach($asic->coins as $k=>$coin)
+                            @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
                                 <div class="tab-pane fade show {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}" role="tabpanel" aria-labelledby="nav-{{$coin->short_name}}-tab">
-                                    <table class="table">
-                                        <tr>
-                                            <td>
-                                                Добыча в
-                                            </td>
-                                            <td>
-                                                Криптовалюта
-                                            </td>
-                                            <td>
-                                                Добыто монет
-                                            </td>
-                                            <td>
-                                                Пересчет на BTC
-                                            </td>
-                                            <td>
-                                                Пересчет на Рубли
-                                            </td>
-{{--                                            <td>--}}
-{{--                                                Расходы--}}
-{{--                                            </td>--}}
-{{--                                            <td>--}}
-{{--                                                Прибыль--}}
-{{--                                            </td>--}}
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                День
-                                            </td>
-                                            <td>
-                                                {{$coin->name}} ({{$coin->short_name}})
-                                            </td>
-                                            <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate),8)}}
-                                            </td>
-                                            <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * 58.74 / 16531,8)}}
-                                            </td>
-                                            <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5,2)}}
-                                            </td>
-{{--                                            <td>--}}
-{{--                                                {{$asic->expenses()}}--}}
-{{--                                            </td>--}}
-{{--                                            <td>--}}
-{{--                                                {{$asic->profit()}}--}}
-{{--                                            </td>--}}
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Месяц
-                                            </td>
-                                            <td>
-                                                {{$coin->name}} ({{$coin->short_name}}
-                                            </td>
-                                            <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8)}}
-                                            </td>
-                                            <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * 58.74 / 16531 * 30.5,8)}}
-                                            </td>
-                                            <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5 * 30.5,2)}}
-                                            </td>
-{{--                                            <td>--}}
-{{--                                                {{$asic->expenses() * 30.5}}--}}
-{{--                                            </td>--}}
-{{--                                            <td>--}}
-{{--                                                {{$asic->profit() * 30.5}}--}}
-{{--                                            </td>--}}
-                                        </tr>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Добыча в
+                                                </th>
+                                                <th>
+                                                    Криптовалюта
+                                                </th>
+                                                <th>
+                                                    Добыто монет
+                                                </th>
+                                                <th>
+                                                    Пересчет на BTC
+                                                </th>
+                                                <th>
+                                                    Пересчет на Рубли
+                                                </th>
+    {{--                                            <td>--}}
+    {{--                                                Расходы--}}
+    {{--                                            </td>--}}
+    {{--                                            <td>--}}
+    {{--                                                Прибыль--}}
+    {{--                                            </td>--}}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    День
+                                                </td>
+                                                <td>
+                                                    {{$coin->name}} ({{$coin->short_name}})
+                                                </td>
+                                                <td>
+                                                    {{number_format($coin->minePerDay($asic->hashrate),8)}}
+                                                </td>
+                                                <td>
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * 58.74 / 16531,8)}}
+                                                </td>
+                                                <td>
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5,2)}}
+                                                </td>
+    {{--                                            <td>--}}
+    {{--                                                {{$asic->expenses()}}--}}
+    {{--                                            </td>--}}
+    {{--                                            <td>--}}
+    {{--                                                {{$asic->profit()}}--}}
+    {{--                                            </td>--}}
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Месяц
+                                                </td>
+                                                <td>
+                                                    {{$coin->name}} ({{$coin->short_name}})
+                                                </td>
+                                                <td>
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8)}}
+                                                </td>
+                                                <td>
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * 58.74 / 16531 * 30.5,8)}}
+                                                </td>
+                                                <td>
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5 * 30.5,2)}}
+                                                </td>
+    {{--                                            <td>--}}
+    {{--                                                {{$asic->expenses() * 30.5}}--}}
+    {{--                                            </td>--}}
+    {{--                                            <td>--}}
+    {{--                                                {{$asic->profit() * 30.5}}--}}
+    {{--                                            </td>--}}
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             @endforeach
                         </div>
                     </div>
-                    <div class="tab-pane fade show active" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    Криптовалюта
-                                </td>
-                                <td>
-                                    Добыто монет
-                                </td>
-                                <td>
-                                    Пересчет на BTC
-                                </td>
-                                <td>
-                                    Пересчет на Рубли
-                                </td>
-                            </tr>
-                            @foreach($asic->coins->where('coin_active',true) as $k=>$coin)
+                    <div class="tab-pane fade" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
+                        <table class="table table-hover">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        {{$coin->name}} ({{$coin->short_name}})
-                                    </td>
-                                    <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8)}}
-                                    </td>
-                                    <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * 58.74 / 16531 * 30.5,8)}}
-                                    </td>
-                                    <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5 * 30.5,2)}}
-                                    </td>
+                                    <th>
+                                        Криптовалюта
+                                    </th>
+                                    <th>
+                                        Добыто монет
+                                    </th>
+                                    <th>
+                                        Пересчет на BTC
+                                    </th>
+                                    <th>
+                                        Пересчет на Рубли
+                                    </th>
                                 </tr>
-                            @endforeach
+                            </thead>
+                            <tbody>
+                                @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
+                                    <tr>
+                                        <td>
+                                            {{$coin->name}} ({{$coin->short_name}})
+                                        </td>
+                                        <td>
+                                            {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8)}}
+                                        </td>
+                                        <td>
+                                            {{number_format($coin->minePerDay($asic->hashrate) * 58.74 / 16531 * 30.5,8)}}
+                                        </td>
+                                        <td>
+                                            {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5 * 30.5,2)}}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -244,6 +253,7 @@
         </div>
         <div class="container">
             <div class="row">
+                @foreach($asics as $asic)
                 <a href="/asic/{{$asic->id}}">
                     <div class="col-sm-3">
                         <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
@@ -257,32 +267,37 @@
                         </div>
                     </div>
                 </a>
-                <a href="/asic/{{$asic->id}}">
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
-                            {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
-                            <div class="card-body">
-                                <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
-                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
-                                    <br>Алгоритм: {{$asic->algorythm->name}}</p>
-                                <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="/asic/{{$asic->id}}">
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
-                            {{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
-                            <div class="card-body">
-                                <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>
-                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}
-                                    <br>Алгоритм: {{$asic->algorythm->name}}</p>
-                                <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                @endforeach
+{{--                <a href="/asic/{{$asic->id}}">--}}
+{{--                    <div class="col-sm-3">--}}
+{{--                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">--}}
+{{--                            --}}{{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>--}}
+{{--                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}--}}
+{{--                                    <br>Алгоритм: {{$asic->algorythm->name}}</p>--}}
+{{--                                <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <a href="/asic/{{$asic->id}}">--}}
+{{--                    <div class="col-sm-3">--}}
+{{--                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">--}}
+{{--                            --}}{{--                        <img class="card-img-top" src="..." alt="Card image cap">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h6 class="card-title">{{$asic->producer->name}} {{$asic->name}}</h6>--}}
+{{--                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}--}}
+{{--                                    <br>Алгоритм: {{$asic->algorythm->name}}</p>--}}
+{{--                                <a href="/asic/{{$asic->id}}" class="btn btn-primary">Перейти</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
             </div>
         </div>
+@stop
+
+@section('title')
+    {{$asic->title?$asic->title:'тест1'}}
 @stop

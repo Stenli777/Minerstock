@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/jquery-3.6.1.min.js"></script>
     <script src="/js/bootstrap.bundle.js"></script>
-
-    <title>Laravel</title>
+    <title>
+        @yield('title')
+    </title>
     <style>
     </style>
 </head>
@@ -40,6 +41,18 @@
         </div>
     </div>
 </div>
+
+{{--<ol class="breadcrumb">--}}
+{{--    <li><i class="fa fa-dashboard"></i>Главная</li>--}}
+{{--    <?php $segments = ''; ?>--}}
+{{--    @foreach($request->breadcrums as $segment)--}}
+{{--        <?php $segments .= '/'. $segment; ?>--}}
+{{--        <li>--}}
+{{--            <a href="{{ $segments }}">{{$segment}}</a>--}}
+{{--        </li>--}}
+{{--    @endforeach--}}
+{{--</ol>--}}
+
 @yield('main')
     <footer class="pt-5" style="background-color: #131A2A; color:#ffffff">
 
