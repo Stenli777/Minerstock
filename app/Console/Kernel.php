@@ -2,7 +2,10 @@
 
 namespace App\Console;
 
+use App\Jobs\binance;
+use App\Jobs\cbfr;
 use App\Jobs\wtm_parse_coins;
+use App\Models\Cbrf;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -17,6 +20,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->job(new wtm_parse_coins)->hourly();
+//        $schedule->job(new binance)->hourly();
+//        $schedule->job(new cbfr)->everyMinute();
     }
 
     /**

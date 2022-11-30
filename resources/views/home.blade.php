@@ -1,5 +1,8 @@
 @extends('layouts.homepage')
 @section('main')
+<div class="container-fluid p-0">
+<img src="/images/uploads/minepage.png" style="width:100%">
+</div>
 <div class="container-fluid asic-back">
 <div class="container-fluid">
     <div class="container">

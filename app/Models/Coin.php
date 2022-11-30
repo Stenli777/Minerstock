@@ -23,4 +23,8 @@ class Coin extends Model
     public function active(){
         return $this->where('coin_active',1);
     }
+
+    public function binance(){
+        return $this->hasMany(Binance::class);
+    }
 }

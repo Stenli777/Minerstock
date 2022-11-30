@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/ico">
+    @yield('canonical')
     <script src="/js/jquery-3.6.1.min.js"></script>
     <script src="/js/bootstrap.bundle.js"></script>
     <title>
@@ -12,12 +14,34 @@
     </title>
     <style>
     </style>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(91418378, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/91418378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- /Yandex.Webmaster -->
+    <meta name="yandex-verification" content="cc8b91a0430ae765" />
+    <!-- /Yandex.Webmaster counter -->
 </head>
 <body class="antialiased">
 {{--Навигационное меню--}}
 <div class="container-fluid" style="background: rgb(0,32,76);background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);">
     <div class="row d-flex align-content-center" style="height:96px">
-        <div class="col-4">
+        <div class="col-4 text-center">
+            <img src="{{ $_SERVER['REQUEST_URI'] ==='/'?'/images/uploads/logo.png':'/images/uploads/logo-black.png'}}">
+        </div>
+        <div class="col-4 text-center">
             <ul class="nav justify-content-left" style="height:100%">
                 <li class="nav-item" >
                     <a class="nav-link active" href="/">Главная</a>
@@ -32,9 +56,6 @@
                     <a class="nav-link disabled" href="#">Майнинг отели</a>
                 </li>
             </ul>
-        </div>
-        <div class="col-4 text-center">
-            <h4>Mine Info - справочник по майнерам</h4>
         </div>
         <div class="col-4 d-flex flex-row-reverse">
             <button type="button" class="btn btn-primary btn-sm badge-pill p-2 ">Необходима консультация?</button>

@@ -12,7 +12,6 @@ class Asic extends Model
     $short = $this->shortHashrate();
         return "$short[0] $short[1]H/s";
     }
-
     private function shortHashrate(){
         $hash = [
             'T'=>1000*1000*1000*1000,
@@ -25,21 +24,16 @@ class Asic extends Model
                 return [trim(trim(number_format($this->hashrate/($value),3),'0'),'.'),$key];
             }
         }
-//        if ($this->hashrate > 1000*1000*1000*1000) {
-//            return [trim(trim(number_format($this->hashrate/(1000*1000*1000*1000),3),'0'),'.'),'T'];
-//        }
-//        if ($this->hashrate > 1000*1000*1000) {
-//            return [trim(trim(number_format($this->hashrate/(1000*1000*1000),3),'0'),'.'),'G'];
-//        }
-//        if ($this->hashrate > 1000*1000) {
-//            return [trim(trim(number_format($this->hashrate/(1000*1000),3),'0'),'.'),'M'];
-//        }
-//        if ($this->hashrate > 1000) {
-//            return [trim(trim(number_format($this->hashrate/1000,3),'0'),'.'),'K'];
-//        }
         return [$this->hashrate,''];
     }
-
+    public function hashUnspeed(){
+        $short = $this->shortHashrate();
+        return "$short[0]";
+    }
+    public function speedHash(){
+        $short = $this->shortHashrate();
+        return "$short[1]H/s";
+    }
     public function efficiency(){
         $short = $this->shortHashrate();
         return number_format(($this->consumption / $short[0]),2)."Дж/$short[1]H";
@@ -61,15 +55,18 @@ class Asic extends Model
         $this->h1 = "ASIC майнер $producer $this->name $hash" . "H/s";
         parent::save($options);
     }
-//    public function expenses($expenses = 2){
-//        $expenses = 2.0;
-//        return $this->consumption / 1000 * $expenses * 24;
-//    }
+    public function energyPrice($energyPrice){
+        return $energyPrice;
+    }
+    public function expenses($expenses = 2){
+        $expenses = 1.23;
+        return $this->consumption / 1000 * $expenses * 24;
+    }
 //    public function profit(){
 //        $usdt = 62;
 //        $coinPrice = 20000;
 //        $short = $this->shortHashrate();
-//        return static::minePerDay($this->hashrate) - $this->expenses();
+//        return (new Coin)->minePerDay($this->hashrate) - $this->expenses();
 //    }
 //
 //    private function minePerDay($this->hashrate) {
