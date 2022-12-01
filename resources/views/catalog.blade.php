@@ -223,18 +223,18 @@
                                     @foreach($asics as $asic)
                                         <tr>
                                             <td>
-                                                {{$asic->producer->name}}
+                                                <a href="/asic/{{$asic->id}}">{{$asic->producer->name}}</a>
                                             </td>
                                             <td>
-                                                {{$asic->name}}
+                                                <a href="/asic/{{$asic->id}}">{{$asic->name}}</a>
                                             </td>
                                             <td>
-                                                {{$asic->humanHashrate()}}
+                                                <a href="/asic/{{$asic->id}}">{{$asic->humanHashrate()}}</a>
                                             </td>
                                             <td>
-                                                {{$asic->algorythm->name}}
+                                                <a href="/asic/{{$asic->id}}">{{$asic->algorythm->name}}</a>
                                             </td>
-                                        </tr>
+                                            </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
