@@ -12,6 +12,7 @@
             <div class="col-sm-4">
                 <h2>Характеристики асика</h2>
                 <div class="row">
+{{--                    <p>Курс доллара: {{$asic->usd()}}</p>--}}
                     <div class="col-8">Хэшрейт: </div>
                     <div class="col">{{$asic->humanHashrate()}}</div>
                 </div>

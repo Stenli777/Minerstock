@@ -16,7 +16,7 @@ class CreateCbrfTable extends Migration
         Schema::create('cbrf', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->float('usdrub');
+            $table->double('usdrub');
         });
     }
 

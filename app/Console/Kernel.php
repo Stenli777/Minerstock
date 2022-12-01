@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->job(new wtm_parse_coins)->hourly();
 //        $schedule->job(new binance)->hourly();
-//        $schedule->job(new cbfr)->everyMinute();
+        $schedule->job(new cbfr)->hourly();
     }
 
     /**

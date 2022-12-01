@@ -38,9 +38,9 @@ class cbfr implements ShouldQueue
 //        Log::info($response);
         $valute = $response->json('Valute');
         Log::info($valute);
-        if($valute[0] = 'USD'){
+        if($valute['USD']){
             $cbrf = [];
-            $cbrf['usdrub'] = $valute[1]['Value'];
+            $cbrf['usdrub'] = $valute['USD']['Value'];
             $data = new Cbrf($cbrf);
             $data->save();
 //            $cbrf['created_at'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format(DATE_ATOM);

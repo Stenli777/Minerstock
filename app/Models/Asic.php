@@ -44,6 +44,9 @@ class Asic extends Model
     public function algorythm(){
         return $this->belongsTo(Algorythm::class);
     }
+    public function usd(){
+        return $this->hasOne(Cbrf::class);
+    }
     public function coins(){
         return $this->hasMany(Coin::class,'algorythm_id','algorythm_id');
     }
