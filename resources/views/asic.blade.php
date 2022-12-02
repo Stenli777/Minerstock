@@ -1,6 +1,6 @@
 @extends('layouts.homepage')
 @section('main')
-    {{ Breadcrumbs::render('asic',$asic) }}
+{{--    {{ Breadcrumbs::render('asic',$asic) }}--}}
     <div class="container-fluid asic-back">
         <p>test console</p>
     <div class="container asic-page">

@@ -1,6 +1,6 @@
 @extends('layouts.homepage')
 @section('main')
-    {{ Breadcrumbs::render('catalog') }}
+{{--    {{ Breadcrumbs::render('catalog') }}--}}
 <div class="container-fluid asic-back">
 <div class="container-fluid">
     <div class="container">
