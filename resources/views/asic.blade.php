@@ -2,6 +2,7 @@
 @section('main')
     {{ Breadcrumbs::render('asic',$asic) }}
     <div class="container-fluid asic-back">
+        <p>test console</p>
     <div class="container asic-page">
         <h1>{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</h1>
         <div class="row">
