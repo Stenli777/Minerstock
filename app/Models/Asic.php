@@ -52,17 +52,19 @@ class Asic extends Model
     }
     public function save(array $options = []){
         $hash = implode($this->shortHashrate());
+        $this->name=str_replace(['А','Р','о','Т','е'],['A','P,','o','T','e'],$this->name);
         $producer = $this->producer->name;
         $this->title = "ASIC майнер $producer $this->name $hash" . "H/s";
         $this->description = "Информация, характеристики и доходность ASIC майнера $producer $this->name $hash" . "H/s";
         $this->h1 = "ASIC майнер $producer $this->name $hash" . "H/s";
+        $this->alias = str_replace('+','_plus',str_replace(['.',',',' ','/'],'_',strtolower("$producer $this->name $hash". "H/s")));
         parent::save($options);
     }
     public function energyPrice($energyPrice){
         return $energyPrice;
     }
     public function expenses($expenses = 2){
-        $expenses = 1.23;
+//        $expenses = 0.83;
         return $this->consumption / 1000 * $expenses * 24;
     }
 //    public function profit(){

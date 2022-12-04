@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asic;
+use App\Models\Cbrf;
 use App\Models\Coin;
 use Illuminate\Http\Request;
 
@@ -45,15 +46,16 @@ class AsicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        $model = Asic::with('producer','algorythm','coins')->find($id);
-//        $coin = Coin::with('wtm_coin')->where('id',[1,2,3,4,5])->get();
-//        $coin = Coin::with('wtm_coin')->find(1);
-//        $algorythmCoin = Coin::with('wtm_coin')->where('algorythm_id',$model->algorythm_id)->get();
-//        $wtm_coin = $coin->wtm_coin()->orderByDesc('id')->first();
-//        var_dump($request->breadcrums);
-        return view('asic',['asic'=>$model,'asics'=>Asic::where([['algorythm_id',$model->algorythm_id],['id','!=',$model->id]])->paginate(12)]);
+        $model = Asic::with('producer','algorythm','coins')->where('alias',$id)->first();
+        $usd = Cbrf::query()->latest()->first('usdrub')->usdrub;
+        return view('asic',[
+            'asic'=>$model,
+            'asics'=>Asic::where([['algorythm_id',$model->algorythm_id], ['id','!=',$model->id]])->paginate(12),
+            'usd' => $usd,
+            'expenses'=>(float) str_replace(',','.',$request->input('expenses',0.83)),
+        ]);
     }
 
     /**

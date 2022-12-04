@@ -24,7 +24,14 @@ class Coin extends Model
         return $this->where('coin_active',1);
     }
 
-    public function binance(){
+    private function binance(){
         return $this->hasMany(Binance::class);
+//        return $this->hasMany(Binance::class)->latest()->first()->avg_price;
+    }
+    public function price(){
+        return $this->binance()->latest()->first()?$this->binance()->latest()->first()->avg_price:0;
+    }
+    public function priceBtc(){
+        return $this->price() / Binance::query()->where('coin_id',25)->latest()->first()->avg_price;
     }
 }

@@ -9,4 +9,5 @@ class Binance extends Model
 {
     use HasFactory;
     protected $table = 'binance_24_data';
+    protected $guarded = [];
 }

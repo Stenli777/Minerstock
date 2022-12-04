@@ -172,7 +172,7 @@
                             <div class="row">
                                 @foreach($asics as $asic)
                                     <div class="col-sm-4">
-                                        <a href="/asic/{{$asic->id}}" style="text-decoration: none;">
+                                        <a href="/asic/{{$asic->alias}}" style="text-decoration: none;">
                                         <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
                                             <div class="text-center" style="min-height: 200px;">
                                                 <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">

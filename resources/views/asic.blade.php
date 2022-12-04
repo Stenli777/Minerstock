@@ -61,34 +61,16 @@
                     <div class="col">{{$asic->chips}}</div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <form action="{{url()->current()}}" method="get" class="col">
                         <p>Стоимость кВт/ч</p>
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="4.7 руб">
-                    </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block mt-3">Рассчитать доходность</button>
+                        <input name="expenses" value="{{$expenses}}" type="float" class="form-control" placeholder="{{$expenses}} руб">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block mt-3" value="Рассчитать доходность"></input>
+                    </form>
                 </div>
-
-
             </div>
-{{--            <div class="col-sm-4">--}}
-{{--                <p>Габариты с упаковкой: {{$asic->packing_size}}</p>--}}
-{{--                <p>Вес с упаковкой: {{$asic->weight_brutto}} кг.</p>--}}
-{{--                <p>Габариты асика: {{$asic->dimensions}}</p>--}}
-{{--                <p>Вес асика: {{$asic->weight_netto}} кг.</p>--}}
-{{--                <p>Шум: {{$asic->noise}} Дб</p>--}}
-{{--                <p>Количество чипов: {{$asic->chips}}</p>--}}
-{{--                <button type="button" class="btn btn-primary btn-lg btn-block mt-3">Рассчитать доходность</button>--}}
-{{--            </div>--}}
         </div>
     </div>
     </div>
-{{--    <div class="container-fluid">--}}
-{{--        <div class="separator">--}}
-{{--        <h2 class="pt-5 pb-5">Добываемые монеты</h2>--}}
-{{--        </div>--}}
-{{--    </div>--}}
     <div class="container">
             <div class="col">
                 <h3 class="font-weight-bold">Добыча асика</h3>
@@ -153,13 +135,13 @@
                                                     {{number_format($coin->minePerDay($asic->hashrate),8,'.',' ')}} ₿
                                                 </td>
                                                 <td>
-                                                    {{number_format($coin->minePerDay($asic->hashrate) * 16531 * 61.5,2,'.',' ')}} ₽
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd,2,'.',' ')}} ₽
                                                 </td>
                                                 <td>
-                                                    {{$asic->expenses()}} ₽
+                                                    {{$asic->expenses($expenses)}} ₽
                                                 </td>
                                                 <td>
-                                                    {{number_format(($coin->minePerDay($asic->hashrate) * 16531 * 61.5) - $asic->expenses(),2,'.',' ')}} ₽
+                                                    {{number_format(($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses),2,'.',' ')}} ₽
                                                 </td>
                                             </tr>
                                             <tr>
@@ -176,13 +158,13 @@
                                                     {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,'.',' ')}} ₿
                                                 </td>
                                                 <td>
-                                                    {{number_format($coin->minePerDay($asic->hashrate) * 16531 * 61.5 * 30.5,2,'.',' ')}} ₽
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd * 30.5,2,'.',' ')}} ₽
                                                 </td>
                                                 <td>
-                                                    {{$asic->expenses() * 30.5}} ₽
+                                                    {{$asic->expenses($expenses) * 30.5}} ₽
                                                 </td>
                                                 <td>
-                                                    {{number_format((($coin->minePerDay($asic->hashrate) * 16531 * 61.5) - $asic->expenses()) * 30.5,2,'.',' ')}} ₽
+                                                    {{number_format((($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses)) * 30.5,2,'.',' ')}} ₽
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -219,10 +201,10 @@
                                             {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,'.',' ')}}
                                         </td>
                                         <td>
-                                            {{number_format($coin->minePerDay($asic->hashrate) * 58.74 / 16531 * 30.5,8,'.',' ')}}
+                                            {{number_format($coin->minePerDay($asic->hashrate) * $coin->priceBtc() * 30.5,8,'.',' ')}}
                                         </td>
                                         <td>
-                                            {{number_format($coin->minePerDay($asic->hashrate) * 58.74 * 61.5 * 30.5,2,'.',' ')}}
+                                            {{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $usd * 30.5,2,'.',' ')}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -247,53 +229,55 @@
         <div class="container-fluid">
             <div style="background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);">
             <div class="container">
-                <div class="row pt-5 pb-5">
-                    <div class="col-8">
-                        <h2 class="pb-3">{{$asic->h1}}</h2>
-                        <p>{{$asic->seo_text}}</p>
+                @if($asic->seo_text != null)
+                    <div class="row pt-5 pb-5">
+                        <div class="col-8">
+                            <h2 class="pb-3">{{$asic->h1}}</h2>
+                            <div>{!!html_entity_decode($asic->seo_text)!!}</div>
+                        </div>
+                        <div class="col-4">
+                            <img src="/{{$asic->img}}">
+                        </div>
                     </div>
-                    <div class="col-4">
-<img src="/{{$asic->img}}">
-                    </div>
-                </div>
-<div class="row">
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Майнер</th>
-            <th>{{$asic->name}} {{$asic->humanHashrate()}}</th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
+                @endif
+            <div class="row">
+            <table class="table table-hover text-center">
+                <thead>
+                <tr>
+                    <th>Майнер</th>
+                    <th>{{$asic->name}} {{$asic->humanHashrate()}}</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
 
-        <tr>
-            <th></th>
-            <th>Режим высокого хэша / Performance</th>
-            <th>Заводской режим / Normal</th>
-            <th>Сбалансированный режим / Balanced</th>
-            <th>Режим эффективности / Effective</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Хэшрейт</td>
-            <td>{{$asic->hashUnspeed() * 1.1}} {{$asic->speedHash()}}</td>
-            <td>{{$asic->hashUnspeed()}} {{$asic->speedHash()}}</td>
-            <td>{{$asic->hashUnspeed() * 0.8}} {{$asic->speedHash()}}</td>
-            <td>{{$asic->hashUnspeed() * 0.7}} {{$asic->speedHash()}}</td>
-        </tr>
-        <tr>
-            <td>Потребление</td>
-            <td>{{$asic->consumption * 1.1}} Вт</td>
-            <td>{{$asic->consumption}} Вт</td>
-            <td>{{$asic->consumption * 0.8}} Вт</td>
-            <td>{{$asic->consumption * 0.7}} Вт</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+                <tr>
+                    <th></th>
+                    <th>Разгон /<br> Performance</th>
+                    <th>Заводской режим /<br> Normal</th>
+                    <th>Сбалансированный режим /<br> Balanced</th>
+                    <th>Режим эффективности /<br> Effective</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Хэшрейт</td>
+                    <td>{{$asic->hashUnspeed() * 1.1}} {{$asic->speedHash()}}</td>
+                    <td>{{$asic->hashUnspeed()}} {{$asic->speedHash()}}</td>
+                    <td>{{$asic->hashUnspeed() * 0.8}} {{$asic->speedHash()}}</td>
+                    <td>{{$asic->hashUnspeed() * 0.7}} {{$asic->speedHash()}}</td>
+                </tr>
+                <tr>
+                    <td>Потребление</td>
+                    <td>{{$asic->consumption * 1.1}} Вт</td>
+                    <td>{{$asic->consumption}} Вт</td>
+                    <td>{{$asic->consumption * 0.8}} Вт</td>
+                    <td>{{$asic->consumption * 0.7}} Вт</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
             </div>
             </div>
         </div>

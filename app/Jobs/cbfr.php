@@ -43,15 +43,7 @@ class cbfr implements ShouldQueue
             $cbrf['usdrub'] = $valute['USD']['Value'];
             $data = new Cbrf($cbrf);
             $data->save();
-//            $cbrf['created_at'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format(DATE_ATOM);
+//            $cbrf['created_at'] = $response['Timestamp'];
         }
-//        foreach ($valute as $key => $value){
-//            $value['name'] = $key;
-//            $coin['coin_id'] = $coin['id'];
-//            unset($coin['id']);
-//            $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format(DATE_ATOM);
-//            $data = new WtmCoin($coin);
-//            $data->save();
-//        }
     }
 }
