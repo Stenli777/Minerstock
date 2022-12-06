@@ -1,4 +1,4 @@
-@extends('layouts.homepage')
+@extends('layouts.layout')
 @section('main')
     {{ Breadcrumbs::render('catalog') }}
 <div class="container-fluid asic-back">
@@ -178,7 +178,7 @@
                                                 <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
                                             </div>
                                             <div class="card-body pt-0">
-                                                <h6 class="card-title">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6>
+                                                <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>
                                                 <div class="row">
                                                     <div class="col">
                                                         <p class="mt-0 mb-0"> Хэшрейт:</p>
@@ -189,7 +189,7 @@
                                                         <p class="mt-0">{{$asic->algorythm->name}}</p>
                                                     </div>
                                                 </div>
-                                                <a href="/asic/{{$asic->id}}" class="btn btn-primary btn-block">Перейти</a>
+{{--                                                <a href="/asic/{{$asic->id}}" class="btn btn-primary btn-block">Перейти</a>--}}
                                             </div>
                                         </div>
                                         </a>

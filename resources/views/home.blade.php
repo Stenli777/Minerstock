@@ -1,4 +1,4 @@
-@extends('layouts.homepage')
+@extends('layouts.layout')
 @section('main')
 <div class="container-fluid p-0">
 <img src="/images/uploads/minepage.png" style="width:100%;margin-top: -96px;">

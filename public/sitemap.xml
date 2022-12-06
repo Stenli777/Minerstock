@@ -2,1471 +2,1441 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>http://minerstock.ru</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:08+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/</loc>
-        <lastmod>2022-12-06T14:00:07+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:07+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/aladdin_l2_30th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/aladdin_t1_32th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/baikal_baikal_bk-g28_28gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_d5_119gh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_d7_1_234th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:26+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_d7_1_29th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_dr5_35th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_e9_2_4gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_k5_1_13th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:35+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_ka3_166th_s</loc>
-        <lastmod>2022-12-06T14:00:14+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_l3_plus_504mh_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_l3_plus_plus_596mh_s</loc>
-        <lastmod>2022-12-06T14:00:14+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_l7_8_55gh_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_l7_8_8gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:26+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_l7_9_05gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_l7_9_16gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_l7_9_5gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s11_20_5th_s</loc>
-        <lastmod>2022-12-06T14:00:27+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s15_17th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s15_28th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_53th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_56th_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_59th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_plus_67th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_plus_70th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_plus_73th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_plus_76th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_pro_50th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_pro_53th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_pro_56th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17_pro_59th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17e_60th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s17e_64th_s</loc>
-        <lastmod>2022-12-06T14:00:27+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_82th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_86th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/bitmain_antminer_s19_95th_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_hydro__150th_s</loc>
-        <lastmod>2022-12-06T14:00:21+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_hydro__158th_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_pro_110th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_pro_hydro_177th_s</loc>
-        <lastmod>2022-12-06T14:00:21+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:24+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_pro_plus_hyd_198th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19_xp_140th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19a_pro_110th_s</loc>
-        <lastmod>2022-12-06T14:00:21+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19i_92_5th_s</loc>
-        <lastmod>2022-12-06T14:00:21+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19j_110th_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19j_90th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19j_pro_100th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19j_pro_104th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19j_pro_88th_s</loc>
-        <lastmod>2022-12-06T14:00:21+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:24+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19j_pro_92th_s</loc>
-        <lastmod>2022-12-06T14:00:21+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19j_pro_96th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19xp_134th_s</loc>
-        <lastmod>2022-12-06T14:00:22+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:25+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s19xp_141th_s</loc>
-        <lastmod>2022-12-06T14:00:22+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:24+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s9_se_16th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s9_se_17th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s9j_14_5th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:26+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_s9k_13_5th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:26+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t15_(eco_mode)_20th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t15_23th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t17_40th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t17_42th_s</loc>
-        <lastmod>2022-12-06T14:00:27+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/bitmain_antminer_t17_plus_55th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t17_plus_58th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t17_plus_64th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t17e_53th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t17e_60th_s</loc>
-        <lastmod>2022-12-06T14:00:22+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:25+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t19_84th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/bitmain_antminer_t19_88th_s</loc>
-        <lastmod>2022-12-06T14:00:22+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_t19_hydro__145th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:36+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_z11_135kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_z11e_70kh_s</loc>
-        <lastmod>2022-12-06T14:00:14+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_z11j_105kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_z15_420kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_z15e_200kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_antminer_z9_40_7kh_s</loc>
-        <lastmod>2022-12-06T14:00:14+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/bitmain_k7_63_5th_s</loc>
-        <lastmod>2022-12-06T14:00:22+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:25+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/blackminer_f1-ultra_5_75gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/blackminer_f1_plus_5_04gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/blackminer_f2_6_6gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1047_37th_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1066_50th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:37+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1126_68th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1126_pro_64th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1126_pro_68th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1126_pro_s_72th_s</loc>
-        <lastmod>2022-12-06T14:00:33+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1146_56th_s</loc>
-        <lastmod>2022-12-06T14:00:31+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1166_68th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1166_pro_72th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1166_pro_78th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1166_pro_81th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1246_85th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_1246_96th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_852_15th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_911_18th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_a1166_pro_75th_s</loc>
-        <lastmod>2022-12-06T14:00:32+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:36+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_a1166_pro_81th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_a1246_83th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/canaan_avalon_a1246_87th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/canaan_avalon_a1266_100th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:36+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/cheetah_miner_f1_24th_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:35+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/cheetah_miner_f3_30th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/cheetah_miner_f5i_60th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/cheetah_miner_f5m_53th_s</loc>
-        <lastmod>2022-12-06T14:00:31+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:36+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/dayun_zig_z1_6_8gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/dayun_zig_z1_plus_7_2gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/dayun_zig_z1_pro_13gh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e10_18th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e10_1_18th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e10_2_27th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:37+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e10_3_24th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e11_plus_plus_44th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e12_44th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e12_plus_50th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e9_3_16th_s</loc>
-        <lastmod>2022-12-06T14:00:27+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e9_5_11_5th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ebang_ebit_e9i_plus_13_5th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/fusionsilicon_x1_12_96gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/fusionsilicon_x7_262gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/fusionsilicon_x7_plus_320gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_ck-box_1_05th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_ck5_12th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_ck6_19_3th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://minerstock.ru/asic/goldshell_ck_lite_6_3th_s</loc>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_hs-box_540gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_hs3_2th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_hs5_5_4th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_hs6_10_6th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_hs_lite_2_9th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_kd2_6_4th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_kd5_18th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_kd6_29_2th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/goldshell_kd6_se_25_3th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_kd_box_pro_2_6th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_kd_lite_16_2th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_kd_max_40_2th_s</loc>
-        <lastmod>2022-12-06T14:00:14+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_kda_box_1_6th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_lb1_87gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_lb_box_175gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_lb_lite_1_62th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_lt5_2_05gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_lt5_pro_2_45gh_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_lt6_3_35gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_lt_lite_1_62gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_mini-doge_185mh_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_mini-doge_pro_205mh_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_sc6_se_17th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_sc_box_900gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/goldshell_st_box_13_9kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ibelink_bm-k1_5_3th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ibelink_bm-k1_max_32th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ibelink_bm-k1_plus_15th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ibelink_bm-n1_6_6th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:26+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ibelink_s1_max_12th_s</loc>
-        <lastmod>2022-12-06T14:00:15+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a10_pro_500mh_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a10_pro_6g_720mh_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:26+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a10_pro_7g_720mh_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a10_pro_plus_7gb_750mh_s</loc>
-        <lastmod>2022-12-06T14:00:11+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a11_pro_8gb_1_5gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a6_plus_ltc_master_2_2gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a9_plus_plus_zmaster_140kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a9_plus_zmaster_120kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_a9_zmaster_50kh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t2_turbo_plus_32th_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t2t-p_25th_s</loc>
-        <lastmod>2022-12-06T14:00:22+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/innosilicon_t2t_26th_s</loc>
-        <lastmod>2022-12-06T14:00:31+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:25+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t2t_30th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t2t_37th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t3_40th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t3_43th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t3_50th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t3_plus_57th_s</loc>
-        <lastmod>2022-12-06T14:00:31+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:35+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/innosilicon_t3_plus_67th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_b1l_50th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_g1_126h_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_g1_mini_4h_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_mini_se_200mh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_mini_se_plus_400mh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_v1_3_6gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_v1_classic_1_55gh_s</loc>
-        <lastmod>2022-12-06T14:00:08+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_v1_mini_300mh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/ipollo_v1_mini_classic_plus_280mh_s</loc>
-        <lastmod>2022-12-06T14:00:14+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/jasminer_x4-1u_520mh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/jasminer_x4-q_1_04gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/jasminer_x4_2_5gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/jasminer_x4_brick_65mh_s</loc>
-        <lastmod>2022-12-06T14:00:14+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_d1_44th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m10_33th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m10s_55th_s</loc>
-        <lastmod>2022-12-06T14:00:32+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m20_45th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m20s_65th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m20s_68th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/microbt_whatsminer_m20s_70th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m20s_72th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m20s_76th_s</loc>
-        <lastmod>2022-12-06T14:00:33+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:38+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m21_31th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m21s_52th_s</loc>
-        <lastmod>2022-12-06T14:00:33+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m21s_54th_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m21s_56th_s</loc>
-        <lastmod>2022-12-06T14:00:32+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m21s_58th_s</loc>
-        <lastmod>2022-12-06T14:00:32+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_100th_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_102th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_86th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_88th_s</loc>
-        <lastmod>2022-12-06T14:00:19+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_90th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_92th_s</loc>
-        <lastmod>2022-12-06T14:00:33+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_94th_s</loc>
-        <lastmod>2022-12-06T14:00:33+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:38+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_98th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:38+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_100th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_102th_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_104th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_94th_s</loc>
-        <lastmod>2022-12-06T14:00:24+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_96th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_98th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_plus_106th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_plus_108th_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_plus_110th_s</loc>
-        <lastmod>2022-12-06T14:00:17+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m30s_plus_plus_112th_s</loc>
-        <lastmod>2022-12-06T14:00:30+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m31s_70th_s</loc>
-        <lastmod>2022-12-06T14:00:29+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:32+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://minerstock.ru/asic/microbt_whatsminer_m31s_80th_s</loc>
+        <lastmod>2022-12-06T21:00:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m31s_plus_68th_s</loc>
-        <lastmod>2022-12-06T14:00:28+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m31s_plus_76th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m31s_plus_80th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m31s_plus_82th_s</loc>
-        <lastmod>2022-12-06T14:00:27+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://minerstock.ru/asic/microbt_whatsminer_m32_68th_s</loc>
+        <lastmod>2022-12-06T21:00:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m32s_62th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m50_112th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m50_114th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m50_118th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/microbt_whatsminer_m50s_126th_s</loc>
-        <lastmod>2022-12-06T14:00:16+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/monad_imperium_f2_6_1gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/monad_imperium_r2_85gh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/obelisk_sc1_550gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/obelisk_sc1_dual_1_1th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:22+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/obelisk_sc1_immersion_2_2th_s</loc>
-        <lastmod>2022-12-06T14:00:23+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:26+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/obelisk_sc1_slim_550gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/pangolinminer_hummer_miner_mars_h1_88gh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/spondoolies_spx36_540gh_s</loc>
-        <lastmod>2022-12-06T14:00:13+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/strongu_stu-u1_11th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/strongu_stu-u1_plus_12_8th_s</loc>
-        <lastmod>2022-12-06T14:00:26+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/strongu_stu-u1_plus_plus_52th_s</loc>
-        <lastmod>2022-12-06T14:00:18+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/strongu_stu-u6_420gh_s</loc>
-        <lastmod>2022-12-06T14:00:12+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/strongu_stu-u8_46th_s</loc>
-        <lastmod>2022-12-06T14:00:20+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/todek_toddminer_c1_1_6th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/asic/todek_toddminer_c1_pro_3th_s</loc>
-        <lastmod>2022-12-06T14:00:25+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/catalog</loc>
-        <lastmod>2022-12-06T14:00:07+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:07+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>http://minerstock.ru/coins</loc>
-        <lastmod>2022-12-06T14:00:07+00:00</lastmod>
+        <lastmod>2022-12-06T21:00:07+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

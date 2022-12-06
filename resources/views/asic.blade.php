@@ -1,4 +1,4 @@
-@extends('layouts.homepage')
+@extends('layouts.layout')
 @section('main')
     {{ Breadcrumbs::render('asic',$asic) }}
     <div class="container-fluid asic-back">
