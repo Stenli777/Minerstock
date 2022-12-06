@@ -40,6 +40,7 @@ MineInfo - подробный справочник по ASIC майнерам. �
     <!-- /Yandex.Webmaster counter -->
 </head>
 <body class="antialiased">
+тест
 {{--Навигационное меню--}}
 <div class="container-fluid" style="{{$_SERVER['REQUEST_URI'] ==='/'?"background: rgba(255, 255, 255, 0.3);backdrop-filter: blur(5px);":"background: rgb(0,32,76);background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);"}}">
     <div class="row d-flex align-content-center" style="height:96px">
