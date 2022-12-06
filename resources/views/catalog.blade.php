@@ -253,6 +253,9 @@
 @section('canonical')
 <link rel="canonical" href="{{ url()->current() }}">
 @stop
+@section('title')
+        Каталог ASIC майнеров | MineInfo
+@stop
 
 
 

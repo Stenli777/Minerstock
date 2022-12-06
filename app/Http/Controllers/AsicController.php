@@ -52,7 +52,7 @@ class AsicController extends Controller
         $usd = Cbrf::query()->latest()->first('usdrub')->usdrub;
         return view('asic',[
             'asic'=>$model,
-            'asics'=>Asic::where([['algorythm_id',$model->algorythm_id], ['id','!=',$model->id]])->paginate(12),
+            'asics'=>Asic::where([['algorythm_id',$model->algorythm_id], ['id','!=',$model->id]])->inRandomOrder()->paginate(4),
             'usd' => $usd,
             'expenses'=>(float) str_replace(',','.',$request->input('expenses',0.83)),
         ]);

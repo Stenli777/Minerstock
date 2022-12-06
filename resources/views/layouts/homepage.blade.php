@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/ico">
+    <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/x-icon">
     @yield('canonical')
     <script src="/js/jquery-3.6.1.min.js"></script>
     <script src="/js/bootstrap.bundle.js"></script>
     <title>
-        @yield('title')
+    @if($_SERVER['REQUEST_URI'] ==='/')
+MineInfo - подробный справочник по ASIC майнерам. Добыча, характеристики и другая информация.
+@else
+    @yield('title')
+@endif
     </title>
+    @yield('description')
     <style>
     </style>
     <!-- Yandex.Metrika counter -->
@@ -36,7 +41,7 @@
 </head>
 <body class="antialiased">
 {{--Навигационное меню--}}
-<div class="container-fluid" style="background: rgb(0,32,76);background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);">
+<div class="container-fluid" style="{{$_SERVER['REQUEST_URI'] ==='/'?"background: rgba(255, 255, 255, 0.3);backdrop-filter: blur(5px);":"background: rgb(0,32,76);background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);"}}">
     <div class="row d-flex align-content-center" style="height:96px">
         <div class="col-4 text-center">
             <img src="{{ $_SERVER['REQUEST_URI'] ==='/'?'/images/uploads/logo.png':'/images/uploads/logo-black.png'}}">
@@ -91,7 +96,7 @@
         <div class="row pt-5">
             <div class="col-3">
                 <h2>Mine Info</h2>
-                <p>Рейтинг майнинг отелей формируется на основе независимых оценок майнеров и агентов. Перед размещением в дешёвых майнинг отелях рекомендуем ознакомиться с отзывами, условиями и стоимостью из нашего каталога отелей для майнинга.</p>
+                <p style="font-weight: 250;">Рейтинг майнинг отелей формируется на основе независимых оценок майнеров и агентов. Перед размещением в дешёвых майнинг отелях рекомендуем ознакомиться с отзывами, условиями и стоимостью из нашего каталога отелей для майнинга.</p>
             </div>
             <div class="col-3">
                 <h2>Карта сайта</h2>
