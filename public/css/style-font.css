@@ -84,6 +84,10 @@ body.main-page .top-menu a:active{
 .lightGrey{
     color: #C5C5C5;
 }
+.lightGrey:hover{
+    color: grey;
+    text-decoration: none;
+}
 
 .card p {
     color:#181B1D;
