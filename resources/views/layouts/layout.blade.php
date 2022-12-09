@@ -40,7 +40,7 @@ MineInfo - подробный справочник по ASIC майнерам. �
     <meta name="yandex-verification" content="cc8b91a0430ae765" />
     <!-- /Yandex.Webmaster counter -->
 </head>
-<body class="antialiased {{$_SERVER['REQUEST_URI'] ==='/'?"main-page":""}}">
+<body class="antialiased {{$_SERVER['REQUEST_URI'] === '/'?"main-page":""}}">
 {{--Навигационное меню--}}
 <div class="container-fluid top-menu">
     <div class="row d-flex align-content-center" style="height:96px">
@@ -91,7 +91,7 @@ MineInfo - подробный справочник по ASIC майнерам. �
                 </div>
                 <div class="col-6 text-center">
                     <a href="https://t.me/miningstoreads">
-                        <button type="button" class="btn btn-primary btn-sm badge-pill pt-2 pb-2 pl-5 pr-5">Подписаться</button>
+                        <button type="button" class="btn btn-footer btn-primary btn-sm badge-pill pt-2 pb-2 pl-5 pr-5">Подписаться</button>
                     </a>
                 </div>
             </div>
@@ -119,6 +119,12 @@ MineInfo - подробный справочник по ASIC майнерам. �
 
             </div>
         </div>
+            <div class="row text-center">
+                <div class="col-4"></div>
+                <div class="col-8 float-right">
+                <p class="lightGrey UltraLight">©Топ майнинг отелей. Вся информация на сайте размещена исключительно в ознакомительных целях. Все изображения на сайте принадлежат их правообладателям.</p>
+                </div>
+            </div>
     </div>
 
     </footer>

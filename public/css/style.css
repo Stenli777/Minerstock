@@ -37,12 +37,8 @@ h1{
     margin: 0 auto!important;
 }
 
-card-img-catalog{
+.card-img-catalog{
     text-align: center;
-}
-
-.btn-primary{
-
 }
 
 .asic-page{
@@ -60,3 +56,11 @@ border-radius: 20px;
 
 /*}*/
 
+footer .btn-primary{
+    border: 1px solid white;
+    background-color: #131a2a;
+}
+footer .btn-primary:hover{
+    border: 1px solid white;
+    background-color: gray;
+}

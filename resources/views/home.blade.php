@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('main')
 <div class="container-fluid p-0">
-<img src="/images/uploads/minepage.png" style="width:100%;margin-top: -96px;">
+<img src="/images/uploads/minepage.png" style="width:100%;margin-top: -96px;max-height: 900px">
 </div>
 <div class="container-fluid asic-back">
 <div class="container-fluid">
@@ -31,5 +31,8 @@
 </div>
 </div>
     @stop
+@section('canonical')
+    <link rel="canonical" href="{{ url()->current() }}">
+@stop
 
 

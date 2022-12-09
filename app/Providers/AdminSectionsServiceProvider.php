@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use SleepingOwl\Admin\Providers\AdminSectionsServiceProvider as ServiceProvider;
 
 class AdminSectionsServiceProvider extends ServiceProvider
@@ -16,6 +17,9 @@ class AdminSectionsServiceProvider extends ServiceProvider
         \App\Models\Producer::class => 'App\Http\Admin\Producers',
         \App\Models\Algorythm::class => 'App\Http\Admin\Algorythms',
         \App\Models\Coin::class => 'App\Http\Admin\Coins',
+        \App\Models\Category::class => 'App\Http\Admin\Category',
+        \App\Models\Post::class => 'App\Http\Admin\Post',
+        \App\Models\Tag::class => 'App\Http\Admin\Tag',
     ];
 
     /**
