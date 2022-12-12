@@ -115,7 +115,6 @@ MineInfo - подробный справочник по ASIC майнерам. �
                 <p>Телефон: <a href="tel:+79817639661" class="UltraLight lightGrey">+7 (981) 763-96-61</a></p>
                 <p>E-mail: <a href="mailto:info@mineinfo.ru" class="UltraLight lightGrey">info@mineinfo.ru</a></p>
                 <p>Адрес: <span class="UltraLight lightGrey">Россия, Москва</span></p>
-
             </div>
             <div class="col-3">
                 <h3 class="pb-3">Наши новости</h3>
