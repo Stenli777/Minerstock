@@ -4,7 +4,7 @@
 <div class="row">
     @foreach($posts as $post)
         <div class="col-3">
-            {{$post->title}}
+            <a href="/post/{{$post->alias}}">{{$post->title}}</a>
         </div>
     @endforeach
 </div>

@@ -58,22 +58,12 @@ class Post extends Section implements Initializable
     {
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('name', 'Name', 'created_at')
-                ->setSearchCallback(function($column, $query, $search){
-                    return $query
-                        ->orWhere('name', 'like', '%'.$search.'%')
-                        ->orWhere('created_at', 'like', '%'.$search.'%')
-                    ;
-                })
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('created_at', $direction);
-                })
-            ,
-            AdminColumn::boolean('name', 'On'),
-            AdminColumn::text('created_at', 'Created / updated', 'updated_at')
+            AdminColumn::text('title', 'Заголовок'),
+            AdminColumn::boolean('active', 'Активность'),
+            AdminColumn::text('created_at', 'Дата создания')
                 ->setWidth('160px')
                 ->setOrderable(function($query, $direction) {
-                    $query->orderBy('updated_at', $direction);
+                    $query->orderBy('created_at', $direction);
                 })
                 ->setSearchable(false)
             ,
@@ -114,18 +104,17 @@ class Post extends Section implements Initializable
     {
         $form = AdminForm::card()->addBody([
             AdminFormElement::columns()->addColumn([
-                AdminFormElement::text('name', 'Name')
-                    ->required()
-                ,
-                AdminFormElement::html('<hr>'),
                 AdminFormElement::datetime('created_at')
                     ->setVisible(true)
                     ->setReadonly(false)
                 ,
-                AdminFormElement::html('last AdminFormElement without comma')
+                AdminFormElement::select('category_id', 'Категория', \App\Models\Category::class)->setDisplay('name'),
+                AdminFormElement::image('img', 'Выберите миниатюру поста'),
+                AdminFormElement::text('title','Заголовок (Title)')->required(),
+                AdminFormElement::text('description','Description (SEO элемент)'),
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
                 AdminFormElement::text('id', 'ID')->setReadonly(true),
-                AdminFormElement::html('last AdminFormElement without comma')
+                AdminFormElement::wysiwyg('content', 'Текст статьи'),
             ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
         ]);
 

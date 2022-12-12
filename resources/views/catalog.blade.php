@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Майнинг оборудование</h1>
         <div class="row">
-            <div class="col-3">
+            <div class="col-sm-3">
                 <form class="asic-page p-3" method="get" action="/catalog">
                     <p class="font-weight-bold">Фильтр категории</p>
 {{--Поиск--}}

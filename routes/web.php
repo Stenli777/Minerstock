@@ -79,3 +79,6 @@ Route::resource('/mining-center', \App\Models\Dpc::class);
 Route::get('/articles', function () {
     return view('blog',['posts' => \App\Models\Post::all()->sortByDesc('created_at')]);
 });
+
+Route::resource('/post',
+    \App\Http\Controllers\PostController::class)->names('post');

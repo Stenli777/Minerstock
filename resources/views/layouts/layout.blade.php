@@ -59,8 +59,11 @@ MineInfo - подробный справочник по ASIC майнерам. �
                     <a class="nav-link" href="/coins">Монеты</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Майнинг отели</a>
+                    <a class="nav-link" href="/articles">Статьи</a>
                 </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link disabled" href="#">Майнинг отели</a>--}}
+{{--                </li>--}}
             </ul>
         </div>
         <div class="col-4 d-flex flex-row-reverse">
@@ -105,7 +108,7 @@ MineInfo - подробный справочник по ASIC майнерам. �
                 <a href="/" class="lightGrey UltraLight"><p>Главная</p></a>
                 <a href="/catalog" class="lightGrey UltraLight"><p>Майнеры</p></a>
                 <a href="/coins" class="lightGrey UltraLight"><p>Монеты</p></a>
-                <a href="#" class="lightGrey UltraLight"><p>Майнинг отели</p></a>
+                <a href="/articles" class="lightGrey UltraLight"><p>Статьи</p></a>
             </div>
             <div class="col-3">
                 <h3 class="pb-3">Контакты</h3>
