@@ -10,6 +10,7 @@
     @yield('canonical')
     <script src="/js/jquery-3.6.1.min.js"></script>
     <script src="/js/bootstrap.bundle.js"></script>
+    <script src="extensions/mobile/bootstrap-table-mobile.js"></script>
     <title>
     @if($_SERVER['REQUEST_URI'] ==='/')
 MineInfo - подробный справочник по ASIC майнерам. Добыча, характеристики и другая информация.
@@ -39,6 +40,9 @@ MineInfo - подробный справочник по ASIC майнерам. �
     <!-- /Yandex.Webmaster -->
     <meta name="yandex-verification" content="cc8b91a0430ae765" />
     <!-- /Yandex.Webmaster counter -->
+    <!-- /Google Search Console -->
+    <meta name="google-site-verification" content="ppfx7H1OhSoHhzenMvF1KfciycWVevBOdkZvcyKXDss" />
+    <!-- /Google Search Console -->
 </head>
 <body class="antialiased {{$_SERVER['REQUEST_URI'] === '/'?"main-page":""}}">
 {{--Навигационное меню--}}

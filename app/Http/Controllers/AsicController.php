@@ -48,6 +48,13 @@ class AsicController extends Controller
      */
     public function show(Request $request,$id)
     {
+        if (preg_match('/^\d+$/', $id)) {
+            $model = Asic::query()->find($id);
+            if (!$model) {
+                return response('', 404);
+            }
+            return redirect("/asic/{$model->alias}", 301);
+        }
         $model = Asic::with('producer','algorythm','coins')->where('alias',$id)->first();
         $usd = Cbrf::query()->latest()->first('usdrub')->usdrub;
         return view('asic',[

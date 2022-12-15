@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://mineinfo.ru/sitemap.xml

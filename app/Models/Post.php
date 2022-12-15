@@ -10,7 +10,9 @@ class Post extends Model
     use HasFactory;
 //    protected $table = 'posts';
 //    protected $guarded = false;
-
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
     public function save(array $options = []): bool
     {
         $this->alias = str_replace('__','_',str_replace(['!','?'],'',str_replace(['.',',',' ','/'],'_',str_replace(

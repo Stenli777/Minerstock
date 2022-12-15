@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,11 +44,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
         $model = Post::query()->where('alias',$id)->first();
-        return view('post',[
+        return view('category',[
             'post' => $model,
+            'category'=> Post::where('category_id',$id),
         ]);
     }
 

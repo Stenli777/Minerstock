@@ -94,7 +94,7 @@
                         <div class="tab-content" id="nav-tabContent">
                             @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
                                 <div class="tab-pane fade show {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}" role="tabpanel" aria-labelledby="nav-{{$coin->short_name}}-tab">
-                                    <table class="table table-hover text-center">
+                                    <table class="table table-hover text-center"  data-mobile-responsive="true">
                                         <thead>
                                             <tr>
                                                 <th>
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
-                        <table class="table table-hover">
+                        <table class="table table-hover" data-mobile-responsive="true">
                             <thead>
                                 <tr>
                                     <th>
@@ -241,7 +241,7 @@
                     </div>
                 @endif
             <div class="row">
-            <table class="table table-hover text-center">
+            <table class="table table-hover text-center" data-mobile-responsive="true">
                 <thead>
                 <tr>
                     <th>Майнер</th>

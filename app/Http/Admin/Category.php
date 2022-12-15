@@ -58,7 +58,7 @@ class Category extends Section implements Initializable
     {
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('name', 'Name', 'created_at')
+            AdminColumn::link('title', 'Name', 'created_at')
                 ->setSearchCallback(function($column, $query, $search){
                     return $query
                         ->orWhere('name', 'like', '%'.$search.'%')

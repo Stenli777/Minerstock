@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('main')
-    {{ Breadcrumbs::render('blog') }}
+{{--    {{ Breadcrumbs::render('category',$category) }}--}}
     <div class="container">
 <div class="row">
     @foreach($posts as $post)

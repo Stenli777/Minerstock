@@ -11,20 +11,34 @@ Breadcrumbs::for('home', function ($trail) {
 //    $trail->push('About', route('about'));
 //});
 
-// Home > Blog
+// Home > Catalog
 Breadcrumbs::for('catalog', function ($trail) {
     $trail->parent('home');
     $trail->push('Каталог', route('catalog'));
 });
 
-// Home > Blog > [Category]
+// Home > Catalog > [Asic]
 Breadcrumbs::for('asic', function ($trail, $asic) {
     $trail->parent('catalog');
     $trail->push($asic->title, route('asic.show', $asic->id));
 });
 
-//// Home > Blog > [Category] > [Post]
-//Breadcrumbs::for('post', function ($trail, $post) {
-//    $trail->parent('category', $post->category);
-//    $trail->push($post->title, route('post', $post->id));
-//});
+// Home > Blog
+Breadcrumbs::for('blog', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Статьи', route('blog'));
+});
+
+// Home > Blog
+Breadcrumbs::for('category', function ($trail, $category) {
+    $trail->parent('blog');
+    $trail->push($category->title, route('category',$category->id));
+});
+
+// Home > Blog > [Category] > [Post]
+Breadcrumbs::for('post', function ($trail, $post) {
+    $trail->parent('blog', $post->category_id);
+    $trail->push($post->title, route('post.show', $post->id));
+});
+
+

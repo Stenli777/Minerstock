@@ -1,28 +1,29 @@
+<label class="custom-control-label" for="customCheck6">Ethash</label>
 @extends('layouts.layout')
 @section('main')
     {{ Breadcrumbs::render('catalog') }}
-<div class="container-fluid asic-back">
-<div class="container-fluid">
+    <div class="container-fluid asic-back">
+    <div class="container-fluid">
     <div class="container">
         <h1>Майнинг оборудование</h1>
         <div class="row">
             <div class="col-sm-3">
                 <form class="asic-page p-3" method="get" action="/catalog">
                     <p class="font-weight-bold">Фильтр категории</p>
-{{--Поиск--}}
+                    {{--Поиск--}}
                     <p class="font-weight-bold mt-3">Поиск</p>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Поиск по фразе">
-{{--Производитель--}}
+                    {{--Производитель--}}
                     <p class="font-weight-bold mt-3">Производитель</p>
-                        <select class="custom-select" name="producer_id">
+                    <select class="custom-select" name="producer_id">
                             <option selected disabled>Выберите производителя</option>
-                            @foreach(\App\Models\Producer::all() as $producer)
+                        @foreach(\App\Models\Producer::all() as $producer)
                                 <option value="{{$producer->id}}">{{$producer->name}}</option>
                             @endforeach
                         </select>
-{{--Хэшрейт--}}
+                    {{--Хэшрейт--}}
                     <p class="font-weight-bold mt-3">Хэшрейт</p>
-                        <div class="row">
+                    <div class="row">
                             <div class="col-7">
                                 <div class="row">
                                     <div class="col-6">
@@ -42,59 +43,59 @@
                                 </select>
                             </div>
                         </div>
-{{--Монеты--}}
+                    {{--Монеты--}}
                     <div id="coinAccordion">
-                            <div class="" id="coinFilter">
-                                    <p class="font-weight-bold mt-3 pl-0 btn link dropdown-toggle" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="" id="coinFilter">
+                                <p class="font-weight-bold mt-3 pl-0 btn link dropdown-toggle" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         Монеты
                                     </p>
-                            <div id="collapseOne" class="collapse" aria-labelledby="coinFilter" data-parent="#coinAccordion">
+                                <div id="collapseOne" class="collapse" aria-labelledby="coinFilter" data-parent="#coinAccordion">
                                 <div class="">
-                                    @foreach(\App\Models\Coin::where('coin_active',true)->orderBy('order','ASC')->get() as $coin)
+                                @foreach(\App\Models\Coin::where('coin_active',true)->orderBy('order','ASC')->get() as $coin)
                                         <div class="custom-control custom-checkbox">
                                             <input name="coin[]" type="checkbox" class="custom-control-input" id="coin_{{ $coin->name }}" value="{{$coin->id}}">
                                             <label class="custom-control-label" for="coin_{{ $coin->name }}">{{ $coin->name }} ({{ $coin->short_name }})</label>
                                         </div>
                                     @endforeach
-{{--                                    --}}
-{{--                                        <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
-{{--                                        <label class="custom-control-label" for="customCheck12">Bitcoin (BTC)</label>--}}
-{{--                                    --}}
-{{--                                    <div class="custom-control custom-checkbox">--}}
-{{--                                        <input type="checkbox" class="custom-control-input" id="customCheck11">--}}
-{{--                                        <label class="custom-control-label" for="customCheck11">Litecoin (LTC)</label>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="custom-control custom-checkbox">--}}
-{{--                                        <input type="checkbox" class="custom-control-input" id="customCheck10">--}}
-{{--                                        <label class="custom-control-label" for="customCheck10">Dogecoin (DOGE)</label>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="custom-control custom-checkbox">--}}
-{{--                                        <input type="checkbox" class="custom-control-input" id="customCheck9">--}}
-{{--                                        <label class="custom-control-label" for="customCheck9">Etherium (ETH)</label>--}}
-{{--                                    </div>--}}
+                                        {{--                                    --}}
+                                        {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
+                                        {{--                                        <label class="custom-control-label" for="customCheck12">Bitcoin (BTC)</label>--}}
+                                        {{--                                    --}}
+                                        {{--                                    <div class="custom-control custom-checkbox">--}}
+                                        {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck11">--}}
+                                        {{--                                        <label class="custom-control-label" for="customCheck11">Litecoin (LTC)</label>--}}
+                                        {{--                                    </div>--}}
+                                        {{--                                    <div class="custom-control custom-checkbox">--}}
+                                        {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck10">--}}
+                                        {{--                                        <label class="custom-control-label" for="customCheck10">Dogecoin (DOGE)</label>--}}
+                                        {{--                                    </div>--}}
+                                        {{--                                    <div class="custom-control custom-checkbox">--}}
+                                        {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck9">--}}
+                                        {{--                                        <label class="custom-control-label" for="customCheck9">Etherium (ETH)</label>--}}
+                                        {{--                                    </div>--}}
                                 </div>
                             </div>
-                        </div>
+                            </div>
                     </div>
-{{--                    <p class="font-weight-bold mt-3">Монеты</p>--}}
-{{--                        <div class="custom-control custom-checkbox">--}}
-{{--                            <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
-{{--                            <label class="custom-control-label" for="customCheck12">Bitcoin (BTC)</label>--}}
-{{--                        </div>--}}
-{{--                        <div class="custom-control custom-checkbox">--}}
-{{--                            <input type="checkbox" class="custom-control-input" id="customCheck11">--}}
-{{--                            <label class="custom-control-label" for="customCheck11">Litecoin (LTC)</label>--}}
-{{--                        </div>--}}
-{{--                        <div class="custom-control custom-checkbox">--}}
-{{--                            <input type="checkbox" class="custom-control-input" id="customCheck10">--}}
-{{--                            <label class="custom-control-label" for="customCheck10">Dogecoin (DOGE)</label>--}}
-{{--                        </div>--}}
-{{--                        <div class="custom-control custom-checkbox">--}}
-{{--                            <input type="checkbox" class="custom-control-input" id="customCheck9">--}}
-{{--                            <label class="custom-control-label" for="customCheck9">Etherium (ETH)</label>--}}
-{{--                        </div>--}}
+                    {{--                    <p class="font-weight-bold mt-3">Монеты</p>--}}
+                    {{--                        <div class="custom-control custom-checkbox">--}}
+                    {{--                            <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
+                    {{--                            <label class="custom-control-label" for="customCheck12">Bitcoin (BTC)</label>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="custom-control custom-checkbox">--}}
+                    {{--                            <input type="checkbox" class="custom-control-input" id="customCheck11">--}}
+                    {{--                            <label class="custom-control-label" for="customCheck11">Litecoin (LTC)</label>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="custom-control custom-checkbox">--}}
+                    {{--                            <input type="checkbox" class="custom-control-input" id="customCheck10">--}}
+                    {{--                            <label class="custom-control-label" for="customCheck10">Dogecoin (DOGE)</label>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="custom-control custom-checkbox">--}}
+                    {{--                            <input type="checkbox" class="custom-control-input" id="customCheck9">--}}
+                    {{--                            <label class="custom-control-label" for="customCheck9">Etherium (ETH)</label>--}}
+                    {{--                        </div>--}}
 
-{{--                    <p class="font-weight-bold mt-3">Алгоритм</p>--}}
+                    {{--                    <p class="font-weight-bold mt-3">Алгоритм</p>--}}
                     <div id="algorythmAccordion">
                         <div class="" id="algorythmFilter">
                             <p class="font-weight-bold mt-3 pl-0 btn link dropdown-toggle" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
@@ -112,7 +113,6 @@
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck6">Ethash</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck5">
