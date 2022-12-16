@@ -36,7 +36,7 @@ class Asic extends Model
     }
     public function efficiency(){
         $short = $this->shortHashrate();
-        return number_format(($this->consumption / $short[0]),2)."Дж/$short[1]H";
+        return trim(trim(number_format(($this->consumption / $short[0]),2, ',', ' '),0),',')." Дж/$short[1]H";
     }
     public function producer(){
         return $this->belongsTo(Producer::class);

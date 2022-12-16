@@ -1,3 +1,5 @@
 User-agent: *
 Disallow:
+Disallow: /admin
+Disallow: /login
 Sitemap: https://mineinfo.ru/sitemap.xml

@@ -7,7 +7,7 @@
         <div class="row">
 
             <div class="col-sm-6">
-                <img src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" style="background-color: white; border: 1px solid;max-width:433px; border-radius: 20px;padding: 20px">
+                <img src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" class="img-fluid border border-dark bg-white" style="border-radius: 20px">
             </div>
             <div class="col-sm-4">
                 <h2>Характеристики асика</h2>
@@ -30,36 +30,50 @@
                 </div>
                 <div class="row">
                     <div class="col-8">Потребление: </div>
-                    <div class="col">{{$asic->consumption}} Вт</div>
+                    <div class="col">{{number_format($asic->consumption,0,'',' ')}} Вт</div>
                 </div>
+                @if($asic->sales_data_start!= null)
                 <div class="row">
                     <div class="col-8">Старт продаж: </div>
                     <div class="col">{{$asic->sales_data_start}}</div>
                 </div>
+                @endif
+                @if ($asic->packing_size != null)
                 <div class="row">
                     <div class="col-8">Габариты с упаковкой: </div>
                     <div class="col">{{$asic->packing_size}}</div>
                 </div>
+                @endif
+                @if ($asic->weight_brutto != null)
                 <div class="row">
                     <div class="col-8">Вес с упаковкой: </div>
                     <div class="col">{{$asic->weight_brutto}} кг.</div>
                 </div>
+                @endif
+                @if ($asic->dimensions != 'NA')
                 <div class="row">
                     <div class="col-8">Габариты асика: </div>
                     <div class="col">{{$asic->dimensions}}</div>
                 </div>
+                @endif
+                @if($asic->weight_netto != 0)
                 <div class="row">
                     <div class="col-8">Вес асика: </div>
                     <div class="col">{{$asic->weight_netto}} кг.</div>
                 </div>
+                @endif
+                @if ($asic->noise!=0)
                 <div class="row">
                     <div class="col-8">Шум: </div>
                     <div class="col">{{$asic->noise}} Дб</div>
                 </div>
+                @endif
+                @if($asic->chips != 0)
                 <div class="row">
                     <div class="col-8">Количество чипов: </div>
                     <div class="col">{{$asic->chips}}</div>
                 </div>
+                @endif
                 <div class="row">
                     <form action="{{url()->current()}}" method="get" class="col">
                         <p>Стоимость кВт/ч</p>

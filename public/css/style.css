@@ -64,3 +64,6 @@ footer .btn-primary:hover{
     border: 1px solid white;
     background-color: gray;
 }
+.rounded-20 {
+    border-radius: 20px !important;
+}

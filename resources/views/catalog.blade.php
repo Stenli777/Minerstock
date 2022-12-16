@@ -1,7 +1,11 @@
-<label class="custom-control-label" for="customCheck6">Ethash</label>
 @extends('layouts.layout')
 @section('main')
-    {{ Breadcrumbs::render('catalog') }}
+    <nav class="container-fluid" style="background-color: #e9ecef">
+        <div class="container">
+        {{ Breadcrumbs::render('catalog') }}
+        </div>
+    </nav>
+
     <div class="container-fluid asic-back">
     <div class="container-fluid">
     <div class="container">
@@ -26,11 +30,11 @@
                     <div class="row">
                             <div class="col-7">
                                 <div class="row">
-                                    <div class="col-6">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="min">
+                                    <div class="col-6 pr-0">
+                                        <input type="email" class="form-control" id="" placeholder="min">
                                     </div>
-                                    <div class="col-6">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="max">
+                                    <div class="col-6 pr-0">
+                                        <input type="email" class="form-control" id="" placeholder="max">
                                     </div>
                                 </div>
                             </div>
@@ -123,37 +127,37 @@
                         </div>
                     </div>
 {{--Есть в продаже--}}
-                    <p class="font-weight-bold mt-3">Есть в продаже</p>
-                        <div class="row">
-                            <div class="col">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                    <label class="custom-control-label" for="customCheck4">Да</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                    <label class="custom-control-label" for="customCheck3">Нет</label>
-                                </div>
-                            </div>
-                        </div>
+{{--                    <p class="font-weight-bold mt-3">Есть в продаже</p>--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col">--}}
+{{--                                <div class="custom-control custom-checkbox">--}}
+{{--                                    <input type="checkbox" class="custom-control-input" id="customCheck4">--}}
+{{--                                    <label class="custom-control-label" for="customCheck4">Да</label>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col">--}}
+{{--                                <div class="custom-control custom-checkbox">--}}
+{{--                                    <input type="checkbox" class="custom-control-input" id="customCheck3">--}}
+{{--                                    <label class="custom-control-label" for="customCheck3">Нет</label>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 {{--Окупается--}}
-                    <p class="font-weight-bold mt-3">Окупается</p>
-                        <div class="row">
-                            <div class="col">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    <label class="custom-control-label" for="customCheck2">Да</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Нет</label>
-                                </div>
-                            </div>
-                        </div>
+{{--                    <p class="font-weight-bold mt-3">Окупается</p>--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col">--}}
+{{--                                <div class="custom-control custom-checkbox">--}}
+{{--                                    <input type="checkbox" class="custom-control-input" id="customCheck2">--}}
+{{--                                    <label class="custom-control-label" for="customCheck2">Да</label>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col">--}}
+{{--                                <div class="custom-control custom-checkbox">--}}
+{{--                                    <input type="checkbox" class="custom-control-input" id="customCheck1">--}}
+{{--                                    <label class="custom-control-label" for="customCheck1">Нет</label>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 {{--Применить фильтр--}}
                         <input type="submit" class="btn btn-primary btn-lg btn-block mt-3" value="Применить фильтр"></input>
 {{--Хэшрейт--}}
