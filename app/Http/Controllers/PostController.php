@@ -46,7 +46,7 @@ class PostController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $model = Post::query()->where('alias',$id)->first();
+        $model = Post::with('category')->where('alias',$id)->first();
         return view('post',[
             'post' => $model,
         ]);

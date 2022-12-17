@@ -80,12 +80,14 @@ Route::get('/articles', function () {
     return view('blog',['posts' => \App\Models\Post::all()->sortByDesc('created_at')]);
 })->name('blog');
 
-//Route::get('/category', function () {
-//    return view('category',['posts' => \App\Models\Post::all()->where('category_id')->sortByDesc('created_at')]);
-//})->name('category');
+Route::get('/category/{alias}', function ($alias) {
+    $category = \App\Models\Category::query()->where(['alias'=>$alias])->first();
+//    dd($category);
+    return view('category',['posts' => \App\Models\Post::all()->where(['category_id'=>$category->attributesToArray()['id']])->sortByDesc('created_at')]);
+})->name('category');
 
-Route::resource('/category',
-    \App\Http\Controllers\CategoryController::class)->middleware([\App\Http\Middleware\Breadcrumbs::class])->names('category');
+//Route::resource('/category',
+//    \App\Http\Controllers\CategoryController::class)->middleware([\App\Http\Middleware\Breadcrumbs::class])->names('category');
 
 
 Route::resource('/post',

@@ -11,7 +11,7 @@ class Post extends Model
 //    protected $table = 'posts';
 //    protected $guarded = false;
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class,'category_id');
     }
     public function save(array $options = []): bool
     {
