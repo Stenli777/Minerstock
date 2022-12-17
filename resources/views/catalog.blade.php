@@ -166,13 +166,13 @@
             <div class="col-9">
                 <div class="row d-flex flex-row-reverse mb-3">
                     <nav class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-link active" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab" aria-controls="nav-tabs" data-target="#nav-tabs" aria-selected="true">Плиткой</a>
+                            <a class="nav-link" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab" aria-controls="nav-tabs" data-target="#nav-tabs" aria-selected="true">Плиткой</a>
                             <a class="nav-link" href="#view_table" id="nav_table" data-toggle="tab" role="tab" aria-controls="nav-table" data-target="#nav-table" aria-selected="false">Списком</a>
                     </nav>
                 </div>
 
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
+                        <div class="tab-pane show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
                             <div class="row">
                                 @foreach($asics as $asic)
                                     <div class="col-sm-4">
@@ -200,11 +200,11 @@
                                     </div>
                                 @endforeach
                                 <div class="container justify-content-center d-flex py-3">
-                                    {{ $asics->links() }}
+                                    {{ $asics->fragment('view_tabs')->links() }}
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
+                        <div class="tab-pane" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
                             <div class="row">
                                 <table class="table table-hover">
                                    <thead>
@@ -243,7 +243,7 @@
                                     </tbody>
                                 </table>
                                 <div class="container justify-content-center d-flex py-3">
-                                    {{ $asics->links() }}
+                                    {{ $asics->fragment('view_table')->links() }}
                                 </div>
                             </div>
                         </div>
@@ -253,6 +253,21 @@
     </div>
 </div>
 </div>
+        <script>
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                var hash = $(e.target).attr('href');
+                if (history.pushState) {
+                    history.pushState(null, null, hash);
+                } else {
+                    location.hash = hash;
+                }
+            });
+
+            var hash = window.location.hash;
+            if (hash) {
+                $('.nav-link[href="' + hash + '"]').tab('show');
+            }
+        </script>
     @stop
 @section('canonical')
 <link rel="canonical" href="{{ url()->current() }}">
