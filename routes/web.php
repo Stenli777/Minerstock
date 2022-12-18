@@ -96,6 +96,8 @@ Route::resource('/post',
     ->middleware([\App\Http\Middleware\Breadcrumbs::class])
     ->names('post');
 
+Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::class, 'callback']);
+
 //Route::get('/asic', function($asic){
 //    return redirect()->route('asic', [$asic->alias]);
 //});
