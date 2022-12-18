@@ -11,7 +11,7 @@ class GerwinController extends Controller
         $task_id = $request->json('id');
         $model = Gerwin::query()->where('gerwin_id', $task_id)->firstOrFail();
 
-        $model->task_result = json_encode(var_export($request, 1));
+        $model->task_result = var_export($request->post(), 1);
         $model->task_status = $request->json('status');
         $model->save();
     }
