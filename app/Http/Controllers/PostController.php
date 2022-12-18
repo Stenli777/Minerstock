@@ -44,9 +44,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show(Request $request, $alias)
     {
-        $model = Post::with('category')->where('alias',$id)->first();
+        $model = Post::with('category')->where('alias',$alias)->first();
         return view('post',[
             'post' => $model,
         ]);

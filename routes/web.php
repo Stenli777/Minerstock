@@ -82,7 +82,6 @@ Route::get('/articles', function () {
 
 Route::get('/category/{alias}', function ($alias) {
     $category = \App\Models\Category::query()->where(['alias'=>$alias])->first();
-//    dd($category);
     return view('category',['posts' => \App\Models\Post::all()->where(['category_id'=>$category->attributesToArray()['id']])->sortByDesc('created_at')]);
 })->name('category');
 
@@ -91,7 +90,9 @@ Route::get('/category/{alias}', function ($alias) {
 
 
 Route::resource('/post',
-    \App\Http\Controllers\PostController::class)->middleware([\App\Http\Middleware\Breadcrumbs::class])->names('post');
+    \App\Http\Controllers\PostController::class)
+    ->middleware([\App\Http\Middleware\Breadcrumbs::class])
+    ->names('post');
 
 //Route::get('/asic', function($asic){
 //    return redirect()->route('asic', [$asic->alias]);

@@ -32,7 +32,7 @@ Breadcrumbs::for('blog', function ($trail) {
 // Home > Blog
 Breadcrumbs::for('category', function ($trail, $category) {
     $trail->parent('blog');
-    $trail->push($category->title, route('category',$category->id));
+    $trail->push($category->title, route('category',$category->alias));
 });
 
 // Home > Blog > [Category] > [Post]
@@ -41,7 +41,7 @@ Breadcrumbs::for('category', function ($trail, $category) {
 //    $trail->push($post->title, route('post.show', $post->id));
 //});
 Breadcrumbs::for('post', function ($trail, $post) {
-    $trail->parent('category', $post->category_id);
+    $trail->parent('category', $post->category);
     $trail->push($post->title, route('post', $post->id));
 });
 
