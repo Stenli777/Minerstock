@@ -5,7 +5,7 @@
 <div class="row d-flex justify-content-center">
 <div class="col-sm-8">
     <h1>{{$post->title}}</h1>
-    <div>{!!html_entity_decode($post->content)!!}</div>
+    <div>{!! $post->content !!}</div>
 </div>
 </div>
     </div>

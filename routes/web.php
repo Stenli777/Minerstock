@@ -77,12 +77,14 @@ Route::resource('/mining-center', \App\Models\Dpc::class);
 //});
 
 Route::get('/articles', function () {
-    return view('blog',['posts' => \App\Models\Post::all()->sortByDesc('created_at')]);
+    return view('blog',['posts' => \App\Models\Post::all()->sortByDesc('created_at'), 'categories' => \App\Models\Category::all(),]);
 })->name('blog');
 
 Route::get('/category/{alias}', function ($alias) {
     $category = \App\Models\Category::query()->where(['alias'=>$alias])->first();
-    return view('category',['posts' => \App\Models\Post::all()->where(['category_id'=>$category->attributesToArray()['id']])->sortByDesc('created_at')]);
+    return view('category',[
+        'category' => $category,
+        'posts' => \App\Models\Post::all()->where('category_id', $category->id)->sortByDesc('created_at')]);
 })->name('category');
 
 //Route::resource('/category',

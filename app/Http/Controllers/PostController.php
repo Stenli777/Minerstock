@@ -49,6 +49,7 @@ class PostController extends Controller
         $model = Post::with('category')->where('alias',$alias)->first();
         return view('post',[
             'post' => $model,
+            'category' => $model->category
         ]);
     }
 

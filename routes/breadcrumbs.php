@@ -41,7 +41,8 @@ Breadcrumbs::for('category', function ($trail, $category) {
 //    $trail->push($post->title, route('post.show', $post->id));
 //});
 Breadcrumbs::for('post', function ($trail, $post) {
-    $trail->parent('category', $post->category);
-    $trail->push($post->title, route('post', $post->id));
+    $category = $post->category;
+    $trail->parent('category', $category);
+    $trail->push($post->title, route('post.show', $post->alias));
 });
 

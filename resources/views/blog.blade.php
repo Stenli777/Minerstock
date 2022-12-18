@@ -2,6 +2,13 @@
 @section('main')
     {{ Breadcrumbs::render('blog') }}
     <div class="container">
+        <div class="row">
+            @foreach($categories as $category)
+                <div class="card col-3">
+                    <a href="/category/{{$category->alias}}"><div class="card-body">{{$category->title}}</div></a>
+                </div>
+            @endforeach
+        </div>
 <div class="row">
     @foreach($posts as $post)
         <div class="col-md-6">
