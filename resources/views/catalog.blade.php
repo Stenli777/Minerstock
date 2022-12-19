@@ -16,13 +16,13 @@
                     <p class="font-weight-bold">Фильтр категории</p>
                     {{--Поиск--}}
                     <p class="font-weight-bold mt-3">Поиск</p>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Поиск по фразе">
+                    <input type="text" name="title_search" value="{{$request->input('title_search')}}" class="form-control" placeholder="Поиск по фразе">
                     {{--Производитель--}}
                     <p class="font-weight-bold mt-3">Производитель</p>
                     <select class="custom-select" name="producer_id">
                             <option selected disabled>Выберите производителя</option>
                         @foreach(\App\Models\Producer::all() as $producer)
-                                <option value="{{$producer->id}}">{{$producer->name}}</option>
+                                <option {{$request->input('producer_id')==$producer->id?'selected':''}} value="{{$producer->id}}">{{$producer->name}}</option>
                             @endforeach
                         </select>
                     {{--Хэшрейт--}}
@@ -31,19 +31,19 @@
                             <div class="col-7">
                                 <div class="row">
                                     <div class="col-6 pr-0">
-                                        <input type="email" class="form-control" id="" placeholder="min">
+                                        <input type="number" name="hashrate_min" value="{{$request->input('hashrate_min')}}" class="form-control" id="" placeholder="min">
                                     </div>
                                     <div class="col-6 pr-0">
-                                        <input type="email" class="form-control" id="" placeholder="max">
+                                        <input type="number" name="hashrate_max" value="{{$request->input('hashrate_max')}}" class="form-control" id="" placeholder="max">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-5">
-                                <select class="custom-select">
-                                    <option value="1">TH/s</option>
-                                    <option value="2">GH/s</option>
-                                    <option value="3">MH/s</option>
-                                    <option value="4">KH/s</option>
+                                <select name="hashrate_power" class="custom-select">
+                                    <option {{!$request->input('hashrate_power') || $request->input('hashrate_power')==12?'selected':''}} value="12">TH/s</option>
+                                    <option {{!$request->input('hashrate_power') || $request->input('hashrate_power')==9?'selected':''}} value="9">GH/s</option>
+                                    <option {{!$request->input('hashrate_power') || $request->input('hashrate_power')==6?'selected':''}} value="6">MH/s</option>
+                                    <option {{!$request->input('hashrate_power') || $request->input('hashrate_power')==3?'selected':''}} value="3">KH/s</option>
                                 </select>
                             </div>
                         </div>

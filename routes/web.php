@@ -46,11 +46,20 @@ Route::get('/catalog', function (Illuminate\Http\Request $request) {
         });
 //        dd($asics);
     }
+    if ($request->input('title_search')) {
+        $asics = $asics->where('title', 'like', "%{$request->input('title_search')}%");
+    }
+    if ($request->input('hashrate_min')) {
+        $asics = $asics->where('hashrate', '>', $request->input('hashrate_min') * pow(10, $request->input('hashrate_power')));
+    }
+    if ($request->input('hashrate_max')) {
+        $asics = $asics->where('hashrate', '<', $request->input('hashrate_max') * pow(10, $request->input('hashrate_power')));
+    }
 //    if ($request->input('producer_id')) {
 //        $asics = $asics->where(['producer_id',$request->input('min'],['producer_id',$request->input('max']));
 //    }
 //    var_dump($request->input('coin'));
-    return view('catalog', ['asics' => $asics->paginate(12)->withQueryString()]);
+    return view('catalog', ['asics' => $asics->paginate(12)->withQueryString(), 'request' => $request]);
 })->name('catalog');
 
 //Каталог монет
