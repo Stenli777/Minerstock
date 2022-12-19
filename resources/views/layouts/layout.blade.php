@@ -71,7 +71,9 @@ MineInfo - подробный справочник по ASIC майнерам. �
             </ul>
         </div>
         <div class="col-4 d-flex flex-row-reverse">
-            <button type="button" class="btn btn-primary btn-sm badge-pill p-2 ">Необходима консультация?</button>
+                <button type="button" class="btn btn-primary btn-sm badge-pill p-2" data-toggle="modal" data-target="#sendConsultation">
+                    Необходима консультация?
+                </button>
         </div>
     </div>
 </div>
@@ -134,6 +136,43 @@ MineInfo - подробный справочник по ASIC майнерам. �
     </div>
 
     </footer>
-</blockquote>
+<!-- Форма консультации -->
+<div class="modal fade" id="sendConsultation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Заявка на получение консультации</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Введите ваше имя</label>
+                    <input type="text" required class="form-control" id="exampleInputName1" placeholder="Имя">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Введите ваш телефон</label>
+                    <input type="tel" required class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" placeholder="Телефон">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Введите ваш e-mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Введите email">
+                </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck">
+                        <label class="form-check-label" for="exampleCheck1">Я согласен с условиями пользовательского согласшения</label>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
