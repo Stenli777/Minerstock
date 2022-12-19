@@ -67,6 +67,15 @@ class Asic extends Model
 //        $expenses = 0.83;
         return $this->consumption / 1000 * $expenses * 24;
     }
+
+    public function gerwin_description() {
+        return $this->hasOne(Gerwin::class, 'asic_id')->where(['task_type' => 'description'])->orderByDesc('created_at');
+    }
+
+    public function gerwin_features() {
+        return $this->hasOne(Gerwin::class, 'asic_id')->where(['task_type' => 'features'])->orderByDesc('created_at');
+    }
+
 //    public function profit(){
 //        $usdt = 62;
 //        $coinPrice = 20000;

@@ -65,6 +65,9 @@ class Asics extends Section implements Initializable
             AdminColumn::text('hashrate', 'Хэшрейт'),
             AdminColumn::text('consumption', 'Потребление'),
             AdminColumn::text('order', 'Сортировка'),
+            AdminColumn::text('gerwin_description.task_status', 'Gerwin description'),
+            AdminColumn::text('gerwin_features.task_status', 'Gerwin features'),
+            AdminColumn::boolean('seo_text', 'SEO'),
         ];
 
         $display = AdminDisplay::datatables()
@@ -118,6 +121,10 @@ class Asics extends Section implements Initializable
                 AdminFormElement::text('weight_netto', 'Введите вес асика')->required(),
                 AdminFormElement::text('noise', 'Введите шум асика')->required(),
                 AdminFormElement::text('chips', 'Введите количество чипов в асике'),
+
+                AdminFormElement::wysiwyg('gerwin_description.task_result', 'Gerwin Description'),
+                AdminFormElement::wysiwyg('gerwin_features.task_result', 'Gerwin Features'),
+
                 AdminFormElement::wysiwyg('seo_text', 'Описание (SEO текст)'),
             ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
         ]);
