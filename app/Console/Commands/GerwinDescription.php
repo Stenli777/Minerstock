@@ -6,14 +6,14 @@ use App\Models\Asic;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
-class Gerwin extends Command
+class GerwinDescription extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'gerwin:token';
+    protected $signature = 'gerwin:description';
 
     /**
      * The console command description.
@@ -100,7 +100,7 @@ class Gerwin extends Command
 
         $this->info($task_data['gerwin_id']);
 
-//        sleep(5);
+        sleep(5);
 
         return 0;
     }
