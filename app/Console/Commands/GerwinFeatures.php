@@ -78,7 +78,7 @@ class GerwinFeatures extends Command
 
         $this->info($task_data['gerwin_id']);
 
-//        sleep(5);
+        sleep(5);
 
         return 0;
     }
