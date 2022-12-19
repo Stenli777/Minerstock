@@ -45,7 +45,7 @@ class GerwinDescription extends Command
         ]);
         $token = $token_response->json('auth_token');
 
-        $asic = Asic::with('producer')->whereNull('seo_text')->first();
+        $asic = Asic::with('producer')->whereNull('seo_text')->whereDoesntHave('gerwin_description')->first();
 
         if (!$asic) {
             return 0;

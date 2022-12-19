@@ -31,12 +31,6 @@ class gerwin implements ShouldQueue
      */
     public function handle()
     {
-        $token_response = Http::post('https://backend.gerwin.io/auth/token/login', [
-            'data' => [
-              "password" => env('GERWIN_PASSWORD'),
-              "email" => env('GERWIN_LOGIN')
-            ]
-        ]);
-        var_dump($token_response);
+
     }
 }
