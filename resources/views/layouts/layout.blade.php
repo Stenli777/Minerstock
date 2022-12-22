@@ -12,7 +12,7 @@
     <script src="/js/bootstrap.bundle.js"></script>
     <script src="extensions/mobile/bootstrap-table-mobile.js"></script>
     <title>
-    @if($_SERVER['REQUEST_URI'] ==='/')
+@if($_SERVER['REQUEST_URI'] ==='/')
 MineInfo - подробный справочник по ASIC майнерам. Добыча, характеристики и другая информация.
 @else
     @yield('title')
