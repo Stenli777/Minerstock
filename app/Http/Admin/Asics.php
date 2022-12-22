@@ -75,8 +75,8 @@ class Asics extends Section implements Initializable
             ->setOrder([[0, 'asc']])
             ->setDisplaySearch(true)
             ->with('producer','algorythm')
-            ->paginate(25)
             ->setColumns($columns)
+            ->paginate(50)
             ->setHtmlAttribute('class', 'table-primary table-hover th-center')
         ;
 
@@ -112,8 +112,7 @@ class Asics extends Section implements Initializable
                 AdminFormElement::text('hashrate', 'Введите хэшрейт асика')->required(),
                 AdminFormElement::select('algorythm_id', 'Алгоритм', \App\Models\Algorythm::class)->setDisplay('name'),
                 AdminFormElement::date('sales_data_start', 'Введите дату старта продаж асика'),
-                AdminFormElement::image('img', 'выберите изображение асика'),
-            ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
+
                 AdminFormElement::text('consumption', 'Введите потребление асика')->required(),
                 AdminFormElement::text('packing_size', 'Введите размер упаковки'),
                 AdminFormElement::text('weight_brutto', 'Введите вес вместе с упаковкой'),
@@ -121,7 +120,9 @@ class Asics extends Section implements Initializable
                 AdminFormElement::text('weight_netto', 'Введите вес асика')->required(),
                 AdminFormElement::text('noise', 'Введите шум асика')->required(),
                 AdminFormElement::text('chips', 'Введите количество чипов в асике'),
+            ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
 
+                AdminFormElement::image('img', 'выберите изображение асика'),
                 AdminFormElement::wysiwyg('gerwin_description.task_result', 'Gerwin Description'),
                 AdminFormElement::wysiwyg('gerwin_features.task_result', 'Gerwin Features'),
 

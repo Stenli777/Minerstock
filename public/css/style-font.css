@@ -89,6 +89,8 @@ body.main-page .top-menu a:active{
     text-decoration: none;
 }
 
+
+
 .card p {
     color:#181B1D;
 }
@@ -101,4 +103,8 @@ body.main-page .top-menu a:active{
 
 .lineHeight{
     line-height: 1.5rem;
+}
+
+.bold {
+    font-weight: 600;
 }

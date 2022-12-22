@@ -12,7 +12,7 @@
         <h1>Майнинг оборудование</h1>
         <div class="row">
             <div class="col-sm-3">
-                <form class="asic-page p-3" method="get" action="/catalog">
+                <form class="asic-page p-3 rounded" method="get" action="/catalog">
                     <p class="font-weight-bold">Фильтр категории</p>
                     {{--Поиск--}}
                     <p class="font-weight-bold mt-3">Поиск</p>
@@ -177,12 +177,12 @@
                                 @foreach($asics as $asic)
                                     <div class="col-sm-4">
                                         <a href="/asic/{{$asic->alias}}" style="text-decoration: none;">
-                                        <div class="card" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
+                                        <div class="card rounded" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
                                             <div class="text-center" style="min-height: 200px;">
                                                 <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
                                             </div>
                                             <div class="card-body pt-0">
-                                                <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>
+                                                <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight bold">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>
                                                 <div class="row">
                                                     <div class="col">
                                                         <p class="mt-0 mb-0"> Хэшрейт:</p>
@@ -193,7 +193,7 @@
                                                         <p class="mt-0">{{$asic->algorythm->name}}</p>
                                                     </div>
                                                 </div>
-{{--                                                <a href="/asic/{{$asic->id}}" class="btn btn-primary btn-block">Перейти</a>--}}
+{{--                                                <a href="/asic/{{$asic->alias}}" class="btn btn-primary btn-block">Перейти</a>--}}
                                             </div>
                                         </div>
                                         </a>
@@ -227,16 +227,16 @@
                                     @foreach($asics as $asic)
                                         <tr>
                                             <td>
-                                                <a href="/asic/{{$asic->id}}">{{$asic->producer->name}}</a>
+                                                <a href="/asic/{{$asic->alias}}">{{$asic->producer->name}}</a>
                                             </td>
                                             <td>
-                                                <a href="/asic/{{$asic->id}}">{{$asic->name}}</a>
+                                                <a href="/asic/{{$asic->alias}}">{{$asic->name}}</a>
                                             </td>
                                             <td>
-                                                <a href="/asic/{{$asic->id}}">{{$asic->humanHashrate()}}</a>
+                                                <a href="/asic/{{$asic->alias}}">{{$asic->humanHashrate()}}</a>
                                             </td>
                                             <td>
-                                                <a href="/asic/{{$asic->id}}">{{$asic->algorythm->name}}</a>
+                                                <a href="/asic/{{$asic->alias}}">{{$asic->algorythm->name}}</a>
                                             </td>
                                             </tr>
                                     @endforeach
