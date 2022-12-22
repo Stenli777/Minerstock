@@ -25,8 +25,8 @@
 {{--                                    <img class="card-img-top" src="/{{$coin->img}}" alt="изображение {{$coin->name}} {{$coin->short_name}}">--}}
                                 </div>
                                 <div class="card-body">
-                                    <a href="/asic/{{$coin->id}}"><h6 class="card-title">{{$coin->name}} {{$coin->short_name}}</h6></a>
-                                    <a href="/asic/{{$coin->id}}" class="btn btn-primary btn-block">Перейти</a>
+                                    <h6 class="card-title">{{$coin->name}} {{$coin->short_name}}</h6>
+{{--                                    <a href="#" class="btn btn-primary btn-block">Перейти</a>--}}
                                 </div>
                             </div>
                         </div>
