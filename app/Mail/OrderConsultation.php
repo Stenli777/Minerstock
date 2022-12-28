@@ -16,6 +16,8 @@ class OrderConsultation extends Mailable
      *
      * @return void
      */
+    public $order;
+
     public function __construct()
     {
         //
@@ -28,6 +30,6 @@ class OrderConsultation extends Mailable
      */
     public function build()
     {
-        return $this->from('info@mineinfo.ru','MineInfo')->view('mail.test');
+        return $this->from('info@mineinfo.ru','MineInfo')->text('mail.test');
     }
 }

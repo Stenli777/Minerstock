@@ -64,7 +64,7 @@ Route::get('/catalog', function (Illuminate\Http\Request $request) {
 
 //Каталог монет
 Route::get('/coins', function () {
-    return view('coins', ['coins' => \App\Models\Coin::with('algorythm')->where('coin_active', true)->paginate(12)]);
+    return view('coins', ['coins' => \App\Models\Coin::with('algorythm')->where('coin_active', true)->paginate(36)]);
 });
 
 //Каталог майнинг компаний

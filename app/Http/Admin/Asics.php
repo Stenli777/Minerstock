@@ -7,6 +7,7 @@ use AdminColumnFilter;
 use AdminDisplay;
 use AdminForm;
 use AdminFormElement;
+use App\Models\Gerwin;
 use App\Models\Producer;
 use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
@@ -120,13 +121,22 @@ class Asics extends Section implements Initializable
                 AdminFormElement::text('weight_netto', 'Введите вес асика')->required(),
                 AdminFormElement::text('noise', 'Введите шум асика')->required(),
                 AdminFormElement::text('chips', 'Введите количество чипов в асике'),
+
+                AdminFormElement::html('<h2 style="margin-bottom: 25px; margin-top: 25px">Базовые параметры</h2>') ,
+
+                AdminFormElement::text('h1','H1'),
+                AdminFormElement::text('title','Decsription'),
+                AdminFormElement::text('description','Description'),
+                AdminFormElement::number('order','Сортировка'),
+                AdminFormElement::text('alias','Alias'),
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
 
                 AdminFormElement::image('img', 'выберите изображение асика'),
                 AdminFormElement::wysiwyg('gerwin_description.task_result', 'Gerwin Description'),
                 AdminFormElement::wysiwyg('gerwin_features.task_result', 'Gerwin Features'),
-
                 AdminFormElement::wysiwyg('seo_text', 'Описание (SEO текст)'),
+
+
             ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
         ]);
 
