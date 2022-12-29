@@ -16,12 +16,12 @@ class GerwinTasks extends Migration
         Schema::create('gerwin_tasks', function (Blueprint $table) {
             $table->id();
 
-            $table->string('gerwin_id');
+            $table->string('gerwin_id')->nullable();
             $table->unsignedBigInteger('asic_id');
-            $table->string('task_type');
-            $table->string('task_data', 1000);
+            $table->string('task_type')->nullable();
+            $table->string('task_data', 1000)->nullable();
             $table->string('task_result', 3000)->nullable();
-            $table->string('task_status', 100);
+            $table->string('task_status', 100)->nullable();
 
             $table->timestamps();
         });
