@@ -1,4 +1,10 @@
 @extends('layouts.layout')
+@section('title')
+    {{$asic->title}}
+@stop
+@section('description')
+    <meta name="description" content="{{$asic->description}}" />
+@stop
 @section('main')
     {{ Breadcrumbs::render('asic',$asic) }}
     <div class="container-fluid asic-back">
@@ -296,8 +302,6 @@
             </div>
         </div>
 
-
-
     </div>
     <div class="container-fluid">
         <div class="separator">
@@ -324,9 +328,4 @@
         </div>
 @stop
 
-@section('title')
-    {{$asic->title?$asic->title:'тест1'}}
-@stop
-@section('description')
-<meta name="description" content="{{$asic->description}}" />
-@stop
+
