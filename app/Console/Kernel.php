@@ -23,7 +23,7 @@ class Kernel extends ConsoleKernel
         $schedule->job(new wtm_parse_coins)->hourly();
         $schedule->job(new binance)->daily();
         $schedule->job(new cbfr)->hourly();
-        $schedule->job(new sitemap)->daily();
+        $schedule->job(new sitemap)->everyMinute();
     }
 
     /**

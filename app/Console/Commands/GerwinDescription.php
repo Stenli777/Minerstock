@@ -53,9 +53,9 @@ class GerwinDescription extends Command
 
         $this->info("Selected {$asic->title}");
 
-        $description = "Характеристики асика "
-            . "Хэшрейт: {$asic->humanHashrate()}, "
-            . "Энергоэффективность: {$asic->efficiency()}, "
+        $description = "Характеристики асика"
+            . "Хэшрейт: {$asic->humanHashrate()},"
+            . "Энергоэффективность: {$asic->efficiency()},"
             . "Производитель: {$asic->producer->name}, "
             . "Алгоритм: {$asic->algorythm->name}, "
             . "Потребление: " . number_format($asic->consumption,0,'',' ') . " Вт";
