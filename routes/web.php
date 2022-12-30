@@ -36,7 +36,7 @@ Route::resource('/asic',
 
 //Каталог асиков
 Route::get('/catalog', function (Illuminate\Http\Request $request) {
-    $asics = \App\Models\Asic::with('producer');
+    $asics = \App\Models\Asic::with('producer')->orderByDesc('order');
     if ($request->input('producer_id')) {
         $asics = $asics->where('producer_id', $request->input('producer_id'));
     }
