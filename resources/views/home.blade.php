@@ -15,7 +15,7 @@
                             <img class="card-img-top" src="/{{$asic->img}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
                             </div>
                             <div class="card-body">
-                                <a href="/asic/{{$asic->id}}"><h6 class="card-title bold">{{$asic->producer->name}} {{$asic->name}}<br>{{$asic->humanHashrate()}}</h6></a>
+                                <a href="/asic/{{$asic->alias}}"><h6 class="card-title bold">{{$asic->producer->name}} {{$asic->name}}<br>{{$asic->humanHashrate()}}</h6></a>
 {{--                                <p class="card-text"> Хэшрейт: {{$asic->humanHashrate()}}--}}
                                 <p>Алгоритм: {{$asic->algorythm->name}}</p>
 
