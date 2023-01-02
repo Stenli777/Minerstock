@@ -21,7 +21,7 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authentica
 
 //Главная
 Route::get('/', function () {
-    return view('home', ['asics' => \App\Models\Asic::with('producer')->paginate(8)]);
+    return view('home', ['asics' => \App\Models\Asic::with('producer')->limit(8)->orderByDesc('order')->get()]);
 })->name('home');
 
 //Карточка алгоритма
