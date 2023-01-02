@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Asic;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -46,6 +47,7 @@ class sitemap implements ShouldQueue
                     ->setPriority(0.8);
                 return $url;
             })
+
             ->writeToFile(public_path('sitemap.xml'));
     }
 }

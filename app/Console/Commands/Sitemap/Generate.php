@@ -42,9 +42,10 @@ class Generate extends Command
         SitemapGenerator::create(config('app.url'))
 
             ->hasCrawled(function (Url $url) {
-                if (parse_url($url->url,PHP_URL_QUERY)) {
-                    return;
-                } if ($url->segment(1)=='asic') {
+//                if (parse_url($url->url,PHP_URL_QUERY)) {
+//                    return;
+//                }
+                if ($url->segment(1)=='asic') {
                     $url->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                         ->setPriority(1.0);
                     return $url;
