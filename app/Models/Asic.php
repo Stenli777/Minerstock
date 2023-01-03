@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Sitemap\Contracts\Sitemapable;
+use Spatie\Sitemap\Tags\Url;
 
-class Asic extends Model
+class Asic extends Model implements Sitemapable
 {
     use HasFactory;
     public function humanHashrate(){
@@ -76,6 +78,10 @@ class Asic extends Model
         return $this->hasOne(Gerwin::class, 'asic_id')->where(['task_type' => 'features'])->orderByDesc('created_at');
     }
 
+    public function toSitemapTag(): Url | string | array
+    {
+        return route('asic.show', $this->alias);
+    }
 //    public function profit(){
 //        $usdt = 62;
 //        $coinPrice = 20000;

@@ -2,7 +2,11 @@
 
 namespace App\Console\Commands\Sitemap;
 
+use App\Models\Asic;
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Console\Command;
+use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 
@@ -39,21 +43,22 @@ class Generate extends Command
      */
     public function handle()
     {
-        SitemapGenerator::create(config('app.url'))
-
-            ->hasCrawled(function (Url $url) {
-//                if (parse_url($url->url,PHP_URL_QUERY)) {
-//                    return;
-//                }
-                if ($url->segment(1)=='asic') {
-                    $url->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                        ->setPriority(1.0);
-                    return $url;
-                }
-                $url->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-                    ->setPriority(0.8);
-                return $url;
-            })
+        Sitemap::create()
+            ->add(Url::create('/')
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(1.0))
+            ->add(Url::create('/catalog')
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            ->setPriority(1.0))
+            ->add(Asic::all())
+            ->add(Url::create('/coin')
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(1.0))
+            ->add(Url::create('/articles')
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(1.0))
+            ->add(Category::all())
+            ->add(Post::all())
             ->writeToFile(public_path('sitemap.xml'));
     }
 }
