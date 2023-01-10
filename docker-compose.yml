@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+    nginx:
+        image: nginx:latest
+        container_name: mineinfo_nginx
+        restart: always
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./docker/nginx/vhosts:/etc/nginx/conf.d
+            - ./docker/nginx/logs:/var/log/nginx
+            - ./:/var/www/mineinfo/
+        working_dir: /var/www/mineinfo/
+        networks:
+            - hostnet
+
+    mysql:
+        image: mysql:latest
+        container_name: mineinfo_mysql
+        restart: always
+        command: mysqld --sql_mode=""
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=project
+            - MYSQL_USER=project
+            - MYSQL_PASSWORD=project
+        volumes:
+            - ./docker/mysql:/var/lib/mysql
+        networks:
+            - hostnet
+
+    php:
+        image: mineinfo_php
+        build:
+            context: ./docker/php
+            target: dev
+            args:
+                - USER_ID
+                - GROUP_ID
+        container_name: mineinfo_php
+        volumes:
+            - ./:/var/www/mineinfo
+            - ./docker/mysql:/var/lib/mysql
+            - vendor:/var/www/mineinfo/vendor
+        working_dir: /var/www/mineinfo/
+        environment:
+            APP_ENV: production
+        networks:
+            - hostnet
+
+    composer:
+        image: mineinfo_php
+        restart: "no"
+        working_dir: /var/www/mineinfo/
+        command: sh -c "composer update"
+        volumes:
+            - ./:/var/www/mineinfo
+            - vendor:/var/www/mineinfo/vendor
+        networks:
+            - hostnet
+
+
+networks:
+    hostnet:
+        name: skynet
+
+volumes:
+    vendor:

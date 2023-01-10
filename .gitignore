@@ -15,4 +15,7 @@ yarn-error.log
 /.vscode
 /public/sitemap.xml
 /public/images/uploads
-
+/docker/mysql/
+/docker/nginx/logs/
+/public/css/
+/public/js/
