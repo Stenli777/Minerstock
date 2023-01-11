@@ -19,6 +19,7 @@
                 </div>
                 <div class="row">
                     @foreach($coins as $coin)
+                        @if($coin->price() !== 0)
                         <div class="col-3">
                             <div class="card" style="width: 17rem; margin-bottom:1rem;">
                                 <div class="text-center" style="">
@@ -26,10 +27,13 @@
                                 </div>
                                 <div class="card-body">
                                     <h6 class="card-title">{{$coin->name}} {{$coin->short_name}}</h6>
+
+                                    <p>$ {{number_format($coin->price(),2,',',' ')}}</p>
 {{--                                    <a href="#" class="btn btn-primary btn-block">Перейти</a>--}}
                                 </div>
                             </div>
                         </div>
+                        @endif
                     @endforeach
                 </div>
 

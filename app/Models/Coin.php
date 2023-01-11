@@ -20,6 +20,8 @@ class Coin extends Model
         $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 32 * $this->wtm_coin->difficulty);
         if ($mine < 0.00000010) {
             $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / ($this->wtm_coin->difficulty);
+        } if ($this->id === 22) {
+            $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 13 * $this->wtm_coin->difficulty);
         }
         return $mine;
     }

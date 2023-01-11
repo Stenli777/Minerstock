@@ -107,8 +107,10 @@
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
+                                    @if($coin->price() !== 0)
                                     <a class="nav-item nav-link {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}-tab" data-toggle="tab" href="#nav-{{$coin->short_name}}" role="tab" aria-controls="nav-{{$coin->short_name}}" aria-selected="{{$k==0?'true':'false'}}">{{$coin->name}}({{$coin->short_name}})</a>
-                                @endforeach
+                                    @endif
+                                    @endforeach
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
@@ -152,7 +154,7 @@
                                                     {{number_format($coin->minePerDay($asic->hashrate),8,'.',' ')}}
                                                 </td>
                                                 <td>
-                                                    {{number_format($coin->minePerDay($asic->hashrate),8,'.',' ')}} ₿
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()),8,'.',' ')}} ₿
                                                 </td>
                                                 <td>
                                                     {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd,2,'.',' ')}} ₽
@@ -175,7 +177,7 @@
                                                     {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,'.',' ')}}
                                                 </td>
                                                 <td>
-                                                    {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,'.',' ')}} ₿
+                                                    {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()) * 30.5,8,'.',' ')}} ₿
                                                 </td>
                                                 <td>
                                                     {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd * 30.5,2,'.',' ')}} ₽
@@ -213,6 +215,7 @@
                             </thead>
                             <tbody>
                                 @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
+                                    @if($coin->price() !== 0)
                                     <tr>
                                         <td>
                                             {{$coin->name}} ({{$coin->short_name}})
@@ -227,6 +230,7 @@
                                             {{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $usd * 30.5,2,'.',' ')}}
                                         </td>
                                     </tr>
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>
