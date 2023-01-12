@@ -110,3 +110,4 @@ Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::cla
 //Route::get('/asic', function($asic){
 //    return redirect()->route('asic', [$asic->alias]);
 //});
+

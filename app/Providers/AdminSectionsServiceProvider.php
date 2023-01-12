@@ -20,6 +20,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         \App\Models\Category::class => 'App\Http\Admin\Category',
         \App\Models\Post::class => 'App\Http\Admin\Post',
         \App\Models\Tag::class => 'App\Http\Admin\Tag',
+        \App\Models\PartnerLink::class => 'App\Http\Admin\PartnerLinks',
     ];
 
     /**

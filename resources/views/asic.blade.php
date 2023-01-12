@@ -112,7 +112,6 @@
                                     @endif
                                     @endforeach
                             </div>
-                        </nav>
                         <div class="tab-content" id="nav-tabContent">
                             @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
                                 <div class="tab-pane fade show {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}" role="tabpanel" aria-labelledby="nav-{{$coin->short_name}}-tab">
