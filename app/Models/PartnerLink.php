@@ -20,7 +20,10 @@ class PartnerLink extends Model
         return $randomString;
     }
     public function save(array $options = []){
-        $this->internal_link = "https://mineinfo.ru/link/" . $this->randomizeLink();
+        If ($this->internal_link == null)
+        {
+            $this->internal_link = "https://mineinfo.ru/link/" . $this->randomizeLink();
+        }
         parent::save($options);
     }
     public function partnerLinkRedirect(){

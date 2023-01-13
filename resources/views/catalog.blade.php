@@ -54,12 +54,14 @@
                                         Монеты
                                     </p>
                                 <div id="collapseOne" class="collapse" aria-labelledby="coinFilter" data-parent="#coinAccordion">
-                                <div class="">
+
                                 @foreach(\App\Models\Coin::where('coin_active',true)->orderBy('order','ASC')->get() as $coin)
+                                        @if($coin->price() != 0)
                                         <div class="custom-control custom-checkbox">
                                             <input name="coin[]" type="checkbox" class="custom-control-input" id="coin_{{ $coin->name }}" value="{{$coin->id}}">
                                             <label class="custom-control-label" for="coin_{{ $coin->name }}">{{ $coin->name }} ({{ $coin->short_name }})</label>
                                         </div>
+                                        @endif
                                     @endforeach
                                         {{--                                    --}}
                                         {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
@@ -77,7 +79,7 @@
                                         {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck9">--}}
                                         {{--                                        <label class="custom-control-label" for="customCheck9">Etherium (ETH)</label>--}}
                                         {{--                                    </div>--}}
-                                </div>
+
                             </div>
                             </div>
                     </div>

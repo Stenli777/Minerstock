@@ -46,7 +46,7 @@ class PartnerLinks extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o');
+        $this->addToNavigation()->setPriority(100)->setIcon('fa fa-lightbulb-o')->setTitle('Партнерские ссылки')->getParent();
     }
 
     /**
@@ -74,7 +74,7 @@ class PartnerLinks extends Section implements Initializable
             ->setName('firstdatatables')
             ->setOrder([[0, 'asc']])
             ->setDisplaySearch(true)
-            ->paginate(25)
+            ->paginate(50)
             ->setColumns($columns)
             ->setHtmlAttribute('class', 'table-primary table-hover th-center')
         ;
@@ -87,7 +87,7 @@ class PartnerLinks extends Section implements Initializable
                 })
                 ->setDisplay('name')
                 ->setColumnName('name')
-                ->setPlaceholder('All names')
+                ->setPlaceholder('Все ссылки')
             ,
         ]);
         $display->getColumnFilters()->setPlacement('card.heading');
@@ -108,13 +108,10 @@ class PartnerLinks extends Section implements Initializable
                 AdminFormElement::text('name', 'Название')->required(),
                 AdminFormElement::text('redirect301', 'Партнерская ссылка'),
                 AdminFormElement::text('internal_link', 'Новая ссылка')->setVisible(true)->setReadonly(true),
-
-                AdminFormElement::datetime('created_at')->setVisible(true)->setReadonly(false),
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
                 AdminFormElement::text('id', 'ID')->setReadonly(true),
                 AdminFormElement::text('entity', 'Категория объекта'),
                 AdminFormElement::text('id_entity', 'ID объекта'),
-
             ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
         ]);
 

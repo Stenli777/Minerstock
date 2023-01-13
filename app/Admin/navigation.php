@@ -27,35 +27,35 @@ return [
         'icon'  => 'fas fa-tachometer-alt',
         'url'   => route('admin.dashboard'),
     ],
+];
+//    [
+//        'title' => 'Информация',
+//        'icon'  => 'fas fa-info-circle',
+//        'url'   => route('admin.information'),
+//    ],
+//
+//    [
+//        'title' => 'Крипто',
+//        'icon' => 'fa fa-table fa-group',
+//        'id' => 'parent-section',
+//        'pages' => [
+//            [
+//                'title' => 'Монеты',
+//                'icon' => 'fa fa-qrcode',
+//                'url' => route('admin.information')
+//            ],
+//            [
+//                'title' => 'Алгоритмы',
+//                'icon' => 'fa fa-barcode',
+//                'url' => route('admin.information')
+//            ],
+//            [
+//                'title' => 'Производители',
+//                'icon' => 'fa fa-battery-three-quarters',
+//                'url' => route('admin.information')
+//            ],
+//                    ]
 
-    [
-        'title' => 'Информация',
-        'icon'  => 'fas fa-info-circle',
-        'url'   => route('admin.information'),
-    ],
-
-    [
-        'title' => 'Крипто',
-        'icon' => 'fa fa-table fa-group',
-        'id' => 'parent-section',
-        'pages' => [
-            [
-                'title' => 'Монеты',
-                'icon' => 'fa fa-qrcode',
-                'url' => route('admin.information')
-            ],
-            [
-                'title' => 'Алгоритмы',
-                'icon' => 'fa fa-barcode',
-                'url' => route('admin.information')
-            ],
-            [
-                'title' => 'Производители',
-                'icon' => 'fa fa-battery-three-quarters',
-                'url' => route('admin.information')
-            ],
-                    ]
-    ],
 
     // Examples
     // [
@@ -109,4 +109,4 @@ return [
     //        ]
     //    ]
     // ]
-];
+//];

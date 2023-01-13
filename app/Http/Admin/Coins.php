@@ -72,7 +72,7 @@ class Coins extends Section implements Initializable
             ->setName('firstdatatables')
             ->setOrder([[0, 'asc']])
             ->setDisplaySearch(true)
-            ->paginate(25)
+            ->paginate(50)
             ->setColumns($columns)
             ->setHtmlAttribute('class', 'table-primary table-hover th-center')
         ;
