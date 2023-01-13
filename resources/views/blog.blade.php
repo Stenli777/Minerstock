@@ -20,7 +20,7 @@
         <div class="col-4">
             <div class="card mb-3" style="border-radius: 0">
                 <div class="text-center" style="min-height: 200px;">
-                    <img class="card-img-top" src="/{{$post->img ? $post->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$post->title}}">
+                    <img class="card-img" src="/{{$post->img ? $post->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$post->title}}">
                 </div>
                 <div class="card-body pt-0">
             <a href="/post/{{$post->alias}}">{{$post->title}}</a>
