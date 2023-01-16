@@ -1,8 +1,90 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import 'fonts';
 
 // Variables
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
+@import 'libs/bootstrap.css';
+
+//Parts
+@import 'parts/header';
+@import 'parts/footer';
+
+//Blocks
+@import 'blocks/product';
+
+body {
+    font-family: Gilroy Regular, Arial, serif;
+}
+
+.card{
+    border-radius: 20px;
+    box-shadow: 0px 1px 6px 0px #b6c0d1;
+}
+
+.separator{
+
+    width:100%;
+    text-align: center;
+    background: rgb(0,32,76);
+    background: linear-gradient(90deg, rgba(0,32,76,1) 0%, rgba(168,72,56,1) 35%, rgba(0,32,76,1) 95%, rgba(0,212,255,1) 091628%);
+}
+.separator h1{
+    padding: 60px 0 60px 0;
+    color: white;
+}
+.separator h2{
+    /*padding: 60px 0 60px 0;*/
+    color: white;
+}
+
+.asic-back{
+    background-image: url("/images/uploads/curves.png");
+}
+h1{
+    margin: 20px 0 20px 0;
+}
+
+.card-img-top{
+    max-height: 180px!important;
+    max-width: 180px!important;
+    margin: 0 auto!important;
+}
+
+.card-img-catalog{
+    text-align: center;
+}
+
+.asic-page{
+    background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 20px;
+}
+
+/*.breadcrumb > li:not(:last-child)::after{*/
+/*    content:">";*/
+/*    margin-left:5px;*/
+/*    margin-right:5px;*/
+
+/*}*/
+
+footer .btn-primary{
+    border: 1px solid white;
+    background-color: #131a2a;
+}
+footer .btn-primary:hover{
+    border: 1px solid white;
+    background-color: gray;
+}
+.rounded-20 {
+    border-radius: 20px !important;
+}
+
+.breadcrumb {
+    padding: 0.35rem 0;
+    font-size: 13px;
+}

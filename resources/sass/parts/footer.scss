@@ -1,0 +1,33 @@
+footer {
+    background-color: $color-dark;
+    color: #ffffff;
+
+
+    .copyright {
+        font-size: 11px;
+        padding: 10px 0;
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+
+        li {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            a {
+                text-decoration: none !important;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: white;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+
+}

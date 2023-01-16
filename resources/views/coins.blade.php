@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('main')
-    <div class="container-fluid asic-back">
+    <div class="container-fluid">
         <div class="container-fluid">
             <div class="container">
                 <h1>Монеты</h1>

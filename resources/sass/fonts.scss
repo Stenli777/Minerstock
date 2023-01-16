@@ -1,0 +1,68 @@
+@font-face {
+    font-family: Gilroy Regular;
+    src: url('/css/font/Gilroy-Regular.eot');
+    src: url('/css/font/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/css/font/Gilroy-Regular.woff') format('woff'),
+    url('/css/font/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Gilroy Medium;
+    src: url('/css/font/Gilroy-Medium.eot');
+    src: url('/css/font/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/css/font/Gilroy-Medium.woff') format('woff'),
+    url('/css/font/Gilroy-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Gilroy SemiBold;
+    src: url('/css/font/Gilroy-SemiBold.eot');
+    src: url('/css/font/Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('/css/font/Gilroy-SemiBold.woff') format('woff'),
+    url('/css/font/Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Gilroy UltraLight;
+    src: url('/css/font/Gilroy-UltraLight.eot');
+    src: url('/css/font/Gilroy-UltraLight.eot?#iefix') format('embedded-opentype'),
+    url('/css/font/Gilroy-UltraLight.woff') format('woff'),
+    url('/css/font/Gilroy-UltraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.SemiBold {
+    font-family: Gilroy SemiBold, Arial, serif;
+}
+.Medium {
+    font-family: Gilroy Medium, Arial, serif;
+}
+.UltraLight {
+    font-family: Gilroy UltraLight, Arial, serif;
+}
+.lightGrey{
+    color: #C5C5C5;
+}
+
+
+.card p {
+    color:#181B1D;
+}
+.card a {
+    color:#181B1D;
+}
+.card a:hover {
+    color:grey;
+}
+
+.lineHeight{
+    line-height: 1.5rem;
+}
+
+.bold {
+    font-weight: 600;
+}

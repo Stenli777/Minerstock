@@ -6,7 +6,6 @@
         </div>
     </nav>
 
-    <div class="container-fluid asic-back">
     <div class="container-fluid">
     <div class="container">
         <h1>Майнинг оборудование</h1>
@@ -178,27 +177,27 @@
                             <div class="row">
                                 @foreach($asics as $asic)
                                     <div class="col-sm-4">
-                                        <a href="/asic/{{$asic->alias}}" style="text-decoration: none;">
-                                        <div class="card rounded" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">
-                                            <div class="text-center" style="min-height: 200px;">
-                                                <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
-                                            </div>
-                                            <div class="card-body pt-0">
-                                                <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight bold">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <p class="mt-0 mb-0"> Хэшрейт:</p>
-                                                        <p class="mt-0">Алгоритм:</p>
-                                                    </div>
-                                                    <div class="col">
-                                                        <p class="mt-0 mb-0">{{$asic->humanHashrate()}}</p>
-                                                        <p class="mt-0">{{$asic->algorythm->name}}</p>
-                                                    </div>
-                                                </div>
-{{--                                                <a href="/asic/{{$asic->alias}}" class="btn btn-primary btn-block">Перейти</a>--}}
-                                            </div>
-                                        </div>
-                                        </a>
+                                        @include('blocks.product')
+{{--                                        <a href="/asic/{{$asic->alias}}" style="text-decoration: none;">--}}
+{{--                                        <div class="card rounded" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">--}}
+{{--                                            <div class="text-center" style="min-height: 200px;">--}}
+{{--                                                <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="card-body pt-0">--}}
+{{--                                                <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight bold">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>--}}
+{{--                                                <div class="row">--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <p class="mt-0 mb-0"> Хэшрейт:</p>--}}
+{{--                                                        <p class="mt-0">Алгоритм:</p>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <p class="mt-0 mb-0">{{$asic->humanHashrate()}}</p>--}}
+{{--                                                        <p class="mt-0">{{$asic->algorythm->name}}</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        </a>--}}
                                     </div>
                                 @endforeach
                                 <div class="container justify-content-center d-flex py-3">

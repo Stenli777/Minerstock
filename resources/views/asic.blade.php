@@ -6,8 +6,11 @@
     <meta name="description" content="{{$asic->description}}" />
 @stop
 @section('main')
-    {{ Breadcrumbs::render('asic',$asic) }}
-    <div class="container-fluid asic-back">
+    <nav class="container-fluid" style="background-color: #e9ecef">
+        <div class="container">
+            {{ Breadcrumbs::render('asic',$asic) }}
+        </div>
+    </nav>
     <div class="container asic-page pt-3 pb-3">
         <h1 class="mt-0">{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</h1>
         <div class="row">
@@ -104,7 +107,7 @@
             </div>
         </div>
     </div>
-    </div>
+
     <div class="container">
             <div class="col">
                 <h3 class="font-weight-bold mt-3 mb-3">Добыча асика</h3>
@@ -263,7 +266,7 @@
             </div>
     </div>
 
-        <div class="container-fluid">
+
             <div style="background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);">
             <div class="container">
                 @if($asic->seo_text != null)
@@ -316,43 +319,43 @@
             </table>
         </div>
             </div>
-            </div>
+
         </div>
 
     </div>
-    <div class="container-fluid">
-        <div class="separator">
-            <h2 class="pt-5 pb-5">Другое оборудование на {{$asic->algorythm->name}}</h2>
-        </div>
-        <div class="container mt-5 mb-5">
-            <div class="row">
-                @foreach($asics as $asic)
-                    <div class="col-sm-3">
-                        <a href="/asic/{{$asic->alias}}" style="text-decoration: none;">
-                            <div class="card rounded" style="min-height: 10rem; margin-bottom:1rem;">
-                                <div class="text-center" style="min-height: 200px;">
-                                    <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
-                                </div>
-                                <div class="card-body pt-0">
-                                    <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight bold">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="mt-0 mb-0"> Хэшрейт:</p>
-                                            <p class="mt-0">Алгоритм:</p>
-                                        </div>
-                                        <div class="col">
-                                            <p class="mt-0 mb-0">{{$asic->humanHashrate()}}</p>
-                                            <p class="mt-0">{{$asic->algorythm->name}}</p>
-                                        </div>
-                                    </div>
-                                    {{--                                                <a href="/asic/{{$asic->alias}}" class="btn btn-primary btn-block">Перейти</a>--}}
-                                </div>
+
+    <div class="separator">
+        <h2 class="pt-5 pb-5">Другое оборудование на {{$asic->algorythm->name}}</h2>
+    </div>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            @foreach($asics as $asic)
+                <div class="col-sm-3">
+                    <a href="/asic/{{$asic->alias}}" style="text-decoration: none;">
+                        <div class="card rounded" style="min-height: 10rem; margin-bottom:1rem;">
+                            <div class="text-center" style="min-height: 200px;">
+                                <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
                             </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+                            <div class="card-body pt-0">
+                                <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight bold">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="mt-0 mb-0"> Хэшрейт:</p>
+                                        <p class="mt-0">Алгоритм:</p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="mt-0 mb-0">{{$asic->humanHashrate()}}</p>
+                                        <p class="mt-0">{{$asic->algorythm->name}}</p>
+                                    </div>
+                                </div>
+                                {{--                                                <a href="/asic/{{$asic->alias}}" class="btn btn-primary btn-block">Перейти</a>--}}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
+    </div>
 @stop
 
 
