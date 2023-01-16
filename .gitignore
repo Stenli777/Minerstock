@@ -21,3 +21,4 @@ yarn-error.log
 /public/js/
 composer.lock
 package-lock.json
+mix-manifest.json
