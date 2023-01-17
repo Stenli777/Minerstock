@@ -19,3 +19,6 @@ yarn-error.log
 /docker/nginx/logs/
 /public/css/
 /public/js/
+composer.lock
+package-lock.json
+mix-manifest.json
