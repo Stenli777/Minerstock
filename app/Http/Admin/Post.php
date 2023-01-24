@@ -60,6 +60,7 @@ class Post extends Section implements Initializable
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
             AdminColumn::text('title', 'Заголовок'),
             AdminColumn::text('category_id','Категория',\App\Models\Category::class),
+            AdminColumn::text('is_news','Новость'),
             AdminColumn::boolean('active', 'Активность'),
             AdminColumn::text('created_at', 'Дата создания')
                 ->setWidth('160px')
@@ -110,6 +111,7 @@ class Post extends Section implements Initializable
                     ->setReadonly(false)
                 ,
                 AdminFormElement::select('category_id', 'Категория', \App\Models\Category::class)->setDisplay('title'),
+                AdminFormElement::select('is_news','Это новость?',[1,0]),
                 AdminFormElement::image('img', 'Выберите миниатюру поста'),
                 AdminFormElement::text('title','Заголовок (Title)')->required(),
                 AdminFormElement::text('description','Description (SEO элемент)'),

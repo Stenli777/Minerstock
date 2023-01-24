@@ -21,7 +21,20 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authentica
 
 //Главная
 Route::get('/', function () {
-    return view('home', ['asics' => \App\Models\Asic::with('producer')->limit(8)->orderByDesc('order')->get()]);
+    return view('home',
+    [
+        'asics' => \App\Models\Asic::with('producer')->limit(8)
+            ->orderByDesc('order')
+            ->get(),
+        'posts'=> \App\Models\Post::with('category')->where('is_news',0)
+            ->limit(4)
+            ->orderByDesc('created_at')
+            ->get(),
+        'news'=> \App\Models\Post::with('category')->where('is_news',1)
+            ->limit(4)
+            ->orderByDesc('created_at')
+            ->get()
+    ]);
 })->name('home');
 
 //Карточка алгоритма
@@ -86,8 +99,12 @@ Route::resource('/mining-center', \App\Models\Dpc::class);
 //});
 
 Route::get('/articles', function () {
-    return view('blog',['posts' => \App\Models\Post::all()->sortByDesc('created_at'), 'categories' => \App\Models\Category::all(),]);
+    return view('blog',['posts' => \App\Models\Post::all()->where('is_news',0)->sortByDesc('created_at'), 'categories' => \App\Models\Category::all(),]);
 })->name('blog');
+
+Route::get('/news', function () {
+    return view('news',['news' => \App\Models\Post::all()->where('is_news',1)->sortByDesc('created_at')]);
+})->name('news');
 
 Route::get('/category/{alias}', function ($alias) {
     $category = \App\Models\Category::query()->where(['alias'=>$alias])->first();
@@ -104,6 +121,11 @@ Route::resource('/post',
     \App\Http\Controllers\PostController::class)
     ->middleware([\App\Http\Middleware\Breadcrumbs::class])
     ->names('post');
+
+Route::resource('/new',
+    \App\Http\Controllers\PostController::class)
+    ->middleware([\App\Http\Middleware\Breadcrumbs::class])
+    ->names('new');
 
 Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::class, 'callback']);
 

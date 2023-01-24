@@ -1,6 +1,11 @@
 @extends('layouts.layout')
 @section('main')
-    {{ Breadcrumbs::render('post',$post) }}
+    <nav class="container-fluid" style="background-color: #e9ecef">
+        <div class="container">
+           {{ $post->is_news === 1?Breadcrumbs::render('new',$post):Breadcrumbs::render('post',$post) }}
+        </div>
+    </nav>
+
     <div class="container">
 <div class="row d-flex justify-content-center">
 <div class="col-sm-8">

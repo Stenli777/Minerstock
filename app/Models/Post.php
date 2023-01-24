@@ -24,7 +24,12 @@ class Post extends Model implements Sitemapable
     }
     public function toSitemapTag(): Url|string|array
     {
-        return route('post.show', $this->alias);
+        if ($this->is_news === 0) {
+            $post = route('post.show', $this->alias);
+        } else {
+            $post = route('new.show', $this->alias);
+        }
+        return $post;
     }
 //    public function save(array $options = []): bool
 //    {

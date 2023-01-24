@@ -5,12 +5,6 @@ Breadcrumbs::for('home', function ($trail) {
     $trail->push('Главная', route('home'));
 });
 
-//// Home > About
-//Breadcrumbs::for('about', function ($trail) {
-//    $trail->parent('home');
-//    $trail->push('About', route('about'));
-//});
-
 // Home > Catalog
 Breadcrumbs::for('catalog', function ($trail) {
     $trail->parent('home');
@@ -29,20 +23,27 @@ Breadcrumbs::for('blog', function ($trail) {
     $trail->push('Статьи', route('blog'));
 });
 
-// Home > Blog
+// Home > Blog > [Category]
 Breadcrumbs::for('category', function ($trail, $category) {
     $trail->parent('blog');
     $trail->push($category->title, route('category',$category->alias));
 });
 
-// Home > Blog > [Category] > [Post]
-//Breadcrumbs::for('post', function ($trail, $post) {
-//    $trail->parent('blog', $post->category_id);
-//    $trail->push($post->title, route('post.show', $post->id));
-//});
+// Home > Blog > Category > [Post]
 Breadcrumbs::for('post', function ($trail, $post) {
     $category = $post->category;
     $trail->parent('category', $category);
     $trail->push($post->title, route('post.show', $post->alias));
 });
 
+// Home > News
+Breadcrumbs::for('news', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Новости', route('news'));
+});
+
+// home > News > [New]
+Breadcrumbs::for('new', function ($trail, $post) {
+    $trail->parent('news');
+    $trail->push($post->title, route('post.show', $post->alias));
+});
