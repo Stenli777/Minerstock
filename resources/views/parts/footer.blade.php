@@ -8,14 +8,18 @@
             </div>
             <div class="col-6 text-center">
                 <a href="https://t.me/miningstoreads">
-                    <button type="button" class="btn btn-footer btn-primary btn-sm badge-pill pt-2 pb-2 pl-5 pr-5">Подписаться</button>
+                    <button type="button" class="btn btn-footer btn-primary btn-sm badge-pill pt-2 pb-2 pl-5 pr-5">
+                        Подписаться
+                    </button>
                 </a>
             </div>
         </div>
         <div class="row pt-5">
             <div class="col-3">
                 <img src="/images/uploads/logo.png" style="margin-bottom: 0.5rem;">
-                <p class="UltraLight pt-4 lightGrey">Рейтинг майнинг отелей формируется на основе независимых оценок майнеров и агентов. Перед размещением в дешёвых майнинг отелях рекомендуем ознакомиться с отзывами, условиями и стоимостью из нашего каталога отелей для майнинга.</p>
+                <p class="UltraLight pt-4 lightGrey">Рейтинг майнинг отелей формируется на основе независимых оценок
+                    майнеров и агентов. Перед размещением в дешёвых майнинг отелях рекомендуем ознакомиться с отзывами,
+                    условиями и стоимостью из нашего каталога отелей для майнинга.</p>
             </div>
             <div class="col-3">
                 <h3 class="pb-3">Карта сайта</h3>
@@ -32,6 +36,9 @@
                     <li>
                         <a href="/articles" class="lightGrey UltraLight">Статьи</a>
                     </li>
+                    <li>
+                        <a href="/news" class="lightGrey UltraLight">Новости</a>
+                    </li>
                 </ul>
 
             </div>
@@ -47,7 +54,8 @@
             </div>
         </div>
         <div class="copyright text-center lightGrey UltraLight">
-            ©Топ майнинг отелей. Вся информация на сайте размещена исключительно в ознакомительных целях. Все изображения на сайте принадлежат их правообладателям.
+            ©Топ майнинг отелей. Вся информация на сайте размещена исключительно в ознакомительных целях. Все
+            изображения на сайте принадлежат их правообладателям.
         </div>
     </div>
 

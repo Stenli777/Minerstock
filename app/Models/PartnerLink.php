@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PartnerLink extends Model
 {
     use HasFactory;
+
     protected $table = 'partnerlinks';
+
     public function randomizeLink($length = 10): string
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -19,14 +21,12 @@ class PartnerLink extends Model
         }
         return $randomString;
     }
-    public function save(array $options = []){
-        If ($this->internal_link == null)
-        {
-            $this->internal_link = "https://mineinfo.ru/link/" . $this->randomizeLink();
+
+    public function save(array $options = [])
+    {
+        if ($this->internal_link == null) {
+            $this->internal_link = $this->randomizeLink();
         }
         parent::save($options);
-    }
-    public function partnerLinkRedirect(){
-
     }
 }

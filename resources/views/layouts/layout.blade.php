@@ -3,41 +3,50 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/app.css"/>
     <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/x-icon">
     @yield('canonical')
-
     <title>
-@if($_SERVER['REQUEST_URI'] ==='/')
-MineInfo - подробный справочник по ASIC майнерам. Добыча, характеристики и другая информация.
-@else
-    @yield('title')
-@endif
+        @if($_SERVER['REQUEST_URI'] ==='/')
+            MineInfo - подробный справочник по ASIC майнерам. Добыча, характеристики и другая информация.
+        @else
+            @yield('title')
+        @endif
     </title>
     @yield('description')
     <style>
     </style>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(91418378, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/91418378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/91418378" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
     <!-- /Yandex.Webmaster -->
-    <meta name="yandex-verification" content="cc8b91a0430ae765" />
+    <meta name="yandex-verification" content="cc8b91a0430ae765"/>
     <!-- /Yandex.Webmaster counter -->
     <!-- /Google Search Console -->
-    <meta name="google-site-verification" content="ppfx7H1OhSoHhzenMvF1KfciycWVevBOdkZvcyKXDss" />
+    <meta name="google-site-verification" content="ppfx7H1OhSoHhzenMvF1KfciycWVevBOdkZvcyKXDss"/>
     <!-- /Google Search Console -->
 </head>
 <body class="antialiased {{$_SERVER['REQUEST_URI'] === '/'?"main-page":""}}">
@@ -47,7 +56,8 @@ MineInfo - подробный справочник по ASIC майнерам. �
 
 @include('parts.footer')
 <!-- Форма консультации -->
-<div class="modal fade" id="sendConsultation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="sendConsultation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <form>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -64,16 +74,19 @@ MineInfo - подробный справочник по ASIC майнерам. �
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Введите ваш телефон</label>
-                        <input type="tel" required class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" placeholder="Телефон">
+                        <input type="tel" required class="form-control" id="exampleInputPhone"
+                               aria-describedby="phoneHelp" placeholder="Телефон">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Введите ваш e-mail</label>
-                        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Введите email">
+                        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
+                               placeholder="Введите email">
                     </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck">
-                            <label class="form-check-label" for="exampleCheck1">Я согласен с условиями пользовательского согласшения</label>
-                        </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck">
+                        <label class="form-check-label" for="exampleCheck1">Я согласен с условиями пользовательского
+                            согласшения</label>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>

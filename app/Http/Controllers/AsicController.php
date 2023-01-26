@@ -32,7 +32,7 @@ class AsicController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,10 +43,10 @@ class AsicController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$id)
+    public function show(Request $request, $id)
     {
         if (preg_match('/^\d+$/', $id)) {
             $model = Asic::query()->find($id);
@@ -55,20 +55,23 @@ class AsicController extends Controller
             }
             return redirect("/asic/{$model->alias}", 301);
         }
-        $model = Asic::with('producer','algorythm','coins')->where('alias',$id)->first();
+        $model = Asic::with('producer', 'algorythm', 'coins')->where('alias', $id)->first();
         $usd = Cbrf::query()->latest()->first('usdrub')->usdrub;
-        return view('asic',[
-            'asic'=>$model,
-            'asics'=>Asic::where([['algorythm_id',$model->algorythm_id], ['id','!=',$model->id]])->inRandomOrder()->paginate(4),
+        return view('asic', [
+            'asic' => $model,
+            'asics' => Asic::where([
+                ['algorythm_id', $model->algorythm_id],
+                ['id', '!=', $model->id]
+            ])->inRandomOrder()->paginate(4),
             'usd' => $usd,
-            'expenses'=>(float) str_replace(',','.',$request->input('expenses',0.83)),
+            'expenses' => (float)str_replace(',', '.', $request->input('expenses', 0.83)),
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +82,8 @@ class AsicController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,7 +94,7 @@ class AsicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

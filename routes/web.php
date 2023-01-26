@@ -22,19 +22,19 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authentica
 //Главная
 Route::get('/', function () {
     return view('home',
-    [
-        'asics' => \App\Models\Asic::with('producer')->limit(8)
-            ->orderByDesc('order')
-            ->get(),
-        'posts'=> \App\Models\Post::with('category')->where('is_news',0)
-            ->limit(4)
-            ->orderByDesc('created_at')
-            ->get(),
-        'news'=> \App\Models\Post::with('category')->where('is_news',1)
-            ->limit(4)
-            ->orderByDesc('created_at')
-            ->get()
-    ]);
+        [
+            'asics' => \App\Models\Asic::with('producer')->limit(8)
+                ->orderByDesc('order')
+                ->get(),
+            'posts' => \App\Models\Post::with('category')->where('is_news', 0)
+                ->limit(4)
+                ->orderByDesc('created_at')
+                ->get(),
+            'news' => \App\Models\Post::with('category')->where('is_news', 1)
+                ->limit(4)
+                ->orderByDesc('created_at')
+                ->get()
+        ]);
 })->name('home');
 
 //Карточка алгоритма
@@ -63,10 +63,12 @@ Route::get('/catalog', function (Illuminate\Http\Request $request) {
         $asics = $asics->where('title', 'like', "%{$request->input('title_search')}%");
     }
     if ($request->input('hashrate_min')) {
-        $asics = $asics->where('hashrate', '>', $request->input('hashrate_min') * pow(10, $request->input('hashrate_power')));
+        $asics = $asics->where('hashrate', '>',
+            $request->input('hashrate_min') * pow(10, $request->input('hashrate_power')));
     }
     if ($request->input('hashrate_max')) {
-        $asics = $asics->where('hashrate', '<', $request->input('hashrate_max') * pow(10, $request->input('hashrate_power')));
+        $asics = $asics->where('hashrate', '<',
+            $request->input('hashrate_max') * pow(10, $request->input('hashrate_power')));
     }
 //    if ($request->input('producer_id')) {
 //        $asics = $asics->where(['producer_id',$request->input('min'],['producer_id',$request->input('max']));
@@ -99,18 +101,22 @@ Route::resource('/mining-center', \App\Models\Dpc::class);
 //});
 
 Route::get('/articles', function () {
-    return view('blog',['posts' => \App\Models\Post::all()->where('is_news',0)->sortByDesc('created_at'), 'categories' => \App\Models\Category::all(),]);
+    return view('blog', [
+        'posts' => \App\Models\Post::all()->where('is_news', 0)->sortByDesc('created_at'),
+        'categories' => \App\Models\Category::all(),
+    ]);
 })->name('blog');
 
 Route::get('/news', function () {
-    return view('news',['news' => \App\Models\Post::all()->where('is_news',1)->sortByDesc('created_at')]);
+    return view('news', ['news' => \App\Models\Post::all()->where('is_news', 1)->sortByDesc('created_at')]);
 })->name('news');
 
 Route::get('/category/{alias}', function ($alias) {
-    $category = \App\Models\Category::query()->where(['alias'=>$alias])->first();
-    return view('category',[
+    $category = \App\Models\Category::query()->where(['alias' => $alias])->first();
+    return view('category', [
         'category' => $category,
-        'posts' => \App\Models\Post::all()->where('category_id', $category->id)->sortByDesc('created_at')]);
+        'posts' => \App\Models\Post::all()->where('category_id', $category->id)->sortByDesc('created_at')
+    ]);
 })->name('category');
 
 //Route::resource('/category',
@@ -126,6 +132,8 @@ Route::resource('/new',
     \App\Http\Controllers\PostController::class)
     ->middleware([\App\Http\Middleware\Breadcrumbs::class])
     ->names('new');
+
+Route::get('/link/{id_internal_link}', [\App\Http\Controllers\PartnerLinkController::class, 'show']);
 
 Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::class, 'callback']);
 

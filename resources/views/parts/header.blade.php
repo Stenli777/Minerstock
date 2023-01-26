@@ -9,7 +9,7 @@
             </div>
             <div class="col-6 text-center">
                 <ul class="nav justify-content-left" style="height:100%">
-                    <li class="nav-item" >
+                    <li class="nav-item">
                         <a class="nav-link active" href="/">Главная</a>
                     </li>
                     <li class="nav-item">
@@ -21,20 +21,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/articles">Статьи</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">Новости</a>
+                    </li>
                     {{--                <li class="nav-item">--}}
                     {{--                    <a class="nav-link disabled" href="#">Майнинг отели</a>--}}
                     {{--                </li>--}}
                 </ul>
             </div>
             <div class="col-3 d-flex justify-content-end">
-                <button type="button" class="btn btn-primary btn-sm badge-pill p-2" data-toggle="modal" data-target="#sendConsultation">
+                <button type="button" class="btn btn-primary btn-sm badge-pill p-2" data-toggle="modal"
+                        data-target="#sendConsultation">
                     Необходима консультация?
                 </button>
             </div>
         </div>
     </div>
 </header>
-
 
 
 {{--<ol class="breadcrumb">--}}
