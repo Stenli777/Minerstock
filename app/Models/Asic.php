@@ -82,6 +82,10 @@ class Asic extends Model implements Sitemapable
     {
         return Url::create(route('asic.show', $this->alias))->setPriority(0.9);
     }
+
+//    public function similar(){
+//        return ;
+//    }
 //    public function profit(){
 //        $usdt = 62;
 //        $coinPrice = 20000;

@@ -12,7 +12,7 @@
                  itemtype="{{$post->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">
                 <div itemprop="articleBody">
                     <h1>{{$post->title}}</h1>
-                    {!!$post->is_news === 1 ? "<p>".date('d.m.Y',$post->create_at)."</p>": ''!!}
+                    {!!$post->is_news === 1 ? "<p>".$post->publicDate()."</p>": ''!!}
                     <p></p>
                     {!! $post->content !!}
                 </div>
