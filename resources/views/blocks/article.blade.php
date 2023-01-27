@@ -6,6 +6,6 @@
     </div>
     <div class="card-body pt-0">
         <p><a href="{{$post->is_news === 1?'/new/':'/post/'}}{{$post->alias}}">{{$post->title}}</a></p>
-        <a href="{{$post->is_news === 1?'/new/':'/post/'}}{{$post->alias}}">{{date('d.m.Y',$post->create_at)}}</a>
+        <a href="{{$post->is_news === 1?'/new/':'/post/'}}{{$post->alias}}">{{$post->publicDate()}}</a>
     </div>
 </div>
