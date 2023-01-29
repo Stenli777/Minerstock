@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class GerwinController extends Controller
 {
-    public function callback(Request $request) {
+    public function callback(Request $request)
+    {
         $task_id = $request->json('id');
         $model = Gerwin::query()->where('gerwin_id', $task_id)->firstOrFail();
 

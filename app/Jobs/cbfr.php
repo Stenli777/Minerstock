@@ -38,7 +38,7 @@ class cbfr implements ShouldQueue
 //        Log::info($response);
         $valute = $response->json('Valute');
         Log::info($valute);
-        if($valute['USD']){
+        if ($valute['USD']) {
             $cbrf = [];
             $cbrf['usdrub'] = $valute['USD']['Value'];
             $data = new Cbrf($cbrf);

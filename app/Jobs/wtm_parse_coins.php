@@ -37,7 +37,7 @@ class wtm_parse_coins implements ShouldQueue
         $response = Http::get('https://whattomine.com/asic.json');
 //        Log::info(var_export($response->json(),true));
         $coinsAsic = $response->json('coins');
-        foreach ($coinsAsic as $key => $coin){
+        foreach ($coinsAsic as $key => $coin) {
 //            Log::info($coin);
             $coin['name'] = $key;
             $coin['coin_id'] = $coin['id'];
@@ -50,7 +50,7 @@ class wtm_parse_coins implements ShouldQueue
         $response = Http::get('https://whattomine.com/coins.json');
 //        Log::info(var_export($response->json(),true));
         $coinsCoin = $response->json('coins');
-        foreach ($coinsCoin as $key => $coin){
+        foreach ($coinsCoin as $key => $coin) {
 //            Log::info($coin);
             $coin['name'] = $key;
             $coin['coin_id'] = $coin['id'];

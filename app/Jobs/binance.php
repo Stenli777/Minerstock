@@ -34,17 +34,17 @@ class binance implements ShouldQueue
      */
     public function handle()
     {
-        $coins = Coin::query()->where([['coin_active',1],['binance',1]])->get();
+        $coins = Coin::query()->where([['coin_active', 1], ['binance', 1]])->get();
         $coinArray = [];
         foreach ($coins as $coin) {
-           $coinArray[] = '"' . $coin->short_name . 'USDT"';
+            $coinArray[] = '"' . $coin->short_name . 'USDT"';
         }
-        $symbols = '[' . implode(',',$coinArray) . ']';
-        $response = Http::get('https://api.binance.com/api/v3/ticker/24hr', ['symbols'=>$symbols]);
+        $symbols = '[' . implode(',', $coinArray) . ']';
+        $response = Http::get('https://api.binance.com/api/v3/ticker/24hr', ['symbols' => $symbols]);
         $coinsPrice = $response->json();
-        foreach ($coinsPrice as $coin){
-            $coinSymbol = substr($coin['symbol'],0,-4);
-            $shortName = Coin::query()->where('short_name',$coinSymbol)->first();
+        foreach ($coinsPrice as $coin) {
+            $coinSymbol = substr($coin['symbol'], 0, -4);
+            $shortName = Coin::query()->where('short_name', $coinSymbol)->first();
             $binance_24_data = new \App\Models\Binance([
                 'coin_id' => $shortName->id,
                 'avg_price' => $coin['weightedAvgPrice'],

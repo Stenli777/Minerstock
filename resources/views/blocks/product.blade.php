@@ -1,14 +1,15 @@
 <div class="product-card js-link">
     <div class="product-card__image">
         <a href="/asic/{{$asic->alias}}">
-            <img class="card-img-top" src="/{{$asic->img}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
+            <img class="card-img-top" src="/{{$asic->img}}"
+                 alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
         </a>
     </div>
     <div class="product-card__name SemiBold">
         <a href="/asic/{{$asic->alias}}">
-        {{$asic->producer->name}} {{$asic->name}}
-{{--        <br>--}}
-        {{$asic->humanHashrate()}}
+            {{$asic->producer->name}} {{$asic->name}}
+            {{--        <br>--}}
+            {{$asic->humanHashrate()}}
         </a>
     </div>
     <div class="product-card__params">

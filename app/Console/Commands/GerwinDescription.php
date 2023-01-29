@@ -58,7 +58,7 @@ class GerwinDescription extends Command
             . "Энергоэффективность: {$asic->efficiency()},"
             . "Производитель: {$asic->producer->name}, "
             . "Алгоритм: {$asic->algorythm->name}, "
-            . "Потребление: " . number_format($asic->consumption,0,'',' ') . " Вт";
+            . "Потребление: " . number_format($asic->consumption, 0, '', ' ') . " Вт";
 
         if ($asic->sales_data_start != null) {
             $description .= ", Старт продаж: {$asic->sales_data_start}";
@@ -71,11 +71,12 @@ class GerwinDescription extends Command
 //            "product_keywords" => ["асик","майнер",$asic->producer->name,$asic->name]
 //        ]));
 
-        $description_task = Http::withToken($token, 'Token')->post('https://backend.gerwin.io/api/client/products/description/', [
-            "locale"=> "ru",
+        $description_task = Http::withToken($token,
+            'Token')->post('https://backend.gerwin.io/api/client/products/description/', [
+            "locale" => "ru",
             "product_name" => $asic->title,
             "product_information" => $description,
-            "product_keywords" => ["асик","майнер",$asic->producer->name,$asic->name],
+            "product_keywords" => ["асик", "майнер", $asic->producer->name, $asic->name],
             "callback" => 'https://mineinfo.ru/api/gerwin/callback'
         ]);
 
@@ -86,10 +87,10 @@ class GerwinDescription extends Command
             'asic_id' => $asic->id,
             'task_type' => 'description',
             'task_data' => json_encode([
-                    "locale"=> "ru",
-                    "product_name" => $asic->title,
-                    "product_information" => $description,
-                    "product_keywords" => ["асик","майнер",$asic->producer->name,$asic->name]
+                "locale" => "ru",
+                "product_name" => $asic->title,
+                "product_information" => $description,
+                "product_keywords" => ["асик", "майнер", $asic->producer->name, $asic->name]
             ]),
             'task_result' => null,
             'task_status' => $description_response['status'],

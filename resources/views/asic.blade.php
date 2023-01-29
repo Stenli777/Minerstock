@@ -111,12 +111,14 @@
             </div>
         </div>
         @if (empty($simylar))
-        <div>
-            <div>Похожее оборудование</div>
-            @foreach($simular as $asic)
-                <a href="/asic/{{$asic->alias}}"><button type="button" class="btn btn-light">{{$asic->humanHashrate()}}</button></a>
-            @endforeach
-        </div>
+            <div>
+                <div>Похожее оборудование</div>
+                @foreach($simular as $asic)
+                    <a href="/asic/{{$asic->alias}}">
+                        <button type="button" class="btn btn-light">{{$asic->humanHashrate()}}</button>
+                    </a>
+                @endforeach
+            </div>
         @endif
     </div>
 

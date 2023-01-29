@@ -6,7 +6,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="containerz">
         <div class="row d-flex justify-content-center">
             <div class="col-sm-8" itemscope
                  itemtype="{{$post->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">

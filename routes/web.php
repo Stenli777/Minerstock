@@ -23,14 +23,17 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authentica
 Route::get('/', function () {
     return view('home',
         [
-            'asics' => \App\Models\Asic::with('producer')->limit(8)
+            'asics' => \App\Models\Asic::with('producer')
+                ->limit(8)
                 ->orderByDesc('order')
                 ->get(),
-            'posts' => \App\Models\Post::with('category')->where('is_news', 0)
+            'posts' => \App\Models\Post::with('category')
+                ->where('is_news', 0)
                 ->limit(4)
                 ->orderByDesc('created_at')
                 ->get(),
-            'news' => \App\Models\Post::with('category')->where('is_news', 1)
+            'news' => \App\Models\Post::with('category')
+                ->where('is_news', 1)
                 ->limit(4)
                 ->orderByDesc('created_at')
                 ->get()
@@ -49,7 +52,8 @@ Route::resource('/asic',
 
 //Каталог асиков
 Route::get('/catalog', function (Illuminate\Http\Request $request) {
-    $asics = \App\Models\Asic::with('producer')->orderByDesc('order');
+    $asics = \App\Models\Asic::with('producer')
+        ->orderByDesc('order');
     if ($request->input('producer_id')) {
         $asics = $asics->where('producer_id', $request->input('producer_id'));
     }
@@ -74,7 +78,8 @@ Route::get('/catalog', function (Illuminate\Http\Request $request) {
 //        $asics = $asics->where(['producer_id',$request->input('min'],['producer_id',$request->input('max']));
 //    }
 //    var_dump($request->input('coin'));
-    return view('catalog', ['asics' => $asics->paginate(12)->withQueryString(), 'request' => $request]);
+    return view('catalog', ['asics' => $asics->paginate(12)
+        ->withQueryString(), 'request' => $request]);
 })->name('catalog');
 
 //Каталог монет
@@ -95,33 +100,44 @@ Route::resource('/office', \App\Models\Office::class);
 //Карточка майнинг-центра
 Route::resource('/mining-center', \App\Models\Dpc::class);
 
-//Блог
-//Route::group([], function () {
-//Route::get('/articles','BlogController');
-//});
-
 Route::get('/articles', function () {
     return view('blog', [
-        'posts' => \App\Models\Post::all()->where('is_news', 0)->sortByDesc('created_at'),
+        'posts' => \App\Models\Post::all()
+            ->where('is_news', 0)
+            ->sortByDesc('created_at'),
+        'news' => \App\Models\Post::query()
+            ->where('is_news', 1)
+            ->orderByDesc('created_at')
+            ->limit(4)
+            ->get(),
         'categories' => \App\Models\Category::all(),
     ]);
 })->name('blog');
 
 Route::get('/news', function () {
-    return view('news', ['news' => \App\Models\Post::all()->where('is_news', 1)->sortByDesc('created_at')]);
+    return view('news', [
+        'posts' => \App\Models\Post::query()
+            ->where('is_news', 0)
+            ->orderByDesc('created_at')
+            ->limit(4)
+            ->get(),
+        'news' => \App\Models\Post::all()
+            ->where('is_news', 1)
+            ->sortByDesc('created_at'),
+        'categories' => \App\Models\Category::all(),
+    ]);
 })->name('news');
 
 Route::get('/category/{alias}', function ($alias) {
-    $category = \App\Models\Category::query()->where(['alias' => $alias])->first();
+    $category = \App\Models\Category::query()
+        ->where(['alias' => $alias])->first();
     return view('category', [
         'category' => $category,
-        'posts' => \App\Models\Post::all()->where('category_id', $category->id)->sortByDesc('created_at')
+        'posts' => \App\Models\Post::all()
+            ->where('category_id', $category->id)
+            ->sortByDesc('created_at')
     ]);
 })->name('category');
-
-//Route::resource('/category',
-//    \App\Http\Controllers\CategoryController::class)->middleware([\App\Http\Middleware\Breadcrumbs::class])->names('category');
-
 
 Route::resource('/post',
     \App\Http\Controllers\PostController::class)

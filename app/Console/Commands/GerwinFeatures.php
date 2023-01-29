@@ -53,8 +53,9 @@ class GerwinFeatures extends Command
 
         $this->info("Selected {$asic->title}");
 
-        $features_task = Http::withToken($token, 'Token')->post('https://backend.gerwin.io/api/client/products/features/', [
-            "locale"=> "ru",
+        $features_task = Http::withToken($token,
+            'Token')->post('https://backend.gerwin.io/api/client/products/features/', [
+            "locale" => "ru",
             "product_name" => $asic->title,
             "callback" => 'https://mineinfo.ru/api/gerwin/callback'
         ]);
@@ -66,7 +67,7 @@ class GerwinFeatures extends Command
             'asic_id' => $asic->id,
             'task_type' => 'features',
             'task_data' => json_encode([
-                "locale"=> "ru",
+                "locale" => "ru",
                 "product_name" => $asic->title,
             ]),
             'task_result' => null,

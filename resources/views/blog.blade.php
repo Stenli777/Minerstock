@@ -5,32 +5,37 @@
             {{ Breadcrumbs::render('blog') }}
         </div>
     </nav>
-<div class="container-fluid">
-    <div class="row">
-    <div class="col-md-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 pl-5">
 
-            <h2>Категории</h2>
-            @foreach($categories as $category)
-                <div>
-                    <a href="/category/{{$category->alias}}"><div class="card-body">{{$category->title}}</div></a>
+                <h2>Категории</h2>
+                @foreach($categories as $category)
+                    <a href="/category/{{$category->alias}}">
+                        <button type="button" class="btn btn-light container-fluid text-left mb-2">{{$category->title}}</button>
+                    </a>
+                @endforeach
+
+            </div>
+            <div class="col-md-8">
+                <h2>Блоговые записи</h2>
+                <div class="row">
+                    @foreach($posts as $post)
+                        <div class="col-4">
+                            @include('blocks.article')
+                        </div>
+                    @endforeach
                 </div>
-            @endforeach
 
-    </div>
-<div class="col-md-8">
-        <h2>Блоговые записи</h2>
-    <div class="row">
-    @foreach($posts as $post)
-        <div class="col-4">
-            @include('blocks.article')
+            </div>
+            <div class="col-md-2">
+                    <h2>Новости</h2>
+                    @foreach($news as $post)
+                        <div class="col p-0">
+                            @include('blocks.sidebar_article')
+                        </div>
+                    @endforeach
+            </div>
         </div>
-    @endforeach
-    </div>
-
-</div>
-    <div class="col-md-3">
-
-    </div>
-    </div>
     </div>
 @stop
