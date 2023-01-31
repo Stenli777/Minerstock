@@ -10,9 +10,6 @@
             <div class="col-6 text-center">
                 <ul class="nav justify-content-left" style="height:100%">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Главная</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/catalog">Майнеры</a>
                     </li>
                     <li class="nav-item">

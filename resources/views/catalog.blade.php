@@ -267,6 +267,9 @@
                                             <td>
                                                 <a href="/asic/{{$asic->alias}}">{{$asic->algorythm->name}}</a>
                                             </td>
+{{--                                            <td>--}}
+{{--                                                <a href="/asic/{{$asic->alias}}">{{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $asic->exchangeUsd() * 30.5,2,'.',' ')}}</a>--}}
+{{--                                            </td>--}}
                                         </tr>
                                     @endforeach
                                     </tbody>

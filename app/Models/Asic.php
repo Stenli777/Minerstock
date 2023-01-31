@@ -49,6 +49,9 @@ class Asic extends Model implements Sitemapable
     public function usd(){
         return $this->hasOne(Cbrf::class);
     }
+    public function exchangeUsd(){
+        return Cbrf::query()->latest()->first('usdrub')->usdrub;
+    }
     public function coins(){
         return $this->hasMany(Coin::class,'algorythm_id','algorythm_id');
     }
