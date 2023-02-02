@@ -41,4 +41,9 @@ class Post extends Model implements Sitemapable
         return $this->created_at->format('d.m.Y');
     }
 
+    public function comments(){
+        return $this->hasMany(Comment::class,'post_id','id');
+    }
+
+
 }

@@ -127,6 +127,7 @@
             <h3 class="font-weight-bold mt-3 mb-3">Добыча асика</h3>
         </div>
         <div class="col">
+            @if(count($asic->coins()->where('coin_active',true)->orderBy('order')->get()) > 1)
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-link active" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab"
@@ -135,6 +136,7 @@
                        aria-controls="nav-table" data-target="#nav-table" aria-selected="false">Сравнение по монетам</a>
                 </div>
             </nav>
+            @endif
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
                     <nav>
@@ -158,25 +160,25 @@
                                         <thead>
                                         <tr>
                                             <th>
-                                                Добыча в
+                                                Период
                                             </th>
                                             <th>
                                                 Криптовалюта
                                             </th>
                                             <th>
-                                                Добыто монет
+                                                Добыча
                                             </th>
                                             <th>
                                                 Пересчет на BTC
                                             </th>
                                             <th>
-                                                Пересчет на Рубли
+                                                Доход, ₽
                                             </th>
                                             <th>
-                                                Расходы
+                                                Расходы, ₽
                                             </th>
                                             <th>
-                                                Прибыль
+                                                Прибыль, ₽
                                             </th>
                                         </tr>
                                         </thead>
@@ -189,21 +191,21 @@
                                                 {{$coin->name}} ({{$coin->short_name}})
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate),8,'.',' ')}}
+                                                {{number_format($coin->minePerDay($asic->hashrate),8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()),8,'.',' ')}}
+                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()),8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd,2,'.',' ')}}
+                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
-                                                {{$asic->expenses($expenses)}} ₽
+                                                {{number_format($asic->expenses($expenses),2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format(($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses),2,'.',' ')}}
+                                                {{number_format(($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses),2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>
@@ -215,21 +217,21 @@
                                                 {{$coin->name}} ({{$coin->short_name}})
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,'.',' ')}}
+                                                {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()) * 30.5,8,'.',' ')}}
+                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()) * 30.5,8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd * 30.5,2,'.',' ')}}
+                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
-                                                {{$asic->expenses($expenses) * 30.5}} ₽
+                                                {{number_format($asic->expenses($expenses) * 30.5,2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format((($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses)) * 30.5,2,'.',' ')}}
+                                                {{number_format((($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses)) * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>
@@ -247,13 +249,13 @@
                                 Криптовалюта
                             </th>
                             <th>
-                                Добыто монет
+                                Добыча в мес.
                             </th>
                             <th>
                                 Пересчет на BTC
                             </th>
                             <th>
-                                Пересчет на Рубли
+                                Прибыль, ₽ в мес.
                             </th>
                         </tr>
                         </thead>
@@ -265,13 +267,13 @@
                                         {{$coin->name}} ({{$coin->short_name}})
                                     </td>
                                     <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,'.',' ')}}
+                                        {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,',',' ')}}
                                     </td>
                                     <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->priceBtc() * 30.5,8,'.',' ')}}
+                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->priceBtc() * 30.5,8,',',' ')}}
                                     </td>
                                     <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $usd * 30.5,2,'.',' ')}}
+                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $usd * 30.5,2,',',' ')}} ₽
                                     </td>
                                 </tr>
                             @endif
