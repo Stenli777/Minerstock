@@ -20,8 +20,6 @@ class CreateAsicCompaniesTable extends Migration
             $table->integer('company_id');
             $table->integer('price_rub')->nullable();
             $table->integer('price_usd')->nullable();
-            $table->integer('price_vat_rub')->nullable();
-            $table->integer('price_vat_usd')->nullable();
         });
     }
 
