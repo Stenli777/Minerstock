@@ -121,7 +121,7 @@ class Asics extends Section implements Initializable
                 AdminFormElement::text('weight_netto', 'Введите вес асика')->required(),
                 AdminFormElement::text('noise', 'Введите шум асика')->required(),
                 AdminFormElement::text('chips', 'Введите количество чипов в асике'),
-
+                AdminFormElement::text('cooling', 'Вид охлаждения'),
                 AdminFormElement::html('<h2 style="margin-bottom: 25px; margin-top: 25px">Базовые параметры</h2>') ,
 
                 AdminFormElement::text('h1','H1'),
