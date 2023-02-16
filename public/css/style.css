@@ -67,3 +67,31 @@ footer .btn-primary:hover{
 .rounded-20 {
     border-radius: 20px !important;
 }
+.mobile-menu {
+    background-color: #f8f9fa;
+}
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    z-index: 9999;
+    overflow-y: auto;
+    padding-top: 80px;
+    width: 70%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+.hamburger-stripe {
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+}
