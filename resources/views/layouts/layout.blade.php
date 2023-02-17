@@ -49,7 +49,6 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MP5BQVH');</script>
     <!-- End Google Tag Manager -->
-    </script>
     <!-- /Yandex.Webmaster -->
     <meta name="yandex-verification" content="cc8b91a0430ae765"/>
     <!-- /Yandex.Webmaster counter -->
