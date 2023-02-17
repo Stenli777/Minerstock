@@ -6,7 +6,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="container">
             <h1>Майнинг оборудование</h1>
             <div class="row">
@@ -85,45 +85,9 @@
                                             </div>
                                         @endif
                                     @endforeach
-                                    {{--                                    --}}
-                                    {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
-                                    {{--                                        <label class="custom-control-label" for="customCheck12">Bitcoin (BTC)</label>--}}
-                                    {{--                                    --}}
-                                    {{--                                    <div class="custom-control custom-checkbox">--}}
-                                    {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck11">--}}
-                                    {{--                                        <label class="custom-control-label" for="customCheck11">Litecoin (LTC)</label>--}}
-                                    {{--                                    </div>--}}
-                                    {{--                                    <div class="custom-control custom-checkbox">--}}
-                                    {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck10">--}}
-                                    {{--                                        <label class="custom-control-label" for="customCheck10">Dogecoin (DOGE)</label>--}}
-                                    {{--                                    </div>--}}
-                                    {{--                                    <div class="custom-control custom-checkbox">--}}
-                                    {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck9">--}}
-                                    {{--                                        <label class="custom-control-label" for="customCheck9">Etherium (ETH)</label>--}}
-                                    {{--                                    </div>--}}
-
                                 </div>
                             </div>
                         </div>
-                        {{--                    <p class="font-weight-bold mt-3">Монеты</p>--}}
-                        {{--                        <div class="custom-control custom-checkbox">--}}
-                        {{--                            <input type="checkbox" class="custom-control-input" id="customCheck12">--}}
-                        {{--                            <label class="custom-control-label" for="customCheck12">Bitcoin (BTC)</label>--}}
-                        {{--                        </div>--}}
-                        {{--                        <div class="custom-control custom-checkbox">--}}
-                        {{--                            <input type="checkbox" class="custom-control-input" id="customCheck11">--}}
-                        {{--                            <label class="custom-control-label" for="customCheck11">Litecoin (LTC)</label>--}}
-                        {{--                        </div>--}}
-                        {{--                        <div class="custom-control custom-checkbox">--}}
-                        {{--                            <input type="checkbox" class="custom-control-input" id="customCheck10">--}}
-                        {{--                            <label class="custom-control-label" for="customCheck10">Dogecoin (DOGE)</label>--}}
-                        {{--                        </div>--}}
-                        {{--                        <div class="custom-control custom-checkbox">--}}
-                        {{--                            <input type="checkbox" class="custom-control-input" id="customCheck9">--}}
-                        {{--                            <label class="custom-control-label" for="customCheck9">Etherium (ETH)</label>--}}
-                        {{--                        </div>--}}
-
-                        {{--                    <p class="font-weight-bold mt-3">Алгоритм</p>--}}
                         <div id="algorythmAccordion">
                             <div class="" id="algorythmFilter">
                                 <p class="font-weight-bold mt-3 pl-0 btn link dropdown-toggle" data-toggle="collapse"
@@ -190,7 +154,7 @@
                         {{--Хэшрейт--}}
                     </form>
                 </div>
-                <div class="col-9">
+                <div class="col-sm-9">
                     <div class="row d-flex flex-row-reverse mb-3">
                         <nav class="nav nav-tabs" id="nav-tab" role="tablist">
                             <a class="nav-link" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab"
@@ -206,50 +170,22 @@
                                 @foreach($asics as $asic)
                                     <div class="col-sm-4">
                                         @include('blocks.product')
-                                        {{--                                        <a href="/asic/{{$asic->alias}}" style="text-decoration: none;">--}}
-                                        {{--                                        <div class="card rounded" style="width: 17rem; min-height: 10rem; margin-bottom:1rem;">--}}
-                                        {{--                                            <div class="text-center" style="min-height: 200px;">--}}
-                                        {{--                                                <img class="card-img-top" src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" alt="изображение {{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">--}}
-                                        {{--                                            </div>--}}
-                                        {{--                                            <div class="card-body pt-0">--}}
-                                        {{--                                                <a href="/asic/{{$asic->alias}}" style="text-decoration: none;"><h6 class="card-title lineHeight bold">ASIC майнер <br>{{$asic->producer->name}} {{$asic->name}}</h6></a>--}}
-                                        {{--                                                <div class="row">--}}
-                                        {{--                                                    <div class="col">--}}
-                                        {{--                                                        <p class="mt-0 mb-0"> Хэшрейт:</p>--}}
-                                        {{--                                                        <p class="mt-0">Алгоритм:</p>--}}
-                                        {{--                                                    </div>--}}
-                                        {{--                                                    <div class="col">--}}
-                                        {{--                                                        <p class="mt-0 mb-0">{{$asic->humanHashrate()}}</p>--}}
-                                        {{--                                                        <p class="mt-0">{{$asic->algorythm->name}}</p>--}}
-                                        {{--                                                    </div>--}}
-                                        {{--                                                </div>--}}
-                                        {{--                                            </div>--}}
-                                        {{--                                        </div>--}}
-                                        {{--                                        </a>--}}
                                     </div>
                                 @endforeach
-                                <div class="container justify-content-center d-flex py-3">
+                                <div class="container justify-content-center d-flex py-3 pagination-sm">
                                     {{ $asics->fragment('view_tabs')->links() }}
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
-                            <div class="row">
+                            <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th scope="col">
-                                            Производитель
-                                        </th>
-                                        <th scope="col">
-                                            Название
-                                        </th>
-                                        <th scope="col">
-                                            Хэшрейт
-                                        </th>
-                                        <th scope="col">
-                                            Алгоритм
-                                        </th>
+                                        <th scope="col">Производитель</th>
+                                        <th scope="col">Название</th>
+                                        <th scope="col">Хэшрейт</th>
+                                        <th scope="col">Алгоритм</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -267,26 +203,17 @@
                                             <td>
                                                 <a href="/asic/{{$asic->alias}}">{{$asic->algorythm->name}}</a>
                                             </td>
-{{--                                            <td>--}}
-{{--                                                <a href="/asic/{{$asic->alias}}">--}}
-{{--                                                    <div>{{$coin->minePerDay($asic->hashrate)}}</div>--}}
-{{--                                                    <div>{{$asic->coins->where('binance',1)->first()->price()}}</div>--}}
-{{--                                                    <div> {{$asic->coins->where('binance',1)->first()->id}}</div>--}}
-{{--                                                    <div> {{$asic->exchangeUsd()}}</div>--}}
-{{--                                                    {{number_format($asic->coins->where('binance',1)->first()->minePerDay($asic->hashrate) * $asic->coins->first()->price() * $asic->exchangeUsd() * 30.5,2,'.',' ')}}</a>--}}
-{{--                                            </td>--}}
                                         </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
-                                <div class="container justify-content-center d-flex py-3">
-                                    {{ $asics->fragment('view_table')->links() }}
-                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center py-3 pagination-sm">
+                                {{ $asics->fragment('view_table')->links() }}
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

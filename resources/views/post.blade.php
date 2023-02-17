@@ -1,13 +1,13 @@
 @extends('layouts.layout')
 @section('main')
-    <nav class="container-fluid" style="background-color: #e9ecef">
+    <div class="container-fluid" style="background-color: #e9ecef">
         <div class="container">
             {{$post->is_news === 1?Breadcrumbs::render('new',$post):Breadcrumbs::render('post',$post) }}
         </div>
-    </nav>
+    </div>
 
-    <div class="containerz">
-        <div class="row d-flex justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-sm-8" itemscope
                  itemtype="{{$post->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">
                 <div itemprop="articleBody">
@@ -20,6 +20,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 @section('title')
     {{$post->title}}
