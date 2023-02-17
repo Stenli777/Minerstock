@@ -42,6 +42,15 @@
         <div><img src="https://mc.yandex.ru/watch/91418378" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9DFCFMXT7B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9DFCFMXT7B');
+    </script>
     <!-- /Yandex.Webmaster -->
     <meta name="yandex-verification" content="cc8b91a0430ae765"/>
     <!-- /Yandex.Webmaster counter -->
