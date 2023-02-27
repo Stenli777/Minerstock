@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css"/>
     <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/x-icon">
-    @yield('og-tags')
+@yield('og-tags')
     @yield('canonical')
-    <title>
-        @if($_SERVER['REQUEST_URI'] ==='/')
-            MineInfo - подробный справочник по ASIC майнерам. Добыча, характеристики и другая информация.
-        @else
-            @yield('title')
-        @endif
+<title>@if($_SERVER['REQUEST_URI'] ==='/')
+MineInfo - подробный справочник по ASIC майнерам. Добыча, характеристики и другая информация.
+@else
+@yield('title')
+@endif
     </title>
-    @yield('description')
+@yield('description')
     <style>
     </style>
     <!-- Yandex.Metrika counter -->
