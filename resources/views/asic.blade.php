@@ -11,13 +11,21 @@
             {{ Breadcrumbs::render('asic',$asic) }}
         </div>
     </nav>
-    <div class="container asic-page pt-3 pb-3">
-        <h1 class="mt-0">{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</h1>
+    <div class="container asic-page pt-3 pb-3" itemscope itemtype="http://schema.org/Product">
+        <h1 class="mt-0" itemprop="name">{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</h1>
         <div class="row">
 
             <div class="col-sm-4">
-                <img src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}"
-                     class="img-fluid border border-dark bg-white" style="border-radius: 20px">
+                <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <img src="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}"
+                         class="img-fluid border border-dark bg-white"
+                         alt="Bitmain Antminer KA3 166Th/s"
+                         style="border-radius: 20px"/>
+                    <meta itemprop="url" content="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" />
+                    <meta itemprop="width" content="300" />
+                    <meta itemprop="height" content="300" />
+                </div>
+
             </div>
             <div class="col-sm-5">
                 {{--                <h2>Характеристики асика</h2>--}}
@@ -30,9 +38,10 @@
                     <div class="col-8">Энергоэффективность:</div>
                     <div class="col">{{$asic->efficiency()}}</div>
                 </div>
-                <div class="row">
-                    <div class="col-8">Производитель:</div>
-                    <div class="col">{{$asic->producer->name}}</div>
+                <div class="row" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
+                        <meta itemprop="name" content="{{$asic->producer->name}}" />
+                        <div class="col-8">Производитель:</div>
+                        <div class="col">{{$asic->producer->name}}</div>
                 </div>
                 <div class="row">
                     <div class="col-8">Алгоритм:</div>
@@ -304,7 +313,7 @@
                 <div class="row pt-5 pb-5">
                     <div class="col-8">
                         <h2 class="pb-3">{{$asic->h1}}</h2>
-                        <div>{!!html_entity_decode($asic->seo_text)!!}</div>
+                        <div itemprop="description">{!!html_entity_decode($asic->seo_text)!!}</div>
                     </div>
                     <div class="col-4">
                         <img src="/{{$asic->img}}">

@@ -44,7 +44,6 @@
             </div>
         </div>
     </div>
-    </div>
 @stop
 @section('canonical')
     <link rel="canonical" href="{{ url()->current() }}">
