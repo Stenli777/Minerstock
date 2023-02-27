@@ -8,16 +8,16 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-sm-8" itemscope
-                 itemtype="{{$post->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">
+            <article class="col-sm-8" itemscope itemtype="{{$post->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">
+                <header>
+                    <h1 itemprop="headline">{{$post->title}}</h1>
+                    {!!$post->is_news === 1 ? "<p><time itemprop=\"datePublished\" datetime=\"".$post->created_at."\">".$post->publicDate()."</time></p>": ''!!}
+                </header>
                 <div itemprop="articleBody">
-                    <h1>{{$post->title}}</h1>
-                    {!!$post->is_news === 1 ? "<p>".$post->publicDate()."</p>": ''!!}
-                    <p></p>
                     {!! $post->content !!}
                 </div>
                 {!! $post->is_news === 1 ? '' : "<p>Категория: <a href=\"/category/{$post->category->alias}\" itemprop=\"articleSection\">" . $post->category->title . '</a></p>' !!}
-            </div>
+            </article>
         </div>
     </div>
 
