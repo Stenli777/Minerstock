@@ -5,7 +5,7 @@
     <meta property="og:type" content="{{$post->is_news === 1 ? 'NewsArticle' : 'Article'}}" />
     <meta property="og:title" content="{{$post->title}}" />
     <meta property="og:description" content="{{$post->description}}" />
-    <meta property="og:image" content="{{url('/')}}{{$post->img}}" />
+    <meta property="og:image" content="{{url('/')}}/{{$post->img}}" />
     <meta property="og:image:alt" content="{{$post->title}}" />
     <meta property="article:published_time" content="{{$post->created_at}}" />
     {!!$post->is_news === 1 ? '' : "<meta property=\"article:section\" content=\"{$post->category->alias}\" />" !!}
