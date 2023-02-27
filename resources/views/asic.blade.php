@@ -5,6 +5,15 @@
 @section('description')
     <meta name="description" content="{{$asic->description}}"/>
 @stop
+@section('og-tags')
+    <meta property="og:title" content="{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="{{ url('/') }}/{{$asic->img}}">
+    <meta property="og:description" content="{{$asic->description}}">
+    <meta property="og:url" content="{{ url('/') }}/asic/{{$asic->alias}}">
+    <meta property="product:brand" content="{{$asic->producer->name}}">
+    <meta property="og:site_name" content="MineInfo">
+@stop
 @section('main')
     <nav class="container-fluid" style="background-color: #e9ecef">
         <div class="container">
@@ -21,9 +30,10 @@
                          class="img-fluid border border-dark bg-white"
                          alt="Bitmain Antminer KA3 166Th/s"
                          style="border-radius: 20px"/>
-                    <meta itemprop="url" content="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}" />
-                    <meta itemprop="width" content="300" />
-                    <meta itemprop="height" content="300" />
+                    <meta itemprop="url"
+                          content="/{{$asic->img ? $asic->img : "images/uploads/asics/placeholder.png"}}"/>
+                    <meta itemprop="width" content="300"/>
+                    <meta itemprop="height" content="300"/>
                 </div>
 
             </div>
@@ -39,9 +49,9 @@
                     <div class="col">{{$asic->efficiency()}}</div>
                 </div>
                 <div class="row" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
-                        <meta itemprop="name" content="{{$asic->producer->name}}" />
-                        <div class="col-8">Производитель:</div>
-                        <div class="col">{{$asic->producer->name}}</div>
+                    <meta itemprop="name" content="{{$asic->producer->name}}"/>
+                    <div class="col-8">Производитель:</div>
+                    <div class="col">{{$asic->producer->name}}</div>
                 </div>
                 <div class="row">
                     <div class="col-8">Алгоритм:</div>
@@ -137,14 +147,15 @@
         </div>
         <div class="col">
             @if(count($asic->coins()->where('coin_active',true)->orderBy('order')->get()) > 1)
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-link active" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab"
-                       aria-controls="nav-tabs" data-target="#nav-tabs" aria-selected="true">Вкладками</a>
-                    <a class="nav-link" href="#view_table" id="nav_table" data-toggle="tab" role="tab"
-                       aria-controls="nav-table" data-target="#nav-table" aria-selected="false">Сравнение по монетам</a>
-                </div>
-            </nav>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link active" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab"
+                           aria-controls="nav-tabs" data-target="#nav-tabs" aria-selected="true">Вкладками</a>
+                        <a class="nav-link" href="#view_table" id="nav_table" data-toggle="tab" role="tab"
+                           aria-controls="nav-table" data-target="#nav-table" aria-selected="false">Сравнение по
+                            монетам</a>
+                    </div>
+                </nav>
             @endif
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
@@ -282,7 +293,8 @@
                                         {{number_format($coin->minePerDay($asic->hashrate) * $coin->priceBtc() * 30.5,8,',',' ')}}
                                     </td>
                                     <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $usd * 30.5,2,',',' ')}} ₽
+                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $usd * 30.5,2,',',' ')}}
+                                        ₽
                                     </td>
                                 </tr>
                             @endif

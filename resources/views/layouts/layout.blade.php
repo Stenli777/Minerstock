@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css"/>
     <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/x-icon">
+    @yield('og-tags')
     @yield('canonical')
     <title>
         @if($_SERVER['REQUEST_URI'] ==='/')
@@ -46,7 +47,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9DFCFMXT7B"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-9DFCFMXT7B');
