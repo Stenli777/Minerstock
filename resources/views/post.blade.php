@@ -16,7 +16,7 @@
                 <div itemprop="articleBody">
                     {!! $post->content !!}
                 </div>
-                {!! $post->is_news === 1 ? '' : "<p>Категория: <a href=\"/category/{$post->category->alias}\" itemprop=\"articleSection\">" . $post->category->title . '</a></p>' !!}
+                {!! $post->is_news === 1 ? '' : "<p>Категория: <a href=\"/category/{$post->category->alias}\"><span>itemprop=\"articleSection\">" . $post->category->title . '</span></a></p>' !!}
             </article>
         </div>
     </div>
