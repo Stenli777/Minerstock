@@ -54,6 +54,7 @@ Route::resource('/asic',
 Route::get('/catalog', function (Illuminate\Http\Request $request) {
     $asics = \App\Models\Asic::with('producer')
         ->orderByDesc('order');
+
     if ($request->input('producer_id')) {
         $asics = $asics->where('producer_id', $request->input('producer_id'));
     }
@@ -78,7 +79,9 @@ Route::get('/catalog', function (Illuminate\Http\Request $request) {
 //        $asics = $asics->where(['producer_id',$request->input('min'],['producer_id',$request->input('max']));
 //    }
 //    var_dump($request->input('coin'));
-    return view('catalog', ['asics' => $asics->paginate(12)
+    return view('catalog', ['asics' => $asics->paginate(12),
+        'tabsAsics' => $asics->paginate(12)->withQueryString(),
+    'tableAsics' => $asics->paginate(50)->withQueryString()
         ->withQueryString(), 'request' => $request]);
 })->name('catalog');
 

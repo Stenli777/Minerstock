@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+я@extends('layouts.layout')
 @section('main')
     <nav class="container-fluid" style="background-color: #e9ecef">
         <div class="container">
@@ -167,13 +167,13 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
                             <div class="row">
-                                @foreach($asics as $asic)
+                                @foreach($tabsAsics as $asic)
                                     <div class="col-sm-4">
                                         @include('blocks.product')
                                     </div>
                                 @endforeach
                                 <div class="container justify-content-center d-flex py-3 pagination-sm">
-                                    {{ $asics->fragment('view_tabs')->links() }}
+                                    {{ $tabsAsics->fragment('view_tabs')->links() }}
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($asics as $asic)
+                                    @foreach($tableAsics as $asic)
                                         <tr>
                                             <td>
                                                 <a href="/asic/{{$asic->alias}}">{{$asic->producer->name}}</a>
@@ -209,7 +209,7 @@
                                 </table>
                             </div>
                             <div class="d-flex justify-content-center py-3 pagination-sm">
-                                {{ $asics->fragment('view_table')->links() }}
+                                {{ $tableAsics->fragment('view_table')->links() }}
                             </div>
                         </div>
                     </div>

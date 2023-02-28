@@ -21,7 +21,7 @@
                 <h2>Новости</h2>
                 <div class="row">
                     @foreach($news as $post)
-                        <div class="col-4">
+                        <div class="col-md-4">
                             @include('blocks.article')
                         </div>
                     @endforeach
