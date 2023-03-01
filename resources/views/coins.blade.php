@@ -20,7 +20,7 @@
                 <div class="row">
                     @foreach($coins as $coin)
                         @if($coin->price() !== 0)
-                            <div class="col-3">
+                            <div class="col-md-3">
                                 <div class="card" style="width: 17rem; margin-bottom:1rem;">
                                     <div class="text-center" style="">
                                         {{--                                    <img class="card-img-top" src="/{{$coin->img}}" alt="изображение {{$coin->name}} {{$coin->short_name}}">--}}

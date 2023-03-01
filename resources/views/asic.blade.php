@@ -174,7 +174,7 @@
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                             @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
-                                <div class="tab-pane fade show {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}"
+                                <div class="table-responsive tab-pane fade show {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}"
                                      role="tabpanel" aria-labelledby="nav-{{$coin->short_name}}-tab">
                                     <table class="table table-hover text-center" data-mobile-responsive="true">
                                         <thead>
@@ -260,8 +260,9 @@
                                 </div>
                             @endforeach
                         </div>
+                    </nav>
                 </div>
-                <div class="tab-pane fade" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
+                <div class="tab-pane fade table-responsive" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
                     <table class="table table-hover" data-mobile-responsive="true">
                         <thead>
                         <tr>
@@ -322,17 +323,19 @@
         style="background: linear-gradient(90deg, rgba(0, 32, 76, 0.1) 0%, rgba(168, 72, 56, 0.1) 29.72%, rgba(9, 22, 40, 0.1) 89.54%, rgba(0, 32, 76, 0.1) 100%);">
         <div class="container">
             @if($asic->seo_text != null)
+
                 <div class="row pt-5 pb-5">
-                    <div class="col-8">
+                    <div class="col-lg-8">
                         <h2 class="pb-3">{{$asic->h1}}</h2>
                         <div itemprop="description">{!!html_entity_decode($asic->seo_text)!!}</div>
                     </div>
-                    <div class="col-4">
-                        <img src="/{{$asic->img}}">
+                    <div class="col-lg-4">
+                        <img src="/{{$asic->img}}" class="img-fluid">
                     </div>
                 </div>
             @endif
             <div class="row">
+                <div class="table-responsive">
                 <table class="table table-hover text-center mb-5" data-mobile-responsive="true">
                     <thead>
                     <tr>
@@ -369,6 +372,7 @@
                     </tr>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
 
