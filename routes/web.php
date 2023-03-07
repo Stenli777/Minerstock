@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Авторизация
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authenticate']);
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 //Главная
 Route::get('/', function () {
