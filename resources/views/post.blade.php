@@ -32,63 +32,8 @@
                 {!! $post->is_news === 1 ? '' : "<p>Категория: <a href=\"/category/{$post->category->alias}\"><span itemprop=\"articleSection\">" . $post->category->title . '</span></a></p>' !!}
             </article>
         </div>
-{{--        <div>--}}
-{{--            <form>--}}
-{{--                <input type="text" name="email">--}}
-{{--                <textarea name="content"></textarea>--}}
-{{--                <input type="submit">--}}
-{{--            </form>--}}
-{{--        </div>--}}
-
-            <h2>Оставить комментарий</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Введите ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required>
-                </div>
-                <div class="form-group">
-                    <label for="comment">Комментарий:</label>
-                    <textarea class="form-control" name="content" id="comment" rows="5" placeholder="Введите ваш комментарий" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Отправить</button>
-            </form>
-            <br>
-            <h2>Комментарии</h2>
-            <div class="comments">
-                <div class="comment">
-                    <div class="comment-header">
-                        <span class="name">Имя пользователя</span>
-                        <span class="date">Дата комментария</span>
-                    </div>
-                    <div class="comment-body">
-                        <p>Текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария,</p>
-                    </div>
-                    <div class="comment-footer">
-                        <button type="button" class="btn btn-sm btn-success">Лайк</button>
-                        <button type="button" class="btn btn-sm btn-danger">Дизлайк</button>
-                    </div>
-                </div>
-                <div class="comment">
-                    <div class="comment-header">
-                        <span class="name">Алексей</span>
-                        <span class="date">16.03.2023</span>
-                    </div>
-                    <div class="comment-body">
-                        <p>Текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария, текст комментария,</p>
-                    </div>
-                    <div class="comment-footer">
-                        <button type="button" class="btn btn-sm btn-success">Лайк</button>
-                        <button type="button" class="btn btn-sm btn-danger">Дизлайк</button>
-                    </div>
-                </div>
-            </div>
-
+        @include('blocks.comment_form')
     </div>
-
 @endsection
 @section('title')
 {{$post->title}}

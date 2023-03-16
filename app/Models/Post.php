@@ -42,8 +42,17 @@ class Post extends Model implements Sitemapable
     }
 
     public function comments(){
-        return $this->hasMany(Comment::class,'post_id','id');
+        $comments = Comment::query()
+            ->where('entity', '=', self::class)
+            ->where('entity_id', '=', $this->id)
+            ->get();
+//        dd($this->id, self::class, $comments);
+        return $comments;
     }
 
+    public static function aliasToId($alias) {
+        $entity = self::query()->where('alias', '=', $alias)->first();
+        return $entity->id;
+    }
 
 }

@@ -7,79 +7,30 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function create(Request $request, $entity, $alias) {
+        $entity_types = [
+            'post' => 'Post',
+        ];
+        $entity_model = 'App\\Models\\' . $entity_types[$entity];
+        $id = $entity_model::aliasToId($alias);
+        $comment = new Comment([
+            'entity' => $entity_model,
+            'entity_id' => $id,
+            'email' => $request->input('email'),
+            'content_orig' => $request->input('content'),
+            'content' =>  $request->input('content'),
+        ]);
+        $comment->save();
+        return redirect(\URL::previous());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $comment = new Comment($request);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function show($entity, $alias) {
+        $entity_types = [
+            'post' => 'Post',
+        ];
+        $entity_model = 'App\\Models\\' . $entity_types[$entity];
+        $id = $entity_model::aliasToId($alias);
+        $model = $entity_model::find($id);
+        return response()->json($model->comments());
     }
 }

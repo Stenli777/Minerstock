@@ -157,6 +157,9 @@ Route::get('/link/{id_internal_link}', [\App\Http\Controllers\PartnerLinkControl
 
 Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::class, 'callback']);
 
+Route::post('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'create']);
+Route::get('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'show']);
+
 //Route::get('/asic', function($asic){
 //    return redirect()->route('asic', [$asic->alias]);
 //});
