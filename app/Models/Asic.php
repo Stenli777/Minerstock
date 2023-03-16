@@ -86,6 +86,20 @@ class Asic extends Model implements Sitemapable
         return Url::create(route('asic.show', $this->alias))->setPriority(0.9);
     }
 
+    public function comments(){
+        $comments = Comment::query()
+            ->where('entity', '=', self::class)
+            ->where('entity_id', '=', $this->id)
+            ->get();
+//        dd($this->id, self::class, $comments);
+        return $comments;
+    }
+
+    public static function aliasToId($alias) {
+        $entity = self::query()->where('alias', '=', $alias)->first();
+        return $entity->id;
+    }
+
 //    public function similar(){
 //        return ;
 //    }

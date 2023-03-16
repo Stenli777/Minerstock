@@ -10,6 +10,8 @@ class CommentController extends Controller
     public function create(Request $request, $entity, $alias) {
         $entity_types = [
             'post' => 'Post',
+            'asic' => 'Asic',
+            'new' => 'Post'
         ];
         $entity_model = 'App\\Models\\' . $entity_types[$entity];
         $id = $entity_model::aliasToId($alias);

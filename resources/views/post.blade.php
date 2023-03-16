@@ -31,8 +31,11 @@
                 </div>
                 {!! $post->is_news === 1 ? '' : "<p>Категория: <a href=\"/category/{$post->category->alias}\"><span itemprop=\"articleSection\">" . $post->category->title . '</span></a></p>' !!}
             </article>
+            <div class="col-sm-8">
+                @include('blocks.comment_form')
+            </div>
         </div>
-        @include('blocks.comment_form')
+
     </div>
 @endsection
 @section('title')

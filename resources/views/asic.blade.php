@@ -374,6 +374,9 @@
                 </table>
                 </div>
             </div>
+                <div class="col">
+                    @include('blocks.comment_form')
+                </div>
         </div>
 
     </div>
