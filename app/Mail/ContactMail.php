@@ -6,10 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Mail\Mailables\Address;
-use Illuminate\Mail\Mailables\Envelope;
 
-class TestMail extends Mailable
+class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,9 +16,11 @@ class TestMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $contactData;
+
+    public function __construct($contactData)
     {
-        //
+        $this->contactData = $contactData;
     }
 
     /**
@@ -30,7 +30,8 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->from('info@mineinfo.ru', 'Example')
-            ->view('mail.test');
+        return $this->from(env('MAIL_FROM_ADDRESS'))
+            ->subject('Contact Form Submission')
+            ->view('mail.contact',['data' => $this->contactData]);
     }
 }

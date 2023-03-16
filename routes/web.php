@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
@@ -160,3 +161,9 @@ Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::cla
 //    return redirect()->route('asic', [$asic->alias]);
 //});
 
+
+Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'sendContactForm'])->name('contact.submit');
+Route::get('/contact/success', function () {
+    return view('contact-success');
+})->name('contact.success');
