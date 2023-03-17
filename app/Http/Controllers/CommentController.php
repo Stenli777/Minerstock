@@ -18,6 +18,7 @@ class CommentController extends Controller
         $comment = new Comment([
             'entity' => $entity_model,
             'entity_id' => $id,
+            'nickname' => $request->input('nickname'),
             'email' => $request->input('email'),
             'content_orig' => $request->input('content'),
             'content' =>  $request->input('content'),
@@ -29,6 +30,8 @@ class CommentController extends Controller
     public function show($entity, $alias) {
         $entity_types = [
             'post' => 'Post',
+            'asic' => 'Asic',
+            'new' => 'Post'
         ];
         $entity_model = 'App\\Models\\' . $entity_types[$entity];
         $id = $entity_model::aliasToId($alias);
