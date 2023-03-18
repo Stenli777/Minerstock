@@ -10,7 +10,7 @@ use Spatie\Sitemap\Tags\Url;
 
 class Post extends Model implements Sitemapable
 {
-    use HasFactory;
+    use HasFactory, \App\Traits\CommentTrait;
 
 //    protected $table = 'posts';
 //    protected $guarded = false;
@@ -39,20 +39,6 @@ class Post extends Model implements Sitemapable
     public function publicDate()
     {
         return $this->created_at->format('d.m.Y');
-    }
-
-    public function comments(){
-        $comments = Comment::query()
-            ->where('entity', '=', self::class)
-            ->where('entity_id', '=', $this->id)
-            ->get();
-//        dd($this->id, self::class, $comments);
-        return $comments;
-    }
-
-    public static function aliasToId($alias) {
-        $entity = self::query()->where('alias', '=', $alias)->first();
-        return $entity->id;
     }
 
 }

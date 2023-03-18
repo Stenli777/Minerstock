@@ -15,7 +15,14 @@
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
-{{--    @foreach($comments as $comment)--}}
+    @if(isset($comments))
+        @foreach($comments as $comment)
+            {{$comment->nickname}}<br>
+            {{$comment->content}}<br><br>
+        @endforeach
+    @endif
+
+    {{--    @foreach($comments as $comment)--}}
 {{--        <div>--}}
 {{--            <p>{{ $comment->content_orig }}</p>--}}
 {{--            <p>{{ $comment->email }}</p>--}}
