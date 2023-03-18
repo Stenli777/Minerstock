@@ -15,3 +15,9 @@
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
+{{--    @foreach($comments as $comment)--}}
+{{--        <div>--}}
+{{--            <p>{{ $comment->content_orig }}</p>--}}
+{{--            <p>{{ $comment->email }}</p>--}}
+{{--        </div>--}}
+{{--    @endforeach--}}

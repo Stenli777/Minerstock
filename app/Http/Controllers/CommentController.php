@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+//    public function index($entity, $alias) {
+//        $comments = Comment::all();
+//        return view('blocks.comment_form', ['comments' => $comments]);
+//    }
+
     public function create(Request $request, $entity, $alias) {
         $entity_types = [
             'post' => 'Post',
