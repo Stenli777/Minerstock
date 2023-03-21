@@ -5,6 +5,7 @@ namespace App\Jobs;
 use App\Models\Asic;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -51,6 +52,7 @@ class sitemap implements ShouldQueue
                 ->setPriority(1.0))
             ->add(Category::all())
             ->add(Post::all())
+            ->add(Tag::all())
             ->writeToFile(public_path('sitemap.xml'));
     }
 }

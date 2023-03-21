@@ -59,6 +59,7 @@ class AsicController extends Controller
         $usd = Cbrf::query()->latest()->first('usdrub')->usdrub;
         return view('asic', [
             'asic' => $model,
+            'comments' => $model->comments(),
             'asics' => Asic::where([
                 ['algorythm_id', $model->algorythm_id],
                 ['id', '!=', $model->id]

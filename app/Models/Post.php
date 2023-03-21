@@ -18,6 +18,10 @@ class Post extends Model implements Sitemapable
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class,'post_tags');
+    }
 
     public function save(array $options = []): bool
     {

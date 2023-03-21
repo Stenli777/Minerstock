@@ -143,6 +143,24 @@ Route::get('/category/{alias}', function ($alias) {
     ]);
 })->name('category');
 
+Route::get('/tag/{alias}', function ($alias) {
+    $tag = \App\Models\Tag::query()
+        ->where(['alias' => $alias])->first();
+    return view('tag', [
+        'tags' => \App\Models\Tag::all(),
+        'tag' => $tag,
+        'categories' => \App\Models\Category::all(),
+        'news' =>  \App\Models\Post::all()
+        ->where('is_news','=',1),
+        'posts' => \App\Models\Post::query()
+            ->whereHas('tags',function ($q)  use($tag){
+                $q->where('tags.id',$tag->id);
+            })
+            ->orderByDesc('created_at')
+            ->get()
+    ]);
+})->name('tag');
+
 Route::resource('/post',
     \App\Http\Controllers\PostController::class)
     ->middleware([\App\Http\Middleware\Breadcrumbs::class])

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\CommentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sitemap\Contracts\Sitemapable;
@@ -9,7 +10,7 @@ use Spatie\Sitemap\Tags\Url;
 
 class Asic extends Model implements Sitemapable
 {
-    use HasFactory;
+    use HasFactory, CommentTrait;
     public function humanHashrate(){
     $short = $this->shortHashrate();
         return "$short[0] $short[1]H/s";
@@ -86,19 +87,6 @@ class Asic extends Model implements Sitemapable
         return Url::create(route('asic.show', $this->alias))->setPriority(0.9);
     }
 
-    public function comments(){
-        $comments = Comment::query()
-            ->where('entity', '=', self::class)
-            ->where('entity_id', '=', $this->id)
-            ->get();
-//        dd($this->id, self::class, $comments);
-        return $comments;
-    }
-
-    public static function aliasToId($alias) {
-        $entity = self::query()->where('alias', '=', $alias)->first();
-        return $entity->id;
-    }
 
 //    public function similar(){
 //        return ;

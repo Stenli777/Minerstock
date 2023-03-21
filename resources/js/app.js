@@ -1,4 +1,4 @@
-// require('./bootstrap');
+npm // require('./bootstrap');
 
 //Libs
 window.$ = window.jQuery = require('jquery');

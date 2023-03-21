@@ -374,7 +374,7 @@
                 </table>
                 </div>
             </div>
-                <div class="col">
+                <div class="row">
                     @include('blocks.comment_form')
                 </div>
         </div>

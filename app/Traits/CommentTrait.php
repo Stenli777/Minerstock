@@ -8,6 +8,7 @@ trait CommentTrait {
         $comments = Comment::query()
             ->where('entity', '=', self::class)
             ->where('entity_id', '=', $this->id)
+            ->whereNotNull('moderated_at')
             ->get();
         return $comments;
     }

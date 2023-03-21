@@ -5,6 +5,7 @@ namespace App\Console\Commands\Sitemap;
 use App\Models\Asic;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\SitemapGenerator;
@@ -43,7 +44,7 @@ class Generate extends Command
      */
     public function handle()
     {
-        Sitemap::create()
+        \Spatie\Sitemap\Sitemap::create()
             ->add(Url::create('/')
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 ->setPriority(1.0))
@@ -59,6 +60,7 @@ class Generate extends Command
                 ->setPriority(1.0))
             ->add(Category::all())
             ->add(Post::all())
+            ->add(Tag::all())
             ->writeToFile(public_path('sitemap.xml'));
     }
 }

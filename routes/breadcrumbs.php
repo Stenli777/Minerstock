@@ -47,3 +47,9 @@ Breadcrumbs::for('new', function ($trail, $post) {
     $trail->parent('news');
     $trail->push($post->title, route('post.show', $post->alias));
 });
+
+// Home > Blog > [Tag]
+Breadcrumbs::for('tag', function ($trail, $tag) {
+    $trail->parent('blog');
+    $trail->push('Тег: '.$tag->name, route('tag',$tag->alias));
+});
