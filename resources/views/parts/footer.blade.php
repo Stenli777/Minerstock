@@ -1,16 +1,17 @@
 <footer class="text-light">
     <div class="container">
-        <div class="row py-5">
-            <div class="col-md-6">
-                <h3>Телеграм чат - здесь можно купить или продать майнинг оборудование</h3>
+        <div class="row py-4">
+            <div class="col-md-9">
+                <h3>Телеграм чат - покупка или продажа майнинг оборудование</h3>
             </div>
-            <div class="col-md-6 text-md-right">
-                <a href="https://t.me/miningstoreads" class="btn btn-primary btn-sm rounded-pill">
+            <div class="col-md-3 text-md-right">
+                <a href="https://t.me/miningstoreads" class="btn btn-primary mr-4 p-2 pl-4 pr-4 align-self-center">
                     Подписаться
                 </a>
             </div>
         </div>
-        <div class="row pb-3">
+        <div class="border-top">
+        <div class="row mt-5">
             <div class="col-md-3 mb-4 mb-md-0">
                 <a href="/"><img src="/images/uploads/logo.png" class="img-fluid mb-3" alt="Логотип" ></a>
                 <p class="UltraLight pt-2 lightGrey">Портал посвященный криптовалютам, майнингу и высоким технологиям.</p>
@@ -47,15 +48,22 @@
 
             </div>
             <div class="col-md-3">
-                <h3 class="mb-3">Наши новости</h3>
+                <h3 class="mb-3">Дополнительно</h3>
+                <button type="button" class="btn btn-primary p-2 pl-4 pr-4 align-self-center" data-toggle="modal" data-target="#improvementModal">
+                    Предложить улучшение
+                </button>
             </div>
         </div>
+        </div>
     </div>
-    <div class="bg-secondary py-3">
+    <div class="bg-secondary mt-3 py-3">
         <div class="container text-center">
             <p class="m-0 copyright text-center UltraLight">©Топ майнинг отелей. Вся информация на сайте размещена исключительно в ознакомительных целях. Все
                 изображения на сайте принадлежат их правообладателям.
             </p>
         </div>
     </div>
+    <!-- Модальные окна -->
+    @extends('blocks.auth-modal')
+
 </footer>

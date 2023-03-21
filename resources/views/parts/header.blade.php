@@ -25,9 +25,11 @@
                 </ul>
             </div>
             <div class="col-3 d-flex justify-content-end">
-                <button type="button" class="btn btn-primary btn-sm badge-pill p-2" data-toggle="modal"
-                        data-target="#sendConsultation">
-                    Необходима консультация?
+                <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
+                    Войти
+                </button>
+                <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal" data-target="#registerModal">
+                    Регистрация
                 </button>
             </div>
         </div>
@@ -61,11 +63,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/news">Новости</a>
                 </li>
-                <li class="nav-item">
-                    <button type="button" class="btn btn-primary btn-sm badge-pill p-2 my-3" data-toggle="modal"
-                            data-target="#sendConsultation">
-                        Необходима консультация?
-                    </button>
+                <li class="nav-item pb-2">
+                        <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
+                            Войти
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal" data-target="#registerModal">
+                            Регистрация
+                        </button>
                 </li>
             </ul>
         </div>
@@ -74,13 +78,3 @@
 </header>
 
 
-{{--<ol class="breadcrumb">--}}
-{{--    <li><i class="fa fa-dashboard"></i>Главная</li>--}}
-{{--    <?php $segments = ''; ?>--}}
-{{--    @foreach($request->breadcrums as $segment)--}}
-{{--        <?php $segments .= '/'. $segment; ?>--}}
-{{--        <li>--}}
-{{--            <a href="{{ $segments }}">{{$segment}}</a>--}}
-{{--        </li>--}}
-{{--    @endforeach--}}
-{{--</ol>--}}
