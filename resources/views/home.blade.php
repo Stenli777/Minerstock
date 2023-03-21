@@ -6,20 +6,14 @@
     <div class="container-fluid">
         <div class="container-fluid">
             <div class="container">
-                <div class="row border m-1">
-                    <div class="col-md-8">
-                        <h1></h1>
-                        <p>Портал про криптовалюты с подробным справочником ASIC майнеров.</p>
-                        <p>Вы всегда можете предложить улучшения или порекомендоваь исправить неточность с помощью этой формы</p>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-primary p-2 pl-4 pr-4 align-self-center">
-                            Предложить улучшение
-                        </button>
-                    </div>
-                </div>
-
-                <h2 class="mb-4">Майнинг оборудование</h2>
+{{--                    <div class="row border m-1">--}}
+{{--                        <div class="col-md-12">--}}
+{{--                            <h1>Криптопортал MineInfo</h1>--}}
+{{--                            <p>Подробный каталог ASIC Портал про криптовалюты с подробным справочником ASIC майнеров.</p>--}}
+{{--                            <p>Вы всегда можете предложить улучшения или порекомендовать исправить неточность с помощью этой формы.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+                <h2 class="mb-4 mt-4">Майнинг оборудование</h2>
                 <div class="row">
                     @foreach($asics as $asic)
                         <div class="col-sm-3">
