@@ -42,7 +42,11 @@ class Post extends Model implements Sitemapable
 
     public function publicDate()
     {
-        return $this->created_at->format('d.m.Y');
+        if ($this->created_at) {
+            return $this->created_at->format('d.m.Y');
+        } else {
+            return null;
+        }
     }
 
 }
