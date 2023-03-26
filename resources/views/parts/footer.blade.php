@@ -30,6 +30,9 @@
                     <li>
                         <a href="/news" class="lightGrey UltraLight">Новости</a>
                     </li>
+                    <li>
+                        <a href="/mining-pools" class="lightGrey UltraLight">Майнинг пулы</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4 mb-md-0">

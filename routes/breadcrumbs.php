@@ -53,3 +53,13 @@ Breadcrumbs::for('tag', function ($trail, $tag) {
     $trail->parent('blog');
     $trail->push('Тег: '.$tag->name, route('tag',$tag->alias));
 });
+// Home > MiningPools
+Breadcrumbs::for('mining-pools', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Майнинг пулы', route('mining-pools'));
+});
+// home > MiningPools > [MiningPool]
+Breadcrumbs::for('mining-pool', function ($trail, $pool) {
+    $trail->parent('mining-pools');
+    $trail->push($pool->title, route('post.show', $pool->alias));
+});

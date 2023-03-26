@@ -43,9 +43,11 @@
             <div class="border p-2">
                 <h4>Поделиться мнением</h4>
                 <p>Присоединяйтесь к дискуссии о популярном оборудовании для майнинга, мы ценим ваши комментарии</p>
+                <div class="text-center">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Оставить комментарий
             </button>
+                </div>
             </div>
         </div>
     </div>
