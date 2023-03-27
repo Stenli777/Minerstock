@@ -15,8 +15,8 @@ class MiningPool extends Model implements Sitemapable
     public function save(array $options = []): bool
     {
         $this->alias = Str::slug($this->name);
-        $this->title = "Майнинг пул $this->name";
-        $this->description = "Майнинг пул $this->name";
+        $this->title = "Обзор майнинг пула $this->name: удобный и надежный майнинг пул для добычи криптовалют";
+        $this->description = "Ознакомьтесь с обзором $this->name – надежным майнинг пулом, который обеспечивает высокую производительность и защиту для майнеров";
         return parent::save($options);
     }
 
