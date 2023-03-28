@@ -43,25 +43,50 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="register_form" action="/register" method="post">
+                    @csrf
                     <div class="form-group">
                         <label for="registerName">Логин</label>
-                        <input type="text" class="form-control" id="registerName" placeholder="Введите логин">
+                        <input type="text" class="form-control" name="name" id="registerName" placeholder="Введите логин">
                     </div>
                     <div class="form-group">
-                        <label for="registerEmail">Электронная почта</label>
-                        <input type="email" class="form-control" id="registerEmail" placeholder="Введите email">
+                        <label for="registerEmail">Электронная почта<div id="errors_email"></div></label>
+                        <input type="email" class="form-control" name="email" id="registerEmail" placeholder="Введите email">
                     </div>
                     <div class="form-group">
                         <label for="registerPassword">Пароль</label>
-                        <input type="password" class="form-control" id="registerPassword" placeholder="Пароль">
+                        <input type="password" class="form-control" name="password" id="registerPassword" placeholder="Пароль">
                     </div>
                     <div class="form-group">
-                        <label for="registerPasswordConfirm">Подтверждение пароля</label>
-                        <input type="password" class="form-control" id="registerPasswordConfirm" placeholder="Подтвердите пароль">
+                        <label for="registerPasswordConfirm">Подтверждение пароля<div id="errors_password"></div></label>
+                        <input type="password" class="form-control" name="passwordConfirm" id="registerPasswordConfirm" placeholder="Подтвердите пароль">
                     </div>
                     <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                 </form>
+                <script>
+                    let reg_form = document.getElementById('register_form');
+                    reg_form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        fetch('/register', {
+                            method: "post",
+                            body: new FormData(reg_form),
+                        })
+                            .then((data) => console.log(data.json().then((data) => {
+                                if (data.error) {
+                                    for (let error in data.error) {
+                                        document.getElementById(`errors_${error}`).innerHTML = data.error[error];
+                                    }
+                                }
+                            })))
+                            .catch((data) => data.json().then((data) => {
+                                if (data.error) {
+                                    for (let error in data.error) {
+                                        document.getElementById(`errors_${error}`).innerHTML = data.error[error];
+                                    }
+                                }
+                            }));
+                    });
+                </script>
             </div>
         </div>
     </div>

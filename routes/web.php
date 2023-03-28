@@ -189,3 +189,5 @@ Route::post('/contact', [ContactController::class, 'sendContactForm'])->name('co
 Route::get('/contact/success', function () {
     return view('contact-success');
 })->name('contact.success');
+
+Route::post('/register', [\App\Http\Controllers\LoginController::class, 'register']);

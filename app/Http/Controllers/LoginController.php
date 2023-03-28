@@ -30,4 +30,32 @@ class LoginController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
+
+    public function register(Request $request) {
+        $credentials = $request->validate([
+            'name'           => ['required'],
+            'email'           => ['required', 'email'],
+            'password'        => ['required'],
+            'passwordConfirm' => ['required'],
+        ]);
+
+        $user = \App\Models\User::where('email', $credentials['email'])->first();
+
+        if ($user) {
+            return response()->json([
+                'error' => ['email' =>'Email is used'],
+            ], 403);
+        }
+
+        if ($credentials['password'] !== $credentials['passwordConfirm']) {
+            return response()->json([
+                'error' => ['password' => 'Passwords don\'t match'],
+            ], 403);
+        }
+
+        $user = new \App\Models\User($credentials);
+        $user->save();
+
+        return response()->json(['user' => $user]);
+    }
 }
