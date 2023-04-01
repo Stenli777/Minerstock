@@ -24,6 +24,9 @@
                     </li>
                 </ul>
             </div>
+            @if(Auth::user())
+            <div>{{Auth::user()->name}}</div>
+            @else
             <div class="col-3 d-flex justify-content-end">
                 <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
                     Войти
@@ -32,6 +35,7 @@
                     Регистрация
                 </button>
             </div>
+            @endif
         </div>
     </div>
 

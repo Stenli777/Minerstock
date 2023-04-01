@@ -9,24 +9,46 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="loginForm">
+                    @csrf
                     <div class="form-group">
                         <label for="loginEmail">Электронная почта</label>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="Введите email">
+                        <input type="email" class="form-control" name="email" id="loginEmail" placeholder="Введите email">
                     </div>
                     <div class="form-group">
                         <label for="loginPassword">Пароль</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Пароль">
+                        <input type="password" class="form-control" name="password" id="loginPassword" placeholder="Пароль">
                     </div>
                     <div class="form-group d-flex justify-content-between">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <input type="checkbox" name="remember_me" class="form-check-input" id="rememberMe">
                             <label class="form-check-label" for="rememberMe">Запомнить меня</label>
                         </div>
                         <button type="button" class="pt-0 btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#passwordResetModal">Забыли пароль?</button>
                     </div>
-                    <button type="submit" class="btn btn-primary">Войти</button>
+                    <input type="submit" class="btn btn-primary">Войти</input>
                 </form>
+                <script>
+                    let loginForm = document.getElementById('loginForm');
+                    loginForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        fetch('/login', {
+                            method: "post",
+                            body: new FormData(loginForm),
+                        })
+                        .then((data) => {data.json().then((data) => {
+                            if (data.error) {
+                                for (let error in data.error) {
+                                    document.getElementById(`errors_${error}`).innerHTML = data.error[error];
+                                }
+                            } else {
+                                window.location.reload();
+                            }
+                        })})
+                        .catch((error) => {console.log(error)});
+
+                    });
+                </script>
             </div>
         </div>
     </div>

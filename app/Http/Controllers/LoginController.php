@@ -16,19 +16,18 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'email' => ['required'],
             'password' => ['required'],
         ]);
 //        $credentials['password'] = \Hash::make($credentials['password']);
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, (bool)$request->input('remember_me'))) {
             $request->session()->regenerate();
-
-            return redirect()->intended('admin');
+            return response()->json(Auth::user());
         }
 
-        return back()->withErrors([
+        return response()->json([
             'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        ]);
     }
 
     public function register(Request $request) {

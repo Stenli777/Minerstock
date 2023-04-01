@@ -191,3 +191,4 @@ Route::get('/contact/success', function () {
 })->name('contact.success');
 
 Route::post('/register', [\App\Http\Controllers\LoginController::class, 'register']);
+Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authenticate']);
