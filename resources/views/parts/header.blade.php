@@ -25,7 +25,17 @@
                 </ul>
             </div>
             @if(Auth::user())
-            <div>{{Auth::user()->name}}</div>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="loginDropdown">
+                        <a class="dropdown-item" href="#">Профиль</a>
+                        <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Выйти</a>
+                        </div>
+                    </div>
+                </div>
             @else
             <div class="col-3 d-flex justify-content-end">
                 <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
