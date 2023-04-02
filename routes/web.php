@@ -192,3 +192,6 @@ Route::get('/contact/success', function () {
 
 Route::post('/register', [\App\Http\Controllers\LoginController::class, 'register']);
 Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authenticate']);
+Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout']);
+Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'show']);
+Route::post('/company', [\App\Http\Controllers\ProfileController::class, 'add_company']);

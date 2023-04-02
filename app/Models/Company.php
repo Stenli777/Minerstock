@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 class Company extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     public function office()
     {

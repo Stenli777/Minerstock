@@ -26,7 +26,7 @@
                         </div>
                         <button type="button" class="pt-0 btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#passwordResetModal">Забыли пароль?</button>
                     </div>
-                    <input type="submit" class="btn btn-primary">Войти</input>
+                    <input type="submit" class="btn btn-primary" value="Войти" />
                 </form>
                 <script>
                     let loginForm = document.getElementById('loginForm');
@@ -98,6 +98,8 @@
                                     for (let error in data.error) {
                                         document.getElementById(`errors_${error}`).innerHTML = data.error[error];
                                     }
+                                } else {
+                                    window.location.reload();
                                 }
                             })))
                             .catch((data) => data.json().then((data) => {

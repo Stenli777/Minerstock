@@ -30,6 +30,11 @@ class LoginController extends Controller
         ]);
     }
 
+    public function logout(Request $request) {
+        Auth::logout();
+        return response('', 200);
+    }
+
     public function register(Request $request) {
         $credentials = $request->validate([
             'name'           => ['required'],

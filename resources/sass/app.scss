@@ -104,3 +104,11 @@ footer .btn-primary:hover{
     color: #999;
 }
 
+.dropdown-menu .dropdown-item {
+    color: red;
+}
+
+.header__body > .dropdown .dropdown-menu a.dropdown-item {
+    color: black !important;
+}
+

@@ -26,27 +26,40 @@
             </div>
             @if(Auth::user())
                 <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="loginDropdown" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                        <a class="dropdown-item" href="#">Профиль</a>
+                        <a class="dropdown-item" href="/profile">Профиль</a>
                         <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Выйти</a>
-                        </div>
+                        <a class="dropdown-item" id="logout_item" href="#">Выйти</a>
+                        <script>
+                            let logout_item = document.getElementById('logout_item');
+                            logout_item.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                fetch('/logout').then(() => {
+                                    window.location.reload();
+                                });
+                            });
+                        </script>
+
                     </div>
                 </div>
-            @else
+        </div>
+        @else
             <div class="col-3 d-flex justify-content-end">
-                <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
+                <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal"
+                        data-target="#loginModal">
                     Войти
                 </button>
-                <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal" data-target="#registerModal">
+                <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal"
+                        data-target="#registerModal">
                     Регистрация
                 </button>
             </div>
-            @endif
-        </div>
+        @endif
+    </div>
     </div>
 
     <!-- Mobile Menu -->
@@ -58,8 +71,10 @@
                 </a>
             </div>
             <div class="col-9 d-flex justify-content-end align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" style="background-image: url('/images/uploads/hamburger-icon.png');"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileMenu"
+                        aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"
+                          style="background-image: url('/images/uploads/hamburger-icon.png');"></span>
                 </button>
             </div>
         </div>
@@ -78,12 +93,14 @@
                     <a class="nav-link" href="/news">Новости</a>
                 </li>
                 <li class="nav-item pb-2">
-                        <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
-                            Войти
-                        </button>
-                        <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal" data-target="#registerModal">
-                            Регистрация
-                        </button>
+                    <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal"
+                            data-target="#loginModal">
+                        Войти
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal"
+                            data-target="#registerModal">
+                        Регистрация
+                    </button>
                 </li>
             </ul>
         </div>
