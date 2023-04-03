@@ -10,6 +10,12 @@
                     <li class="nav-item" role="presentation">
                     <a href="#" id="companies" class="nav-link" data-toggle="tab" data-target="#companies-tab" type="button" role="tab" aria-controls="companies" aria-selected="false">Компании</a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#" id="offices" class="nav-link" data-toggle="tab" data-target="#offices-tab" type="button" role="tab" aria-controls="offices" aria-selected="false">Офисы</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#" id="dpc" class="nav-link" data-toggle="tab" data-target="#dpc-tab" type="button" role="tab" aria-controls="dpc" aria-selected="false">Майнинг-отели</a>
+                    </li>
                 </ul>
             </div>
             <div class="tab-content col-9" id="myTabContent">
@@ -38,6 +44,45 @@
                             }).then((json) => json.json().then(data => console.log(data)));
                         });
                     </script>
+
+                    <table id="companies">
+                        <th>
+                            <td>logo</td>
+                            <td>name</td>
+                        </th>
+                        @foreach($user->companies as $company)
+                            <tr>
+                                <td><img src="{{Storage::url($company->logo)}}" /></td>
+                                <td>{{$company->name}}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="offices-tab" role="tabpanel" aria-labelledby="offices-tab">
+                    <form id="add_company" class="">
+                        @csrf
+                        <select name="company_id" id="company_id">
+                            @foreach($user->companies as $company)
+                                <option value="{{$company->id}}">{{$company->name}}</option>
+                            @endforeach
+                        </select>
+                        <input type="text" name="name">
+                        <input type="file" name="logo_file">
+                        <input type="submit" value="Добавить">
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="dpc-tab" role="tabpanel" aria-labelledby="dpc-tab">
+                    <form id="add_company" class="">
+                        @csrf
+                        <select name="company_id" id="company_id">
+                            @foreach($user->companies as $company)
+                                <option value="{{$company->id}}">{{$company->name}}</option>
+                            @endforeach
+                        </select>
+                        <input type="text" name="name">
+                        <input type="file" name="logo_file">
+                        <input type="submit" value="Добавить">
+                    </form>
                 </div>
             </div>
         </div>

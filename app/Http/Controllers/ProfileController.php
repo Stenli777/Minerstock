@@ -24,8 +24,36 @@ class ProfileController extends Controller
             'name' => $request->input('name')
         ]);
         $company->save();
-        $request->file('logo_file')->storePubliclyAs('/company/' . $company->id, 'logo.jpg');
-        $company->logo = '/company/' . $company->id . '/logo.jpg';
+        $path = $request->file('logo_file')->store('public/company/' . $company->id);
+        $company->logo = $path;
+        $company->save();
+        return response()->json([
+            'company' => $company
+        ]);
+    }
+    public function add_office(Request $request) {
+        $user_id = Auth::user()->id;
+        $company = new Company([
+            'user_id' => $user_id,
+            'name' => $request->input('name')
+        ]);
+        $company->save();
+        $path = $request->file('logo_file')->store('public/company/' . $company->id);
+        $company->logo = $path;
+        $company->save();
+        return response()->json([
+            'company' => $company
+        ]);
+    }
+    public function add_dpc(Request $request) {
+        $user_id = Auth::user()->id;
+        $company = new Company([
+            'user_id' => $user_id,
+            'name' => $request->input('name')
+        ]);
+        $company->save();
+        $path = $request->file('logo_file')->store('public/company/' . $company->id);
+        $company->logo = $path;
         $company->save();
         return response()->json([
             'company' => $company
