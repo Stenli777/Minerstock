@@ -62,6 +62,8 @@ MineInfo - подробный справочник по ASIC майнерам. �
     <!-- /Google Search Console -->
     <meta name="google-site-verification" content="ppfx7H1OhSoHhzenMvF1KfciycWVevBOdkZvcyKXDss"/>
     <!-- /Google Search Console -->
+    <script src="/js/jquery-3.6.1.min.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
 </head>
 <body class="antialiased {{$_SERVER['REQUEST_URI'] === '/'?"main-page":""}}">
 @include('parts.header')
@@ -111,8 +113,6 @@ MineInfo - подробный справочник по ASIC майнерам. �
     </form>
 </div>
 
-<script src="/js/jquery-3.6.1.min.js"></script>
-<script src="/js/bootstrap.bundle.js"></script>
 <script src="extensions/mobile/bootstrap-table-mobile.js"></script>
 <script src="/js/app.js"></script>
 </body>
