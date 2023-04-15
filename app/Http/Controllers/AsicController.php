@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Asic;
 use App\Models\Cbrf;
 use App\Models\Coin;
+use App\Models\Favorite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AsicController extends Controller
 {
@@ -105,5 +107,22 @@ class AsicController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function favorite($asic_id) {
+        $user_id = Auth::id();
+        $asic = Asic::query()->find($asic_id);
+        if (!$user_id) return;
+        $favorite = Favorite::query()->where(['asic_id' => $asic_id, 'user_id' => $user_id])->first();
+        if ($favorite) {
+            $favorite->delete();
+        } else {
+            $favorite = new Favorite([
+                'asic_id' => $asic_id,
+                'user_id' => $user_id,
+            ]);
+            $favorite->save();
+        }
+        return;
     }
 }

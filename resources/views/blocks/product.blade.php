@@ -15,5 +15,8 @@
     <div class="product-card__params">
         <div class="product-card__params__item">Алгоритм: {{$asic->algorythm->name}}</div>
     </div>
+    @if (\Illuminate\Support\Facades\Auth::id())
+        <div class="toggle_favorite {{$asic->isFavorite()?'favorite':''}}" data-asic_id="{{$asic->id}}"></div>
+    @endif
 </div>
 

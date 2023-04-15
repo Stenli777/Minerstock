@@ -38,4 +38,19 @@
     &__params {
         opacity: 0.5;
     }
+
+    & .toggle_favorite {
+        color: yellow;
+        font-size: 24px;
+        position: absolute;
+        top: 0px;
+        right: 24px;
+
+        &:before {
+            content: "\2606"
+        }
+        &.favorite:before {
+            content: "\2605"
+        }
+    }
 }

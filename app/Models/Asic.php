@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Traits\CommentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Sitemap\Contracts\Sitemapable;
 use Spatie\Sitemap\Tags\Url;
 
@@ -87,6 +88,14 @@ class Asic extends Model implements Sitemapable
         return Url::create(route('asic.show', $this->alias))->setPriority(0.9);
     }
 
+    public function lots() {
+        return $this->hasMany(Lot::class)->groupBy('user_id');
+    }
+
+    public function isFavorite() {
+        if (!Auth::id()) return false;
+        return !!$this->hasOne(Favorite::class)->where('user_id', Auth::id())->count();
+    }
 
 //    public function similar(){
 //        return ;

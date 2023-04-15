@@ -73,11 +73,10 @@
                         </table>
                         <script>
                             $('#asic_filter').on('input', (e) => {
-                                console.log()
-                                console.log($(e).parents('form').children('tr'))
-                                $(e).parents('form').children('tr').each((tr) => {
-                                    if (tr.child('.name').text().search(e.target.value)) {
-                                        tr.show();
+                                $('#prices_modal table tr').hide();
+                                $('#prices_modal table tr .name').each((_, tr) => {
+                                    if ($(tr).text().toLowerCase().includes(e.target.value.toLowerCase())) {
+                                        $(tr).parent().show();
                                     }
                                 });
                             })

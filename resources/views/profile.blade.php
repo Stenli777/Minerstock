@@ -16,6 +16,9 @@
                     <li class="nav-item" role="presentation">
                         <a href="#dpc" id="dpc" class="nav-link" data-toggle="tab" data-target="#dpc-tab" type="button" role="tab" aria-controls="dpc" aria-selected="false">Майнинг-отели</a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#lots" id="dpc" class="nav-link" data-toggle="tab" data-target="#lots-tab" type="button" role="tab" aria-controls="dpc" aria-selected="false">Объявления</a>
+                    </li>
                 </ul>
             </div>
             <div class="tab-content col-9" id="myTabContent">
@@ -23,6 +26,7 @@
                 @include('profile_tab.companies')
                 @include('profile_tab.offices')
                 @include('profile_tab.dpc')
+                @include('profile_tab.lots')
             </div>
         </div>
         <script>

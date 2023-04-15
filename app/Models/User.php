@@ -49,4 +49,8 @@ class User extends \TCG\Voyager\Models\User
     public function companies() {
         return $this->hasMany(Company::class);
     }
+
+    public function lots() {
+        return $this->hasMany(Lot::class);
+    }
 }
