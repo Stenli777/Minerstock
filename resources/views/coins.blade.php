@@ -27,7 +27,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="card-body">
-                                                <img class="" src="/storage/{{str_replace('\\','/',$coin->img_coin)}}"/>
+                                                <img class="" src="/storage/app/{{str_replace('\\','/',$coin->img_coin)}}"/>
                                             </div>
                                         </div>
                                         <div class="col-md-8">

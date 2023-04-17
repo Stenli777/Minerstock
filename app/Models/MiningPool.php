@@ -20,6 +20,10 @@ class MiningPool extends Model implements Sitemapable
         return parent::save($options);
     }
 
+    public function coins(){
+        $this->hasMany(Coin::class);
+    }
+
     public function toSitemapTag(): Url|string|array
     {
         return Url::create(route('mining_pool.show', $this->alias))->setPriority(0.9);
