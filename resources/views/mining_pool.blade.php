@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-4">
 
-                <img class="" src="/storage/app/{{str_replace('\\','/',$pool->img)}}" />
+                <img class="" src="/images/{{str_replace('\\','/',$pool->img)}}" />
             </div>
             <div class="col-md-4">
                 {{--        <p>{{$pool->description}}</p>--}}
