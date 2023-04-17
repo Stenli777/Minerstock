@@ -30,6 +30,9 @@
                     <li>
                         <a href="/news" class="lightGrey UltraLight">Новости</a>
                     </li>
+                    <li>
+                        <a href="/mining-pools" class="lightGrey UltraLight">Майнинг пулы</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4 mb-md-0">
@@ -43,7 +46,27 @@
                         </p></li>
                     <li><p class="text-muted">Адрес: <span class="UltraLight lightGrey">Россия, Москва</span></p></li>
                 </ul>
-
+                <a data-toggle="modal" data-target="#privacyModal">
+                    Политика конфиденциальности
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:60%">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title pl-3" id="privacyModalLabel">Политика конфиденциальности</h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="p-3">
+                                    @include('parts.privacy_text')
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="col-md-3">
@@ -59,3 +82,4 @@
         </div>
     </div>
 </footer>
+

@@ -88,7 +88,7 @@ Route::get('/catalog', function (Illuminate\Http\Request $request) {
 
 //Каталог монет
 Route::get('/coins', function () {
-    return view('coins', ['coins' => \App\Models\Coin::with('algorythm')->where('coin_active', true)->paginate(36)]);
+    return view('coins', ['coins' => \App\Models\Coin::with('algorythm')->where('coin_active', true)->orderBy('order')->paginate(100)]);
 });
 
 //Каталог майнинг компаний
@@ -172,20 +172,32 @@ Route::resource('/new',
     ->names('new');
 
 Route::get('/link/{id_internal_link}', [\App\Http\Controllers\PartnerLinkController::class, 'show']);
-
 Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::class, 'callback']);
-
 Route::post('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'create']);
 Route::get('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'show']);
-//Route::get('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'index']);
-
-//Route::get('/asic', function($asic){
-//    return redirect()->route('asic', [$asic->alias]);
-//});
-
-
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
 Route::post('/contact', [ContactController::class, 'sendContactForm'])->name('contact.submit');
 Route::get('/contact/success', function () {
     return view('contact-success');
 })->name('contact.success');
+
+
+// ДОБАВЛЕНИЕ МАЙНИНГ ОТЕЛЯ
+Route::resource('/mining-pool',
+    \App\Http\Controllers\MiningPoolController::class)
+    ->middleware([\App\Http\Middleware\Breadcrumbs::class])
+    ->names('mining-pool');
+
+Route::get('/mining-pools', function () {
+    return view('mining_pool-catalog', [
+        'pools' => \App\Models\MiningPool::query()
+            ->orderByDesc('created_at')
+            ->get(),
+    ]);
+})->name('mining-pools');
+
+
+// Политика конфиденциальности
+Route::get('/privacy', function(){
+    return view('pages.privacy');
+})->middleware([\App\Http\Middleware\Breadcrumbs::class])->name('privacy');
