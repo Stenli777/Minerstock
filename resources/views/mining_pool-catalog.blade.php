@@ -11,6 +11,7 @@
             <div class="col-md-3">
                 <div class="card mb-3">
                     <div class="card-body">
+                        <img class="card-img" src="/storage/{{str_replace('\\','/',$pool->img)}}" />
                         <h5 class="card-title">{{$pool->name}}</h5>
 {{--                        <h6 class="card-subtitle mb-2 text-muted">{{$pool->title}}</h6>--}}
 {{--                        <p class="card-text">{{$pool->description}}</p>--}}

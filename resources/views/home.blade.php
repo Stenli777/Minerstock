@@ -34,7 +34,14 @@
                         </button>
                     </a>
                 </div>
-                <h2 class="mb-4">Последние статьи</h2>
+                <div class="row">
+                    <div class="col-md-10">
+                        <h2 class="mb-4">Последние статьи</h2>
+                    </div>
+                    <div class="col-md-2 text-right pt-3">
+                        <a href="/articles">Все статьи</a>
+                    </div>
+                </div>
                 <div class="row">
                     @foreach($posts as $post)
                         <div class="col-md-3">
@@ -43,7 +50,14 @@
                     @endforeach
                 </div>
                 @if (!empty($news))
-                    <h2 class="mb-4">Новости</h2>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2 class="mb-4">Новости</h2>
+                        </div>
+                        <div class="col-md-2 text-right pt-3">
+                            <a href="/news">Все новости</a>
+                        </div>
+                    </div>
                     <div class="row">
                         @foreach($news as $post)
                             <div class="col-md-3">

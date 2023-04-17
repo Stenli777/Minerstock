@@ -63,3 +63,9 @@ Breadcrumbs::for('mining-pool', function ($trail, $pool) {
     $trail->parent('mining-pools');
     $trail->push($pool->title, route('post.show', $pool->alias));
 });
+
+// Home > Catalog
+Breadcrumbs::for('privacy', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Политика конфиденциальности', route('privacy'));
+});
