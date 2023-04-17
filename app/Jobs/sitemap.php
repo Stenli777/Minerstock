@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Models\Asic;
 use App\Models\Category;
+use App\Models\MiningPool;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Bus\Queueable;
@@ -53,6 +54,10 @@ class sitemap implements ShouldQueue
             ->add(Category::all())
             ->add(Post::all())
             ->add(Tag::all())
+            ->add(Url::create('/mining-pools')
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(0.9))
+            ->add(MiningPool::all())
             ->writeToFile(public_path('sitemap.xml'));
     }
 }

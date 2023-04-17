@@ -24,8 +24,8 @@ class MiningPool extends Model implements Sitemapable
         $this->hasMany(Coin::class);
     }
 
-    public function toSitemapTag(): Url|string|array
+    public function toSitemapTag(): Url | string | array
     {
-        return Url::create(route('mining_pool.show', $this->alias))->setPriority(0.9);
+        return Url::create(route('mining-pool.show', $this->alias))->setPriority(0.9);
     }
 }

@@ -8,7 +8,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 pl-5">
-
                 <h2 class="mb-3">Категории</h2>
                 @foreach($categories as $category)
                     <a href="/category/{{$category->alias}}">

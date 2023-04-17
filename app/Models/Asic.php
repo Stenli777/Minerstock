@@ -84,7 +84,7 @@ class Asic extends Model implements Sitemapable
 
     public function toSitemapTag(): Url | string | array
     {
-        return Url::create(route('asic.show', $this->alias))->setPriority(0.9);
+        return Url::create(route('asic.show', $this->alias))->setPriority(1.0);
     }
 
 
