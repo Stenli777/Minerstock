@@ -1,4 +1,10 @@
 @extends('layouts.layout')
+@section('title')
+    {{$tag->title}}
+@stop
+@section('description')
+    <meta name="description" content="{{$tag->description}}"/>
+@stop
 @section('main')
     <nav class="container-fluid" style="background-color: #e9ecef">
         <div class="container">
@@ -15,9 +21,9 @@
                     </a>
                 @endforeach
                 <h2 class="mt-3 mb-3">Теги</h2>
-                @foreach($tags as $tag)
-                    <a href="/tag/{{$tag->alias}}">
-                        <button type="button" class="btn btn-light container-fluid text-left mb-2">{{$tag->name}}</button>
+                @foreach($tags as $t)
+                    <a href="/tag/{{$t->alias}}">
+                        <button type="button" class="btn btn-light container-fluid text-left mb-2">{{$t->name}}</button>
                     </a>
                 @endforeach
             </div>
@@ -30,7 +36,6 @@
                         </div>
                     @endforeach
                 </div>
-
             </div>
             <div class="col-md-2">
                     <h2 class="mb-3">Новости</h2>

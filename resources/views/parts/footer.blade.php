@@ -52,7 +52,7 @@
                 </a>
                 <!-- Modal -->
                 <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:60%">
+                    <privacy class="modal-dialog modal-dialog-centered" role="document" style="max-width:60%">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h2 class="modal-title pl-3" id="privacyModalLabel">Политика конфиденциальности</h2>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </privacy>
                 </div>
 
             </div>
