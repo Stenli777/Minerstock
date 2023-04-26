@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\NewsPublished;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -48,5 +49,12 @@ class Post extends Model implements Sitemapable
             return null;
         }
     }
-
+    protected static function booted()
+    {
+        static::created(function ($post) {
+            if ($post->wasRecentlyCreated || $post->wasChanged()) {
+                event(new NewsPublished($post));
+            }
+        });
+    }
 }
