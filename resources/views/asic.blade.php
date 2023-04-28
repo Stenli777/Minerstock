@@ -103,6 +103,12 @@
                         <div class="col">{{$asic->chips}}</div>
                     </div>
                 @endif
+                @if($asic->cooling != null)
+                    <div class="row">
+                        <div class="col-8">Охлаждение:</div>
+                        <div class="col">{{$asic->cooling}}</div>
+                    </div>
+                @endif
 
             </div>
             <div class="col-sm-3">

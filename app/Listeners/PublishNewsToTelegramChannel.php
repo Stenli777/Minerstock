@@ -33,7 +33,7 @@ class PublishNewsToTelegramChannel
 
         $post = $event->post;
 
-        $plainTextContent = strip_tags($post->content);
+        $plainTextContent = htmlspecialchars_decode(strip_tags($post->content));
         $excerpt = mb_substr($plainTextContent, 0, 400);
         if($post->is_news === 1){
             $message = "⚡⚡⚡*{$post->title}*\n\n{$excerpt}\n\n[" . "Читайте новость на сайте..." . "](" . url('/new/' . $post->alias) . ")";

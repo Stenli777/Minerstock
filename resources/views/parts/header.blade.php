@@ -17,10 +17,18 @@
                         <a class="nav-link" href="/coins">Монеты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/articles">Статьи</a>
+                        <a class="nav-link" href="/mining-pools">Майнинг пулы</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/news">Новости</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="usefulDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Полезное
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="usefulDropdown">
+                            <a class="dropdown-item" href="/articles">Статьи</a>
+                            <a class="dropdown-item" href="/news">Новости</a>
+                            <a class="dropdown-item" href="#">Персоны</a>
+                            <a class="dropdown-item" href="#">Криптословарь</a>
+                        </div>
                     </li>
                 </ul>
             </div>

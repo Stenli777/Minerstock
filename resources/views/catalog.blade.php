@@ -1,4 +1,4 @@
-я@extends('layouts.layout')
+@extends('layouts.layout')
 @section('main')
     <nav class="container-fluid" style="background-color: #e9ecef">
         <div class="container">
