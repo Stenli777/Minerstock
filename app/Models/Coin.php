@@ -18,7 +18,7 @@ class Coin extends Model
 
     public function minePerDay($hashrate){
         $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 32 * $this->wtm_coin->difficulty);
-        if (in_array($this->id,[32,10,67,81,85,107,111])) {
+        if (in_array($this->id,[32,10,11,67,81,85,107,111])) {
             $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / ($this->wtm_coin->difficulty);
         } if (in_array($this->id,[19,22,98])) {
             $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 13 * $this->wtm_coin->difficulty);
@@ -35,10 +35,6 @@ class Coin extends Model
         }
         if (in_array($this->id,[104])) {
             $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 12 * $this->wtm_coin->difficulty);
-        }
-// Coin - Kadena
-        if (in_array($this->id,[11])) {
-            $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 8 * $this->wtm_coin->difficulty);
         }
         return $mine;
     }
