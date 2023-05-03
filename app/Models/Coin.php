@@ -33,9 +33,6 @@ class Coin extends Model
         if (in_array($this->id,[104])) {
             $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 12 * $this->wtm_coin->difficulty);
         }
-        if (in_array($this->id,[104])) {
-            $mine = (86400 * $this->wtm_coin->block_reward * $hashrate) / (2 ** 12 * $this->wtm_coin->difficulty);
-        }
         return $mine;
     }
 
