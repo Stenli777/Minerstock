@@ -69,3 +69,9 @@ Breadcrumbs::for('privacy', function ($trail) {
     $trail->parent('home');
     $trail->push('Политика конфиденциальности', route('privacy'));
 });
+
+// Home > Cryptowiki
+Breadcrumbs::for('cryptowiki', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Криптословарь', route('cryptowiki'));
+});

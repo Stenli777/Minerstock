@@ -26,8 +26,8 @@
                         <div class="dropdown-menu" aria-labelledby="usefulDropdown">
                             <a class="dropdown-item" href="/articles">Статьи</a>
                             <a class="dropdown-item" href="/news">Новости</a>
-                            <a class="dropdown-item" href="#">Персоны</a>
-                            <a class="dropdown-item" href="#">Криптословарь</a>
+                            <a class="dropdown-item" href="/cryptowiki">Криптословарь</a>
+                            <a class="dropdown-item disabled" href="#">Персоны</a>
                         </div>
                     </li>
                 </ul>

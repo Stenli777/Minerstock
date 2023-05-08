@@ -93,34 +93,34 @@
     </div>
 </div>
 
-<!-- Модальное окно предложения улучшения -->
-<div class="modal fade" id="improvementModal" tabindex="-1" role="dialog" aria-labelledby="improvementModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="improvementModalLabel">Предложить улучшение</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="userName">Ваше имя</label>
-                        <input type="text" class="form-control" id="userName" placeholder="Введите ваше имя">
-                    </div>
-                    <div class="form-group">
-                        <label for="userEmail">Ваш Email</label>
-                        <input type="email" class="form-control" id="userEmail" placeholder="Введите ваш email">
-                    </div>
-                    <div class="form-group">
-                        <label for="improvementText">Предложение или замечание</label>
-                        <textarea class="form-control" id="improvementText" rows="3" placeholder="Опишите ваше предложение или замечание"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<!-- Модальное окно предложения улучшения -->--}}
+{{--<div class="modal fade" id="improvementModal" tabindex="-1" role="dialog" aria-labelledby="improvementModalLabel" aria-hidden="true">--}}
+{{--    <div class="modal-dialog" role="document">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h5 class="modal-title" id="improvementModalLabel">Предложить улучшение</h5>--}}
+{{--                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">--}}
+{{--                    <span aria-hidden="true">&times;</span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body">--}}
+{{--                <form>--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="userName">Ваше имя</label>--}}
+{{--                        <input type="text" class="form-control" id="userName" placeholder="Введите ваше имя">--}}
+{{--                    </div>--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="userEmail">Ваш Email</label>--}}
+{{--                        <input type="email" class="form-control" id="userEmail" placeholder="Введите ваш email">--}}
+{{--                    </div>--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="improvementText">Предложение или замечание</label>--}}
+{{--                        <textarea class="form-control" id="improvementText" rows="3" placeholder="Опишите ваше предложение или замечание"></textarea>--}}
+{{--                    </div>--}}
+{{--                    <button type="submit" class="btn btn-primary">Отправить</button>--}}
+{{--                </form>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 

@@ -1,15 +1,27 @@
 <footer class="text-light">
     <div class="container">
         <div class="row py-4">
-            <div class="col-md-9">
-                <h3>Телеграм чат - покупка или продажа майнинг оборудование</h3>
+            <div class="col-md-4">
+                <h4><i class="fab fa-telegram-plane mr-2"></i> Телеграм чат</h4>
+                <p>покупка или продажа майнинг оборудование</p>
+
             </div>
-            <div class="col-md-3 text-md-right">
+            <div class="col-md-2 text-md-right">
                 <a href="https://t.me/miningstoreads" class="btn btn-primary mr-4 p-2 pl-4 pr-4 align-self-center">
                     Подписаться
                 </a>
             </div>
+            <div class="col-md-4">
+                <h4><i class="fab fa-telegram-plane mr-2"></i> Телеграм канал</h4>
+                <p>статьи и новости о криптовалютах</p>
+            </div>
+            <div class="col-md-2 text-md-right">
+                <a href="https://t.me/mineinforu" class="btn btn-primary mr-4 p-2 pl-4 pr-4 align-self-center">
+                    Подписаться
+                </a>
+            </div>
         </div>
+
         <div class="border-top">
         <div class="row mt-5">
             <div class="col-md-3 mb-4 mb-md-0">
@@ -81,13 +93,14 @@
     </div>
     <div class="bg-secondary mt-3 py-3">
         <div class="container text-center">
-            <p class="m-0 copyright text-center UltraLight">©Топ майнинг отелей. Вся информация на сайте размещена исключительно в ознакомительных целях. Все
+            <p class="m-0 copyright text-center UltraLight">©Mineinfo - портал о криптовалютах и майнинге. Вся информация на сайте размещена исключительно в ознакомительных целях. Все
                 изображения на сайте принадлежат их правообладателям.
             </p>
         </div>
     </div>
     <!-- Модальные окна -->
     @extends('blocks.auth-modal')
+    @extends('contact')
 
 </footer>
 

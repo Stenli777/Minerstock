@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css"/>
     <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
 @yield('og-tags')
     @yield('canonical')
 <title>@if($_SERVER['REQUEST_URI'] ==='/')
@@ -102,6 +103,7 @@ MineInfo - подробный справочник по ASIC майнерам. �
     </form>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 <script src="/js/jquery-3.6.1.min.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="extensions/mobile/bootstrap-table-mobile.js"></script>

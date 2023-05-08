@@ -151,7 +151,8 @@ Route::get('/tag/{alias}', function ($alias) {
         'tag' => $tag,
         'categories' => \App\Models\Category::all(),
         'news' =>  \App\Models\Post::all()
-        ->where('is_news','=',1),
+        ->where('is_news','=',1)
+        ->sortByDesc('created_at'),
         'posts' => \App\Models\Post::query()
             ->whereHas('tags',function ($q)  use($tag){
                 $q->where('tags.id',$tag->id);
@@ -201,3 +202,21 @@ Route::get('/mining-pools', function () {
 Route::get('/privacy', function(){
     return view('pages.privacy');
 })->middleware([\App\Http\Middleware\Breadcrumbs::class])->name('privacy');
+
+//Криптословарь
+Route::get('/cryptowiki', function () {
+    return view('cryptowiki', [
+        'cryptowikis' => \App\Models\CryptoWiki::query()
+            ->orderBy('name')
+            ->get(),
+        'posts' => \App\Models\Post::all()
+            ->where('is_news', 0)
+            ->sortByDesc('created_at'),
+        'news' => \App\Models\Post::query()
+            ->where('is_news', 1)
+            ->orderByDesc('created_at')
+            ->limit(4)
+            ->get(),
+        'categories' => \App\Models\Category::all(),
+    ]);
+})->name('cryptowiki');
