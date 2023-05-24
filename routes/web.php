@@ -220,3 +220,5 @@ Route::get('/cryptowiki', function () {
         'categories' => \App\Models\Category::all(),
     ]);
 })->name('cryptowiki');
+
+Route::get('/turbo/rss', 'App\Http\Controllers\RSS\TurboPageController@rss');
