@@ -4,6 +4,7 @@ Disallow: /login
 Sitemap: https://mineinfo.ru/sitemap.xml
 
 User-Agent: Yandex
+Allow: /rss.xml
 Host: https://mineinfo.ru
 Sitemap: https://mineinfo.ru/sitemap.xml
 

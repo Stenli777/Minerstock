@@ -221,4 +221,4 @@ Route::get('/cryptowiki', function () {
     ]);
 })->name('cryptowiki');
 
-Route::get('/turbo/rss', 'App\Http\Controllers\RSS\TurboPageController@rss');
+Route::get('/rss.xml', 'App\Http\Controllers\RSS\TurboPageController@rss');
