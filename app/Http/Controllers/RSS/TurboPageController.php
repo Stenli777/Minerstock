@@ -15,7 +15,7 @@ class TurboPageController extends Controller
         // Создание XML-структуры канала
         $xml = new \SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><rss xmlns:yandex="http://news.yandex.ru" version="2.0"></rss>');
         $channel = $xml->addChild('channel');
-        $channel->addChild('title', 'Название вашего канала');
+        $channel->addChild('title', 'MineInfo.ru');
         // Добавьте остальные необходимые теги, такие как description, link, language, image и т.д.
 
         // Получите список турбо-страниц из вашей базы данных или другого источника данных
