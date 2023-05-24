@@ -24,6 +24,9 @@ class TurboPageController extends Controller
 
         foreach ($posts as $post) {
             $item = $channel->addChild('item');
+            $item->addAttribute('turbo','true');
+            $title = $item->addChild('title', $post['title']);
+            $link = $item->addChild('link', "https://mineinfo.ru/new/".$post['alias']);
             $turbo = $item->addChild('turbo:content', '', 'http://turbo.yandex.ru');
             $turbo->addAttribute('url', "https://mineinfo.ru/post/".$post['alias']);
             $this->xml_cdata($turbo, $post['content']);
