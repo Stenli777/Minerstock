@@ -13,21 +13,21 @@
 
                     <div class="form-group">
                         <label for="name">Ваше имя</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Введите ваше имя" value="{{ old('name') }}" required>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Введите ваше имя" required>
                         @error('name')
                         <p>{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">Ваш Email</label>
-                        <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" required placeholder="Введите ваш email">
+                        <input type="email" class="form-control" name="email" id="email" required placeholder="Введите ваш email">
                         @error('email')
                         <p>{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="message">Предложение или замечание</label>
-                        <textarea class="form-control" name="message" id="message" rows="3" placeholder="Опишите ваше предложение или замечание" required>{{ old('message') }}</textarea>
+                        <textarea class="form-control" name="message" id="message" rows="3" placeholder="Опишите ваше предложение или замечание" required></textarea>
                         @error('message')
                         <p>{{ $message }}</p>
                         @enderror

@@ -37,6 +37,6 @@ class ContactController extends Controller
 
         // возвращаем ответ пользователю
 
-        return view('contact',['data', $validatedData]);
+        return view('contact.success');
     }
 }
