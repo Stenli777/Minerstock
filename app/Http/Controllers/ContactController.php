@@ -37,6 +37,6 @@ class ContactController extends Controller
 
         // возвращаем ответ пользователю
 
-        return view('contact.success');
+        return view('contact-success');
     }
 }
