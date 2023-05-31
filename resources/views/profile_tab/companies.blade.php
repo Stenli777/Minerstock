@@ -1,7 +1,7 @@
 <div class="tab-pane fade" id="companies-tab" role="tabpanel" aria-labelledby="companies-tab">
     <h1>Ваши компании</h1>
     <button id="show_form" class="btn button btn-outline-success" onclick="show_form()">Добавить компанию</button>
-    <form id="add_company" class="fade form-group">
+    <form id="companies_add_company" class="fade form-group">
         @csrf
         <input type="text" name="name">
         <input type="file" name="logo_file">
@@ -9,13 +9,13 @@
     </form>
     <script>
         function show_form() {
-            let form_add = document.getElementById('add_company');
+            let form_add = document.getElementById('companies_add_company');
             form_add.classList.toggle('show');
         }
-        let form_add_company = document.getElementById('add_company');
+        let form_add_company = document.getElementById('companies_add_company');
         form_add_company.addEventListener('submit', (e) => {
             e.preventDefault();
-            let f = e.target.closest('#add_company');
+            let f = e.target.closest('#companies_add_company');
             let form_data = new FormData(f);
             fetch('/company', {
                 method: 'post',
@@ -24,7 +24,7 @@
         });
     </script>
 
-    <table class="table" id="companies">
+    <table class="table" id="companies_companies">
         <tr>
             <th>logo</th>
             <th>name</th>

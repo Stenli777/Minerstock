@@ -2,7 +2,7 @@
     <h1>Ваши предложения</h1>
     <div class="container">
         <div class="row">
-            <button class="button btn btn-success">Добавить предложение</button>
+            <button class="button btn btn-success"  data-toggle="modal" data-target="#lots_modal">Добавить предложение</button>
         </div>
         <div class="row">
             @foreach($user->lots as $lot)
@@ -23,10 +23,16 @@
                     <div class="modal-body">
                         <form class="form-group">
                             <div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 30px; background-color: white">
-                                <input type="text" class="form-control" id="asic_filter" placeholder="Поиск">
+                                <input type="text" class="form-control" id="lots_asic_filter" placeholder="Поиск">
                             </div>
                             <table style="margin-top: 30px;" class="table">
-                                @foreach(\App\Models\Asic::all() as $asic)
+                                <tr>
+                                    <th class="name">Название</th>
+                                    <th>Цена в рублях</th>
+                                    <th>Цена в долларах</th>
+                                    <th>Б/У?</th>
+                                </tr>
+                            @foreach(\App\Models\Asic::all() as $asic)
                                     <tr>
                                         <td class="name">{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</td>
                                         <td><input type="text" name="price_rub" placeholder="0.00"></td>
@@ -36,9 +42,9 @@
                                 @endforeach
                             </table>
                             <script>
-                                $('#asic_filter').on('input', (e) => {
-                                    $('#prices_modal table tr').hide();
-                                    $('#prices_modal table tr .name').each((_, tr) => {
+                                $('#lots_asic_filter').on('input', (e) => {
+                                    $('#lots_modal table tr .name').each((_, tr) => {
+                                        $(tr).parent().hide();
                                         if ($(tr).text().toLowerCase().includes(e.target.value.toLowerCase())) {
                                             $(tr).parent().show();
                                         }
@@ -56,4 +62,10 @@
         </div>
     </div>
 </div>
+
+@section('javascript')
+    <script lang="js">
+
+    </script>
+@endsection
 

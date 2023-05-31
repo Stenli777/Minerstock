@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css"/>
+    <link rel="stylesheet" href="/css/jquery-ui.min.css"/>
     <link rel="shortcut icon" href="/images/uploads/favicon.ico" type="image/x-icon">
 @yield('og-tags')
     @yield('canonical')
@@ -63,6 +64,7 @@ MineInfo - подробный справочник по ASIC майнерам. �
     <meta name="google-site-verification" content="ppfx7H1OhSoHhzenMvF1KfciycWVevBOdkZvcyKXDss"/>
     <!-- /Google Search Console -->
     <script src="/js/jquery-3.6.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/bootstrap.bundle.js"></script>
 </head>
 <body class="antialiased {{$_SERVER['REQUEST_URI'] === '/'?"main-page":""}}">
@@ -113,7 +115,8 @@ MineInfo - подробный справочник по ASIC майнерам. �
     </form>
 </div>
 
-<script src="extensions/mobile/bootstrap-table-mobile.js"></script>
-<script src="/js/app.js"></script>
+{{--<script src="extensions/mobile/bootstrap-table-mobile.js"></script>--}}
+{{--<script src="/js/app.js"></script>--}}
+@yield('javascript')
 </body>
 </html>

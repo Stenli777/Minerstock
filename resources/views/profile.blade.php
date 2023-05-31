@@ -29,23 +29,23 @@
                 @include('profile_tab.lots')
             </div>
         </div>
-        <script>
-            $(document).ready(() => {
-                let url = window.location.href;
-                if (url.indexOf("#") > 0){
-                    let activeTab = url.substring(url.indexOf("#") + 1);
-                    $('.nav[role="tablist"] a[href="#'+activeTab+'"]').tab('show');
-                } else {
-                    $('.nav[role="tablist"] a[href="#profile"]').tab('show');
-                }
-
-                $('a[role="tab"]').on("click", function() {
-                    let newUrl;
-                    const hash = $(this).attr("href");
-                    newUrl = url.split("#")[0] + hash;
-                    history.replaceState(null, null, newUrl);
-                });
-            });
-        </script>
     </div>
+@endsection
+
+@section('javascript')
+    <script>
+        let url = window.location.href;
+        if (url.indexOf("#") > 0){
+            let activeTab = url.substring(url.indexOf("#") + 1);
+            $('.nav[role="tablist"] a[href="#'+activeTab+'"]').tab('show');
+        } else {
+            $('#profile').tab('show');
+        }
+        $('a[role="tab"]').on("click", function() {
+        let newUrl;
+        const hash = $(this).attr("href");
+        newUrl = url.split("#")[0] + hash;
+        history.replaceState(null, null, newUrl);
+        });
+    </script>
 @endsection

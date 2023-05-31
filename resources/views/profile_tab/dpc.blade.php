@@ -1,5 +1,5 @@
 <div class="tab-pane fade" id="dpc-tab" role="tabpanel" aria-labelledby="dpc-tab">
-    <form id="add_company" class="">
+    <form id="dpc_add_company" class="">
         @csrf
         <select name="company_id" id="company_id">
             @foreach($user->companies as $company)
