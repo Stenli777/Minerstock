@@ -180,7 +180,8 @@
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                             @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
-                                <div class="table-responsive tab-pane fade show {{$k==0?'active':''}}" id="nav-{{$coin->short_name}}"
+                                <div class="table-responsive tab-pane fade show {{$k==0?'active':''}}"
+                                     id="nav-{{$coin->short_name}}"
                                      role="tabpanel" aria-labelledby="nav-{{$coin->short_name}}-tab">
                                     <table class="table table-hover text-center" data-mobile-responsive="true">
                                         <thead>
@@ -268,7 +269,8 @@
                         </div>
                     </nav>
                 </div>
-                <div class="tab-pane fade table-responsive" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
+                <div class="tab-pane fade table-responsive" id="nav-table" role="tabpanel"
+                     aria-labelledby="nav-table-tab">
                     <table class="table table-hover" data-mobile-responsive="true">
                         <thead>
                         <tr>
@@ -313,14 +315,14 @@
         </div>
         <!-- Yandex.RTB R-A-2404949-11 -->
         <div class="col">
-        <div id="yandex_rtb_R-A-2404949-11"></div>
-        <script>window.yaContextCb.push(()=>{
-                Ya.Context.AdvManager.renderFeed({
-                    "blockId": "R-A-2404949-11",
-                    "renderTo": "yandex_rtb_R-A-2404949-11"
+            <div id="yandex_rtb_R-A-2404949-11"></div>
+            <script>window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.renderFeed({
+                        "blockId": "R-A-2404949-11",
+                        "renderTo": "yandex_rtb_R-A-2404949-11"
+                    })
                 })
-            })
-        </script>
+            </script>
         </div>
     </div>
 
@@ -342,47 +344,47 @@
             @endif
             <div class="row">
                 <div class="table-responsive">
-                <table class="table table-hover text-center mb-5" data-mobile-responsive="true">
-                    <thead>
-                    <tr>
-                        <th>Майнер</th>
-                        <th>{{$asic->name}} {{$asic->humanHashrate()}}</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+                    <table class="table table-hover text-center mb-5" data-mobile-responsive="true">
+                        <thead>
+                        <tr>
+                            <th>Майнер</th>
+                            <th>{{$asic->name}} {{$asic->humanHashrate()}}</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
 
 
-                    <tr>
-                        <th></th>
-                        <th>Разгон /<br> Performance</th>
-                        <th>Заводской режим /<br> Normal</th>
-                        <th>Сбалансированный режим /<br> Balanced</th>
-                        <th>Режим эффективности /<br> Effective</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Хэшрейт</td>
-                        <td>{{$asic->hashUnspeed() * 1.1}} {{$asic->speedHash()}}</td>
-                        <td>{{$asic->hashUnspeed()}} {{$asic->speedHash()}}</td>
-                        <td>{{$asic->hashUnspeed() * 0.8}} {{$asic->speedHash()}}</td>
-                        <td>{{$asic->hashUnspeed() * 0.7}} {{$asic->speedHash()}}</td>
-                    </tr>
-                    <tr>
-                        <td>Потребление</td>
-                        <td>{{$asic->consumption * 1.1}} Вт</td>
-                        <td>{{$asic->consumption}} Вт</td>
-                        <td>{{$asic->consumption * 0.8}} Вт</td>
-                        <td>{{$asic->consumption * 0.7}} Вт</td>
-                    </tr>
-                    </tbody>
-                </table>
+                        <tr>
+                            <th></th>
+                            <th>Разгон /<br> Performance</th>
+                            <th>Заводской режим /<br> Normal</th>
+                            <th>Сбалансированный режим /<br> Balanced</th>
+                            <th>Режим эффективности /<br> Effective</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Хэшрейт</td>
+                            <td>{{$asic->hashUnspeed() * 1.1}} {{$asic->speedHash()}}</td>
+                            <td>{{$asic->hashUnspeed()}} {{$asic->speedHash()}}</td>
+                            <td>{{$asic->hashUnspeed() * 0.8}} {{$asic->speedHash()}}</td>
+                            <td>{{$asic->hashUnspeed() * 0.7}} {{$asic->speedHash()}}</td>
+                        </tr>
+                        <tr>
+                            <td>Потребление</td>
+                            <td>{{$asic->consumption * 1.1}} Вт</td>
+                            <td>{{$asic->consumption}} Вт</td>
+                            <td>{{$asic->consumption * 0.8}} Вт</td>
+                            <td>{{$asic->consumption * 0.7}} Вт</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-                <div class="row">
-                    @include('blocks.comment_form')
-                </div>
+            <div class="row">
+                @include('blocks.comment_form')
+            </div>
         </div>
 
     </div>
