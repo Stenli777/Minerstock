@@ -310,18 +310,16 @@
                     </table>
                 </div>
             </div>
-            {{--                <div class="row d-flex flex-row-reverse mb-3">--}}
-            {{--                    <ul class="nav nav-tabs">--}}
-            {{--                        <li class="nav-item">--}}
-            {{--                            <a class="nav-link active" href="#">Вкладками</a>--}}
-            {{--                        </li>--}}
-            {{--                        <li class="nav-item">--}}
-            {{--                            <a class="nav-link" href="#">Сравнение по монетам</a>--}}
-            {{--                        </li>--}}
-            {{--                    </ul>--}}
-            {{--                    <p class="mr-5 mt-2 align-middle">Внешний вид</p>--}}
-            {{--                </div>--}}
         </div>
+        <!-- Yandex.RTB R-A-2404949-11 -->
+        <div id="yandex_rtb_R-A-2404949-11"></div>
+        <script>window.yaContextCb.push(()=>{
+                Ya.Context.AdvManager.renderFeed({
+                    "blockId": "R-A-2404949-11",
+                    "renderTo": "yandex_rtb_R-A-2404949-11"
+                })
+            })
+        </script>
     </div>
 
 
