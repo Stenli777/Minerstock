@@ -15,7 +15,15 @@
                         <button type="button" class="btn btn-light container-fluid text-left mb-2">{{$category->title}}</button>
                     </a>
                 @endforeach
-
+            <!-- Yandex.RTB R-A-2404949-10 -->
+                <div id="yandex_rtb_R-A-2404949-10"></div>
+                <script>window.yaContextCb.push(()=>{
+                        Ya.Context.AdvManager.render({
+                            "blockId": "R-A-2404949-10",
+                            "renderTo": "yandex_rtb_R-A-2404949-10"
+                        })
+                    })
+                </script>
             </div>
             <div class="col-md-8">
                 <h2>Блоговые записи</h2>
