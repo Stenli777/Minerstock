@@ -16,6 +16,7 @@
                     </a>
                 @endforeach
             <!-- Yandex.RTB R-A-2404949-10 -->
+            <div>
                 <div id="yandex_rtb_R-A-2404949-10"></div>
                 <script>window.yaContextCb.push(()=>{
                         Ya.Context.AdvManager.render({
@@ -24,6 +25,7 @@
                         })
                     })
                 </script>
+            </div>
             </div>
             <div class="col-md-8">
                 <h2>Блоговые записи</h2>
