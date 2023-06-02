@@ -312,6 +312,7 @@
             </div>
         </div>
         <!-- Yandex.RTB R-A-2404949-11 -->
+        <div class="col">
         <div id="yandex_rtb_R-A-2404949-11"></div>
         <script>window.yaContextCb.push(()=>{
                 Ya.Context.AdvManager.renderFeed({
@@ -320,6 +321,7 @@
                 })
             })
         </script>
+        </div>
     </div>
 
 
