@@ -42,7 +42,7 @@ class wtm_parse_coins implements ShouldQueue
             $coin['name'] = $key;
             $coin['coin_id'] = $coin['id'];
             unset($coin['id']);
-            $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format(DATE_ATOM);
+            $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format('Y-m-d H:i:s');
             $data = new WtmCoin($coin);
             $data->save();
         }
@@ -55,7 +55,7 @@ class wtm_parse_coins implements ShouldQueue
             $coin['name'] = $key;
             $coin['coin_id'] = $coin['id'];
             unset($coin['id']);
-            $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format(DATE_ATOM);
+            $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format('Y-m-d H:i:s');
             $data = new WtmCoin($coin);
             $data->save();
         }
