@@ -43,7 +43,7 @@ class WhatToMine extends Command
         $response = Http::get('https://whattomine.com/asic.json');
 //        Log::info(var_export($response->json(),true));
         $coinsAsic = $response->json('coins');
-        foreach ($coinsAsic as $key => $coin){
+        foreach ($coinsAsic as $key => $coin) {
 //            Log::info($coin);
             $coin['name'] = $key;
             $coin['coin_id'] = $coin['id'];
@@ -56,7 +56,7 @@ class WhatToMine extends Command
         $response = Http::get('https://whattomine.com/coins.json');
 //        Log::info(var_export($response->json(),true));
         $coinsCoin = $response->json('coins');
-        foreach ($coinsCoin as $key => $coin){
+        foreach ($coinsCoin as $key => $coin) {
 //            Log::info($coin);
             $coin['name'] = $key;
             $coin['coin_id'] = $coin['id'];
@@ -65,6 +65,5 @@ class WhatToMine extends Command
             $data = new WtmCoin($coin);
             $data->save();
         }
-
     }
 }
