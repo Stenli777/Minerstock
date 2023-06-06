@@ -316,7 +316,7 @@
         <!-- Yandex.RTB R-A-2404949-11 -->
         <div class="col">
             <!-- Yandex.RTB R-A-2404949-12 -->
-            <div class="mt-2 mb-2" id="yandex_rtb_R-A-2404949-12"></div>
+            <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-12"></div>
             <script>window.yaContextCb.push(()=>{
                     Ya.Context.AdvManager.render({
                         "blockId": "R-A-2404949-12",

@@ -15,8 +15,7 @@
                         <button type="button" class="btn btn-light container-fluid text-left mb-2">{{$category->title}}</button>
                     </a>
                 @endforeach
-                <div>
-                    <div id="yandex_rtb_R-A-2404949-10"></div>
+                    <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-10"></div>
                     <script>window.yaContextCb.push(()=>{
                             Ya.Context.AdvManager.render({
                                 "blockId": "R-A-2404949-10",
@@ -24,7 +23,6 @@
                             })
                         })
                     </script>
-                </div>
             </div>
             <div class="col-md-8">
                 <h2>Новости</h2>
@@ -45,7 +43,7 @@
                     </div>
                 @endforeach
             <!-- Yandex.RTB R-A-2404949-10 -->
-                    <div class="mt-2 mb-2" id="yandex_rtb_R-A-2404949-10"></div>
+                    <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-10"></div>
                     <script>window.yaContextCb.push(()=>{
                             Ya.Context.AdvManager.render({
                                 "blockId": "R-A-2404949-10",

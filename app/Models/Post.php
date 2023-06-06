@@ -61,7 +61,7 @@ class Post extends Model implements Sitemapable
     public function contentWithRtb()
     {
         $replacementCode = '
-            <div class="mt-2 mb-2" id="yandex_rtb_R-A-2404949-13"></div>
+            <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-13"></div>
             <script>window.yaContextCb.push(()=>{
                 Ya.Context.AdvManager.render({
                     "blockId": "R-A-2404949-13",
