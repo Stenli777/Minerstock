@@ -315,11 +315,12 @@
         </div>
         <!-- Yandex.RTB R-A-2404949-11 -->
         <div class="col">
-            <div id="yandex_rtb_R-A-2404949-11"></div>
-            <script>window.yaContextCb.push(() => {
-                    Ya.Context.AdvManager.renderFeed({
-                        "blockId": "R-A-2404949-11",
-                        "renderTo": "yandex_rtb_R-A-2404949-11"
+            <!-- Yandex.RTB R-A-2404949-12 -->
+            <div id="yandex_rtb_R-A-2404949-12"></div>
+            <script>window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-2404949-12",
+                        "renderTo": "yandex_rtb_R-A-2404949-12"
                     })
                 })
             </script>
