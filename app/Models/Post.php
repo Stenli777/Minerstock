@@ -57,4 +57,19 @@ class Post extends Model implements Sitemapable
             }
         });
     }
+
+    public function contentWithRtb()
+    {
+        $replacementCode = '
+            <div class="mt-2 mb-2" id="yandex_rtb_R-A-2404949-13"></div>
+            <script>window.yaContextCb.push(()=>{
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-2404949-13",
+                    "renderTo": "yandex_rtb_R-A-2404949-13"
+                })
+            })
+            </script>
+        ';
+        return str_replace('[[advert]]',$replacementCode,$this->content);
+    }
 }

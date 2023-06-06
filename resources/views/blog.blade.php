@@ -46,8 +46,7 @@
                         </div>
                     @endforeach
             <!-- Yandex.RTB R-A-2404949-10 -->
-                <div>
-                    <div id="yandex_rtb_R-A-2404949-10"></div>
+                    <div class="mt-2 mb-2" id="yandex_rtb_R-A-2404949-10"></div>
                     <script>window.yaContextCb.push(()=>{
                             Ya.Context.AdvManager.render({
                                 "blockId": "R-A-2404949-10",
@@ -55,7 +54,6 @@
                             })
                         })
                     </script>
-                </div>
             </div>
         </div>
     </div>
