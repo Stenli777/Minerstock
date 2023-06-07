@@ -93,11 +93,8 @@ class Post extends Model implements Sitemapable
         ',
         ];
 
-        $callback = function($matches) use ($replacementCode) {
-            static $index = 0;
-            $replacement = $replacementCode[$index];
-            $index++;
-            return $replacement;
+        $callback = function($matches) use (&$replacementCode) {
+            return array_shift($replacementCode);
         };
 
         return preg_replace_callback('/\[\[advert\]\]/', $callback, $this->content);
