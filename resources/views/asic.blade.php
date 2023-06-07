@@ -1,6 +1,9 @@
 @extends('layouts.layout')
 @section('title')
-    {{$asic->title}}
+{{$asic->title}}
+@stop
+@section('canonical')
+    <link rel="canonical" href="{{ url()->current() }}">
 @stop
 @section('description')
     <meta name="description" content="{{$asic->description}}"/>
@@ -428,5 +431,3 @@
         </div>
     </div>
 @stop
-
-
