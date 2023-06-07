@@ -60,16 +60,46 @@ class Post extends Model implements Sitemapable
 
     public function contentWithRtb()
     {
-        $replacementCode = '
-            <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-13"></div>
-            <script>window.yaContextCb.push(()=>{
-                Ya.Context.AdvManager.render({
-                    "blockId": "R-A-2404949-13",
-                    "renderTo": "yandex_rtb_R-A-2404949-13"
-                })
+        $replacementCode = [
+            '
+        <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-13"></div>
+        <script>window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-2404949-13",
+                "renderTo": "yandex_rtb_R-A-2404949-13"
             })
-            </script>
-        ';
-        return str_replace('[[advert]]',$replacementCode,$this->content);
+        })
+        </script>
+        ',
+            '
+        <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-14"></div>
+        <script>window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-2404949-14",
+                "renderTo": "yandex_rtb_R-A-2404949-14"
+            })
+        })
+        </script>
+        ',
+            '
+        <div class="mt-3 mb-3" id="yandex_rtb_R-A-2404949-15"></div>
+        <script>window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-2404949-15",
+                "renderTo": "yandex_rtb_R-A-2404949-15"
+            })
+        })
+        </script>
+        ',
+        ];
+
+        $callback = function($matches) use ($replacementCode) {
+            static $index = 0;
+            $replacement = $replacementCode[$index];
+            $index++;
+            return $replacement;
+        };
+
+        return preg_replace_callback('/\[\[advert\]\]/', $callback, $this->content);
     }
 }
