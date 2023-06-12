@@ -17,7 +17,7 @@
                         <a class="nav-link" href="/coins">Монеты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/mining-pools">Майнинг пулы</a>
+                        <a class="nav-link" href="/calculator">Калькулятор</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="usefulDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,6 +26,7 @@
                         <div class="dropdown-menu" aria-labelledby="usefulDropdown">
                             <a class="dropdown-item" href="/articles">Статьи</a>
                             <a class="dropdown-item" href="/news">Новости</a>
+                            <a class="dropdown-item" href="/mining-pools">Майнинг пулы</a>
                             <a class="dropdown-item" href="/cryptowiki">Криптословарь</a>
                             <a class="dropdown-item disabled" href="#">Персоны</a>
                         </div>
@@ -66,12 +67,19 @@
                     <a class="nav-link" href="/coins">Монеты</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/mining-pools">Майнинг пулы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cryptowiki">Криптословарь</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/articles">Статьи</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/news">Новости</a>
                 </li>
-                <li class="nav-item pb-2">
+
+                <li class="nav-item pt-3 pb-2">
                         <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
                             Войти
                         </button>

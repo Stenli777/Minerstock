@@ -222,3 +222,20 @@ Route::get('/cryptowiki', function () {
 })->name('cryptowiki');
 
 Route::get('/rss.xml', 'App\Http\Controllers\RSS\TurboPageController@rss');
+
+
+Route::get('/traider-diary', function () {
+    return view('traider-diary', [
+        'deal' => \App\Models\Deal::all()
+            ->sortByDesc('created_at'),
+    ]);
+})->name('traider-diary');
+
+Route::resource('/deal',
+    \App\Http\Controllers\DealController::class)
+    ->middleware([\App\Http\Middleware\Breadcrumbs::class])
+    ->names('deal');
+
+Route::get('/calculator', function () {
+    return view('calculator');
+})->name('calculator');

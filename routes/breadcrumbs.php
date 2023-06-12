@@ -75,3 +75,9 @@ Breadcrumbs::for('cryptowiki', function ($trail) {
     $trail->parent('home');
     $trail->push('Криптословарь', route('cryptowiki'));
 });
+
+// Home > Calculator
+Breadcrumbs::for('calculator', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Калькулятор Intelion Data Systems', route('calculator'));
+});
