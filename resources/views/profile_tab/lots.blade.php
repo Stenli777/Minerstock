@@ -7,7 +7,7 @@
         <div class="row">
             @foreach($user->lots as $lot)
                 <div class="col-sm-4">
-                    @include('blocks.product')
+                    @include('blocks.lot', ['asic' => $lot->asic])
                 </div>
             @endforeach
         </div>
@@ -21,8 +21,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="form-group">
-                            <div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 30px; background-color: white">
+                        <form id="lots_form" class="form-group">
+                            @csrf
+                            <div style="position: relative; top: 10px; left: 0px; width: 100%; height: 30px; background-color: white">
                                 <input type="text" class="form-control" id="lots_asic_filter" placeholder="Поиск">
                             </div>
                             <table style="margin-top: 30px;" class="table">
@@ -32,12 +33,12 @@
                                     <th>Цена в долларах</th>
                                     <th>Б/У?</th>
                                 </tr>
-                            @foreach(\App\Models\Asic::all() as $asic)
+                                @foreach(\App\Models\Asic::all() as $asic)
                                     <tr>
                                         <td class="name">{{$asic->producer->name}} {{$asic->name}} {{$asic->humanHashrate()}}</td>
-                                        <td><input type="text" name="price_rub" placeholder="0.00"></td>
-                                        <td><input type="text" name="price_usd" placeholder="0.00"></td>
-                                        <td><input type="checkbox" name="was_in_use" placeholder="0.00"></td>
+                                        <td><input class="lot_param form-controll" data-id="{{$asic->id}}" data-type="price_rub" type="text" placeholder="0.00"></td>
+                                        <td><input class="lot_param form-controll" data-id="{{$asic->id}}" data-type="price_usd" type="text" placeholder="0.00"></td>
+                                        <td><input class="lot_param form-controll" data-id="{{$asic->id}}" data-type="was_in_use" type="checkbox"></td>
                                     </tr>
                                 @endforeach
                             </table>
@@ -55,17 +56,41 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="lots_update btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $('.lots_update').click((e) => {
+        let f = $('#lots_form');
+        let inputs = f.find('.lot_param');
+        let lots = [];
+        for (let input of inputs) {
+            lots[input.dataset.id] = lots[input.dataset.id] ?? {id: input.dataset.id};
+            if (input.type == 'checkbox') {
+                lots[input.dataset.id][input.dataset.type] = input.checked;
+            } else {
+                lots[input.dataset.id][input.dataset.type] = input.value;
+            }
+        }
+        lots = lots.filter((lot, i) => {
+            return lot.price_rub || lot.price_usd;
+        });
 
-@section('javascript')
-    <script lang="js">
-
-    </script>
-@endsection
-
+        fetch('/lots', {
+            method: 'post',
+            body: JSON.stringify({
+                lots: lots,
+            }),
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}",
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+        }).then((e) => {
+            $('#lots_modal').modal('hide');
+        });
+    });
+</script>

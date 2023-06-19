@@ -382,6 +382,16 @@
     </div>
 
     </div>
+    <div class="container">
+        <h1>Предложения</h1>
+        <div class="row">
+            @foreach($asic->lots as $lot)
+                <div class="col-sm-4">
+                    @include('blocks.lot', ['asic' => $lot->asic])
+                </div>
+            @endforeach
+        </div>
+    </div>
     <div class="separator">
         <h2 class="pt-5 pb-5">Другое оборудование на {{$asic->algorythm->name}}</h2>
     </div>

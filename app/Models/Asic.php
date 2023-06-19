@@ -89,7 +89,7 @@ class Asic extends Model implements Sitemapable
     }
 
     public function lots() {
-        return $this->hasMany(Lot::class)->groupBy('user_id');
+        return $this->hasMany(Lot::class);
     }
 
     public function isFavorite() {

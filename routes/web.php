@@ -196,3 +196,4 @@ Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout']);
 Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'show'])->middleware(\App\Http\Middleware\Authenticate::class);
 Route::post('/company', [\App\Http\Controllers\ProfileController::class, 'add_company']);
 Route::get('/asic/{asic_id}/favorite', [\App\Http\Controllers\AsicController::class, 'favorite']);
+Route::post('/lots', [\App\Http\Controllers\AsicController::class, 'lots']);

@@ -53,4 +53,8 @@ class User extends \TCG\Voyager\Models\User
     public function lots() {
         return $this->hasMany(Lot::class);
     }
+
+    public function favorites() {
+        return $this->hasManyThrough(Asic::class, Favorite::class, 'user_id', 'id', 'id', 'asic_id');
+    }
 }

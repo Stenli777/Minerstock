@@ -6,6 +6,7 @@ use App\Models\Asic;
 use App\Models\Cbrf;
 use App\Models\Coin;
 use App\Models\Favorite;
+use App\Models\Lot;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -123,6 +124,22 @@ class AsicController extends Controller
             ]);
             $favorite->save();
         }
-        return;
+        return response()->json(Auth::user()->favorites()->get()->toArray());
+    }
+
+    public function lots(Request $request) {
+        $lots = $request->json('lots');
+
+        foreach ($lots as $lot) {
+            $lot_model = new Lot([
+                'asic_id' => $lot['id'],
+                'user_id' => Auth::id(),
+                'price' => $lot['price_rub'] ?? $lot['price_usd'],
+                'was_in_use' => $lot['was_in_use']
+            ]);
+            $lot_model->save();
+        }
+
+        return response()->json(Auth::user()->lots()->get()->toArray());
     }
 }

@@ -117,6 +117,5 @@ MineInfo - подробный справочник по ASIC майнерам. �
 
 {{--<script src="extensions/mobile/bootstrap-table-mobile.js"></script>--}}
 {{--<script src="/js/app.js"></script>--}}
-@yield('javascript')
 </body>
 </html>
