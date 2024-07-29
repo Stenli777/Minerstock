@@ -236,6 +236,4 @@ Route::resource('/deal',
     ->middleware([\App\Http\Middleware\Breadcrumbs::class])
     ->names('deal');
 
-Route::get('/calculator', function () {
-    return view('calculator');
-})->name('calculator');
+

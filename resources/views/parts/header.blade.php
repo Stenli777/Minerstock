@@ -16,9 +16,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/coins">Монеты</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/calculator">Калькулятор</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="usefulDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Полезное
@@ -33,14 +30,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-3 d-flex justify-content-end">
-                <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
-                    Войти
-                </button>
-                <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal" data-target="#registerModal">
-                    Регистрация
-                </button>
-            </div>
+
         </div>
     </div>
 
@@ -79,14 +69,6 @@
                     <a class="nav-link" href="/news">Новости</a>
                 </li>
 
-                <li class="nav-item pt-3 pb-2">
-                        <button type="button" class="btn btn-primary btn-sm badge-pill mr-2" data-toggle="modal" data-target="#loginModal">
-                            Войти
-                        </button>
-                        <button type="button" class="btn btn-primary btn-sm badge-pill" data-toggle="modal" data-target="#registerModal">
-                            Регистрация
-                        </button>
-                </li>
             </ul>
         </div>
     </div>
