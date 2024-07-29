@@ -99,7 +99,6 @@
         </div>
     </div>
     <!-- Модальные окна -->
-    @extends('blocks.auth-modal')
     @extends('contact')
 
 </footer>
