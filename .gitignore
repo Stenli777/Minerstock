@@ -23,3 +23,6 @@ composer.lock
 package-lock.json
 mix-manifest.json
 /config/telegram.php
+mineinfo
+mineinfo.pub
+mysqldump.sql
