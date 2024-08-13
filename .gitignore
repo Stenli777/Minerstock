@@ -26,3 +26,4 @@ mix-manifest.json
 mineinfo
 mineinfo.pub
 mysqldump.sql
+app/.DS_Store
