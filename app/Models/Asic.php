@@ -24,7 +24,7 @@ class Asic extends Model implements Sitemapable
         ];
         foreach ($hash as $key => $value) {
             if ($this->hashrate > $value) {
-                return [trim(trim(number_format($this->hashrate/($value),3),'0'),'.'),$key];
+                return [trim(trim(number_format($this->hashrate/($value),3),'0'),'.'), $key];
             }
         }
         return [$this->hashrate,''];
@@ -36,10 +36,6 @@ class Asic extends Model implements Sitemapable
     public function speedHash(){
         $short = $this->shortHashrate();
         return "$short[1]H/s";
-    }
-    public function efficiency(){
-        $short = $this->shortHashrate();
-        return trim(trim(number_format(($this->consumption / $short[0]),2, ',', ' '),0),',')." Дж/$short[1]H";
     }
     public function producer(){
         return $this->belongsTo(Producer::class);
@@ -64,6 +60,7 @@ class Asic extends Model implements Sitemapable
         $this->description = "Информация, характеристики и доходность ASIC майнера $producer $this->name $hash" . "H/s";
         $this->h1 = "ASIC майнер $producer $this->name $hash" . "H/s";
         $this->alias = str_replace('+','_plus',str_replace(['.',',',' ','/'],'_',strtolower("$producer $this->name $hash". "H/s")));
+        $this->weight_brutto = str_replace(',', '.', $this->weight_brutto);
         parent::save($options);
     }
     public function energyPrice($energyPrice){
@@ -72,14 +69,6 @@ class Asic extends Model implements Sitemapable
     public function expenses($expenses = 2){
 //        $expenses = 0.83;
         return $this->consumption / 1000 * $expenses * 24;
-    }
-
-    public function gerwin_description() {
-        return $this->hasOne(Gerwin::class, 'asic_id')->where(['task_type' => 'description'])->orderByDesc('created_at');
-    }
-
-    public function gerwin_features() {
-        return $this->hasOne(Gerwin::class, 'asic_id')->where(['task_type' => 'features'])->orderByDesc('created_at');
     }
 
     public function toSitemapTag(): Url | string | array
