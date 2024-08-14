@@ -23,7 +23,7 @@ class CreateAsicsTable extends Migration
             $table->date('sales_data_start')->nullable();
             $table->integer('consumption');
             $table->string('packing_size')->nullable();
-            $table->integer('weight_brutto')->nullable();
+            $table->float('weight_brutto')->nullable();
             $table->string('dimensions');
             $table->integer('weight_netto');
             $table->integer('noise');

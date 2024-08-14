@@ -60,6 +60,7 @@ class Asic extends Model implements Sitemapable
         $this->description = "Информация, характеристики и доходность ASIC майнера $producer $this->name $hash" . "H/s";
         $this->h1 = "ASIC майнер $producer $this->name $hash" . "H/s";
         $this->alias = str_replace('+','_plus',str_replace(['.',',',' ','/'],'_',strtolower("$producer $this->name $hash". "H/s")));
+        $this->weight_brutto = str_replace(',', '.', $this->weight_brutto);
         parent::save($options);
     }
     public function energyPrice($energyPrice){
