@@ -33,6 +33,10 @@ class Asic extends Model implements Sitemapable
         $short = $this->shortHashrate();
         return "$short[0]";
     }
+    public function countEfficiency(){
+        $short = $this->shortHashrate();
+        return trim(trim(number_format(($this->consumption / $short[0]),2, ',', ' '),0),',')." Дж/$short[1]H";
+    }
     public function speedHash(){
         $short = $this->shortHashrate();
         return "$short[1]H/s";
@@ -60,7 +64,7 @@ class Asic extends Model implements Sitemapable
         $this->description = "Информация, характеристики и доходность ASIC майнера $producer $this->name $hash" . "H/s";
         $this->h1 = "ASIC майнер $producer $this->name $hash" . "H/s";
         $this->alias = str_replace('+','_plus',str_replace(['.',',',' ','/'],'_',strtolower("$producer $this->name $hash". "H/s")));
-        $this->weight_brutto = str_replace(',', '.', $this->weight_brutto);
+        $this->weight_brutto = $this->weight_brutto??str_replace(',', '.', $this->weight_brutto);
         parent::save($options);
     }
     public function energyPrice($energyPrice){
