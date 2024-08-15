@@ -15,7 +15,7 @@ class Asic extends Model implements Sitemapable
     $short = $this->shortHashrate();
         return "$short[0] $short[1]H/s";
     }
-    private function shortHashrate(){
+    public function shortHashrate(){
         $hash = [
             'T'=>1000*1000*1000*1000,
             'G'=>1000*1000*1000,
@@ -32,6 +32,10 @@ class Asic extends Model implements Sitemapable
     public function hashUnspeed(){
         $short = $this->shortHashrate();
         return "$short[0]";
+    }
+    public function countEfficiency(){
+        $short = $this->shortHashrate();
+        return trim(trim(number_format(($this->consumption / $short[0]),2, ',', ' '),0),',')." Дж/$short[1]H";
     }
     public function speedHash(){
         $short = $this->shortHashrate();

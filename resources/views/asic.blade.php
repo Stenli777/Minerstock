@@ -49,7 +49,7 @@
                 </div>
                 <div class="row">
                     <div class="col-8">Энергоэффективность:</div>
-                    <div class="col">{{$asic->efficiency()}}</div>
+                    <div class="col">{{$asic->countEfficiency()}}</div>
                 </div>
                 <div class="row" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
                     <meta itemprop="name" content="{{$asic->producer->name}}"/>
