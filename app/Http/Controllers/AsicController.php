@@ -65,7 +65,7 @@ class AsicController extends Controller
                 ['id', '!=', $model->id]
             ])->inRandomOrder()->paginate(4),
             'usd' => $usd,
-            'expenses' => (float)str_replace(',', '.', $request->input('expenses', 0.83)),
+            'expenses' => (float)str_replace(',', '.', $request->input('expenses', 4.0)),
             'simular' => Asic::where([
                 ['name', $model->name],
                 ['id', '<>', $model->id]
