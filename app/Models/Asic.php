@@ -15,7 +15,7 @@ class Asic extends Model implements Sitemapable
     $short = $this->shortHashrate();
         return "$short[0] $short[1]H/s";
     }
-    private function shortHashrate(){
+    public function shortHashrate(){
         $hash = [
             'T'=>1000*1000*1000*1000,
             'G'=>1000*1000*1000,
