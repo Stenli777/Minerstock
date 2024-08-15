@@ -33,6 +33,10 @@ class Asic extends Model implements Sitemapable
         $short = $this->shortHashrate();
         return "$short[0]";
     }
+    public function countEfficiency(){
+        $short = $this->shortHashrate();
+        return trim(trim(number_format(($this->consumption / $short[0]),2, ',', ' '),0),',')." Дж/$short[1]H";
+    }
     public function speedHash(){
         $short = $this->shortHashrate();
         return "$short[1]H/s";
