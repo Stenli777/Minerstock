@@ -132,6 +132,19 @@ Route::get('/news', function () {
     ]);
 })->name('news');
 
+Route::get('/apps', function () {
+    return view('apps', [
+        'posts' => \App\Models\Post::query()
+            ->where('is_app', 0)
+            ->orderByDesc('created_at')
+            ->limit(4)
+            ->get(),
+        'news' => \App\Models\App::all()
+            ->sortByDesc('created_at'),
+        'categories' => \App\Models\Category::all(),
+    ]);
+})->name('news');
+
 Route::get('/category/{alias}', function ($alias) {
     $category = \App\Models\Category::query()
         ->where(['alias' => $alias])->first();
@@ -162,10 +175,35 @@ Route::get('/tag/{alias}', function ($alias) {
     ]);
 })->name('tag');
 
+Route::get('/app_tag/{alias}', function ($alias) {
+    $tag = \App\Models\ApplicationTag::query()
+        ->where(['alias' => $alias])->first();
+    return view('tag', [
+        'tags' => \App\Models\ApplicationTag::all(),
+        'tag' => $tag,
+        'categories' => \App\Models\Category::all(),
+        'news' =>  \App\Models\App::all()
+            ->sortByDesc('created_at'),
+        'posts' => \App\Models\App::query()
+            ->whereHas('app_tags',function ($q)  use($tag){
+                $q->where('app_tags.id',$tag->id);
+            })
+            ->orderByDesc('created_at')
+            ->get()
+    ]);
+})->name('app_tag');
+
 Route::resource('/post',
     \App\Http\Controllers\PostController::class)
     ->middleware([\App\Http\Middleware\Breadcrumbs::class])
     ->names('post');
+
+Route::resource('/app',
+    \App\Http\Controllers\AppController::class)
+    ->middleware([\App\Http\Middleware\Breadcrumbs::class])
+    ->names('app');
+
+Route::get('/app/link/{hash}', [\App\Http\Controllers\AppController::class, 'link'])->name('app.link');
 
 Route::resource('/new',
     \App\Http\Controllers\PostController::class)

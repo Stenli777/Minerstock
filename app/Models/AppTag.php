@@ -9,10 +9,10 @@ use Spatie\Sitemap\Contracts\Sitemapable;
 use Spatie\Sitemap\Tags\Url;
 
 
-class Tag extends Model implements Sitemapable
+class AppTag extends Model implements Sitemapable
 {
     use HasFactory;
-    protected $table = 'tags';
+    protected $table = 'app_tags';
     protected $guarded = false;
 
     public function save(array $options = []): bool
@@ -23,6 +23,6 @@ class Tag extends Model implements Sitemapable
 
     public function toSitemapTag(): Url | string | array
     {
-        return Url::create(route('tag', $this->alias))->setPriority(0.8);
+        return Url::create(route('app_tag', $this->alias))->setPriority(0.8);
     }
 }
