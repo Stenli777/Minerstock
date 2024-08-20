@@ -135,7 +135,7 @@ Route::get('/news', function () {
 Route::get('/apps', function () {
     return view('apps', [
         'posts' => \App\Models\Post::query()
-            ->where('is_app', 0)
+            ->where('is_news', 0)
             ->orderByDesc('created_at')
             ->limit(4)
             ->get(),
