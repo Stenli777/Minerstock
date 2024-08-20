@@ -48,6 +48,14 @@ Breadcrumbs::for('new', function ($trail, $post) {
     $trail->push($post->title, route('post.show', $post->alias));
 });
 
+Breadcrumbs::for('apps', function ($trail) {
+    $trail->push('Приложения', route('apps'));
+});
+
+Breadcrumbs::for('app_category', function ($trail, $category) {
+    $trail->parent('apps');
+    $trail->push($category->title, route('app.category', ['alias' => $category->alias]));
+});
 // Home > Blog > [Tag]
 Breadcrumbs::for('tag', function ($trail, $tag) {
     $trail->parent('blog');
