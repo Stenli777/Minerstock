@@ -2,7 +2,7 @@
 @section('main')
     <nav class="container-fluid" style="background-color: #e9ecef">
         <div class="container">
-            {{ Breadcrumbs::render('news') }}
+            {{ Breadcrumbs::render('apps') }}
         </div>
     </nav>
     <div class="container-fluid">
@@ -11,7 +11,8 @@
 
                 <h2>Категории</h2>
                 @foreach($categories as $category)
-                    <a href="/category/{{$category->alias}}">
+                    <a href="/app-category/{{$category->alias}}">
+
                         <button type="button" class="btn btn-light container-fluid text-left mb-2">{{$category->title}}</button>
                     </a>
                 @endforeach

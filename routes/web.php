@@ -141,9 +141,10 @@ Route::get('/apps', function () {
             ->get(),
         'news' => \App\Models\App::all()
             ->sortByDesc('created_at'),
-        'categories' => \App\Models\Category::all(),
+        'categories' => \App\Models\AppCategory::all(),
     ]);
-})->name('news');
+})->name('apps');
+
 
 Route::get('/category/{alias}', function ($alias) {
     $category = \App\Models\Category::query()
@@ -155,6 +156,18 @@ Route::get('/category/{alias}', function ($alias) {
             ->sortByDesc('created_at')
     ]);
 })->name('category');
+
+Route::get('/app-category/{alias}', function ($alias) {
+    $category = \App\Models\AppCategory::query()
+        ->where(['alias' => $alias])->first();
+
+    return view('app_category', [
+        'category' => $category,
+        'posts' => \App\Models\App::all()
+            ->where('app_category_id', $category->id)
+            ->sortByDesc('created_at')
+    ]);
+})->name('app.category');
 
 Route::get('/tag/{alias}', function ($alias) {
     $tag = \App\Models\Tag::query()
