@@ -12,6 +12,7 @@
                 <h2>Категории</h2>
                 @foreach($categories as $category)
                     <a href="/app-category/{{$category->alias}}">
+
                         <button type="button" class="btn btn-light container-fluid text-left mb-2">{{$category->title}}</button>
                     </a>
                 @endforeach
