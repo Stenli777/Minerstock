@@ -25,7 +25,7 @@
                     </script>
             </div>
             <div class="col-md-8">
-                <h2>Новости</h2>
+                <h2>Приложения</h2>
                 <div class="row">
                     @foreach($news as $post)
                         <div class="col-md-4">
