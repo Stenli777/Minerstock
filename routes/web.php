@@ -145,6 +145,7 @@ Route::get('/apps', function () {
     ]);
 })->name('apps');
 
+
 Route::get('/category/{alias}', function ($alias) {
     $category = \App\Models\Category::query()
         ->where(['alias' => $alias])->first();
