@@ -23,6 +23,7 @@
                         <div class="dropdown-menu" aria-labelledby="usefulDropdown">
                             <a class="dropdown-item" href="/articles">Статьи</a>
                             <a class="dropdown-item" href="/news">Новости</a>
+                            <a class="dropdown-item" href="/apps">Приложения</a>
                             <a class="dropdown-item" href="/mining-pools">Майнинг пулы</a>
                             <a class="dropdown-item" href="/cryptowiki">Криптословарь</a>
                             <a class="dropdown-item disabled" href="#">Персоны</a>
