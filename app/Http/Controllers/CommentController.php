@@ -16,7 +16,8 @@ class CommentController extends Controller
         $entity_types = [
             'post' => 'Post',
             'asic' => 'Asic',
-            'new' => 'Post'
+            'new' => 'Post',
+            'app' => 'App',
         ];
         $entity_model = 'App\\Models\\' . $entity_types[$entity];
         $id = $entity_model::aliasToId($alias);
