@@ -2,6 +2,9 @@
 
 namespace App\Console\Commands\Sitemap;
 
+use App\Models\App;
+use App\Models\AppCategory;
+use App\Models\AppTag;
 use App\Models\Asic;
 use App\Models\Category;
 use App\Models\MiningPool;
@@ -66,6 +69,9 @@ class Generate extends Command
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 ->setPriority(0.9))
             ->add(MiningPool::all())
+            ->add(AppCategory::all())
+            ->add(App::all())
+            ->add(AppTag::all())
             ->writeToFile(public_path('sitemap.xml'));
     }
 }
