@@ -22,15 +22,15 @@
         <div class="row justify-content-center">
             <article class="col-sm-8 mb-3" itemscope itemtype="{{$app->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">
                 <header>
-                    <h1 itemprop="headline">{{$app->title}}</h1>
+                    <h1 itemprop="headline">{{$app->name}}</h1>
                     {!!"<p><time itemprop=\"datePublished\" datetime=\"".$app->created_at."\">".$app->publicDate()."</time></p>"!!}
-                    <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">Ссылка на приложение</a></p>
+                    <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">{{ $app->link_title }}</a></p>
 
                 </header>
                 <div itemprop="articleBody">
                     {!! $app->content !!}
                 </div>
-                <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">Ссылка на приложение</a></p>
+                <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">{{ $app->link_title }}</a></p>
             @if ($app && count($app->tags))
                 <div>Теги:
                     @foreach($app->tags as $tag)

@@ -21,4 +21,9 @@ class AppCategory extends Model
         return parent::save($options);
     }
 
+    public function toSitemapTag(): Url | string | array
+    {
+        return Url::create(route('app.category', $this->alias))->setPriority(0.8);
+    }
+
 }
