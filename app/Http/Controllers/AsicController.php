@@ -60,6 +60,7 @@ class AsicController extends Controller
         return view('asic', [
             'asic' => $model,
             'comments' => $model->comments(),
+            'avgRating' => $model->avgRating(),
             'asics' => Asic::where([
                 ['algorythm_id', $model->algorythm_id],
                 ['id', '!=', $model->id]

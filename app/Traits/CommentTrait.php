@@ -13,6 +13,14 @@ trait CommentTrait {
         return $comments;
     }
 
+    public function avgRating(){
+        $avg = Comment::query()
+            ->where('entity', '=', self::class)
+            ->where('entity_id', '=', $this->id)
+            ->avg('rating');
+        return $avg;
+    }
+
     public static function aliasToId($alias) {
         $entity = self::query()->where('alias', '=', $alias)->first();
         return $entity->id;

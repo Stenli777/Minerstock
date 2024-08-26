@@ -53,6 +53,7 @@ class MiningPoolController extends Controller
             'pool' => $model,
             'comments' => $model->comments(),
             'asics' => $asics,
+            'avgRating' => $model->avgRating()
         ]);
     }
 
