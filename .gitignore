@@ -17,7 +17,6 @@ yarn-error.log
 /public/images/uploads
 /docker/mysql/
 /docker/nginx/logs/
-/public/css/
 /public/js/
 composer.lock
 package-lock.json

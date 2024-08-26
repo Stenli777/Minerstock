@@ -27,6 +27,7 @@ class CommentController extends Controller
             'nickname' => $request->input('nickname'),
             'email' => $request->input('email'),
             'content_orig' => $request->input('content'),
+            'rating' => $request->input('rating'),
             'content' =>  $request->input('content'),
         ]);
         $comment->save();

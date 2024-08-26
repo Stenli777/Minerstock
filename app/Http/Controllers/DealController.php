@@ -50,6 +50,7 @@ class DealController extends Controller
             'post' => $model,
             'category' => $model->category,
             'comments' => $model->comments(),
+            'avgRating' => $model->avgRating()
         ]);
     }
 

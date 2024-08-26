@@ -2,6 +2,13 @@
 <div class="row">
     <h3 class="mb-3">Комментарии</h3>
 </div>
+<div class="average-rating">
+    <br>
+    <label>Средняя оценка:</label>
+    <div class="stars" id="average-stars">
+        <!-- Звезды будут вставляться через JavaScript -->
+    </div>
+</div>
 <div class="row">
         @if(count($comments)!=0)
             <div class="comments pb-3 col-md-9">
@@ -37,8 +44,6 @@
         </div>
         @endif
 
-
-
         <div class="col-md-3">
             <div class="border p-2">
                 <h4>Поделиться мнением</h4>
@@ -72,6 +77,19 @@
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="Введите ваш email" required>
                         </div>
+                        <!-- Рейтинг в виде звезд -->
+                        <div class="form-group">
+                            <label for="rating">Оценка:</label>
+                            <div class="star-rating">
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span>
+                            </div>
+                            <!-- Поле скрытого ввода для отправки рейтинга -->
+                            <input type="hidden" name="rating" id="rating-value" value="0">
+                        </div>
                         <div class="form-group">
                             <label for="comment">Комментарий:</label>
                             <textarea class="form-control" name="content" id="comment" rows="5" placeholder="Введите ваш комментарий" required></textarea>
@@ -82,3 +100,84 @@
             </div>
         </div>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const stars = document.querySelectorAll('.star-rating span');
+        const ratingInput = document.getElementById('rating-value');
+        const commentField = document.getElementById('comment');
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', function () {
+                resetStars();
+                const rating = this.getAttribute('data-value');
+                highlightStars(rating);
+            });
+
+            star.addEventListener('mouseout', function () {
+                resetStars();
+                highlightStars(ratingInput.value);
+            });
+
+            star.addEventListener('click', function () {
+                const rating = this.getAttribute('data-value');
+                ratingInput.value = rating;
+                highlightStars(rating);
+
+                if (rating > 0) {
+                    commentField.removeAttribute('required');
+                } else {
+                    commentField.setAttribute('required', 'required');
+                }
+            });
+        });
+
+        function highlightStars(rating) {
+            stars.forEach(star => {
+                if (star.getAttribute('data-value') <= rating) {
+                    star.classList.add('selected');
+                }
+            });
+        }
+
+        function resetStars() {
+            stars.forEach(star => {
+                star.classList.remove('selected');
+            });
+        }
+    });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const averageRating = {{ $avgRating??0 }};  // Получаем среднюю оценку из контроллера
+            const starContainer = document.getElementById('average-stars');
+
+            // Рассчитываем количество полных, половинчатых и пустых звезд
+            const fullStars = Math.floor(averageRating);
+            const halfStar = averageRating % 1 >= 0.5 ? 1 : 0;
+            const emptyStars = 5 - fullStars - halfStar;
+            // Добавляем полные звезды
+            for (let i = 0; i < fullStars; i++) {
+                const star = document.createElement('span');
+                star.classList.add('star', 'full');
+                star.innerHTML = '&#9733;';  // Золотая звезда
+                starContainer.appendChild(star);
+            }
+
+            // Добавляем половину звезды, если нужно
+            if (halfStar) {
+                const halfStarElem = document.createElement('span');
+                halfStarElem.classList.add('star', 'half');
+                halfStarElem.innerHTML = '&#9733;';  // Символ звезды
+                starContainer.appendChild(halfStarElem);
+            }
+
+            // Добавляем пустые звезды
+            for (let i = 0; i < emptyStars; i++) {
+                const star = document.createElement('span');
+                star.classList.add('star', 'empty');
+                star.innerHTML = '&#9733;';  // Символ звезды
+                starContainer.appendChild(star);
+            }
+        });
+
+</script>
