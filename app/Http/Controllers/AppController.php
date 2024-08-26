@@ -10,9 +10,11 @@ class AppController extends Controller
     public function show(Request $request, $alias)
     {
         $app = App::where('alias', $alias)->first();
+        //dd($app->comments());
         return view('app', [
             'app' => $app,
             'comments' => $app->comments(),
+            'avgRating' => $app->avgRating()
         ]);
     }
 

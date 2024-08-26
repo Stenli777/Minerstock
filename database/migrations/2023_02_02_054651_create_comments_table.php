@@ -19,7 +19,7 @@ class CreateCommentsTable extends Migration
             $table->string('entity')->nullable();
             $table->integer('entity_id');
             $table->string('email');
-            $table->text('content_orig');
+            $table->text('content_orig')->nullable();
             $table->text('content')->nullable();
             $table->integer('vote')->nullable();
             $table->dateTime('moderated_at');
