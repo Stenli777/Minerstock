@@ -34,7 +34,7 @@
             @if ($app && count($app->tags))
                 <div>Теги:
                     @foreach($app->tags as $tag)
-                        <a class="pl-1" href="/tag/{{$tag->alias}}"><span style="font-size: 1em;" class="badge badge-primary">{{$tag->name}}</span></a>
+                        <a class="pl-1" href="/app_tag/{{$tag->alias}}"><span style="font-size: 1em;" class="badge badge-primary">{{$tag->name}}</span></a>
                     @endforeach
                 </div>
             @endif

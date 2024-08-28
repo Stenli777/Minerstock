@@ -188,16 +188,16 @@ Route::get('/tag/{alias}', function ($alias) {
 })->name('tag');
 
 Route::get('/app_tag/{alias}', function ($alias) {
-    $tag = \App\Models\ApplicationTag::query()
+    $tag = \App\Models\AppTag::query()
         ->where(['alias' => $alias])->first();
-    return view('tag', [
-        'tags' => \App\Models\ApplicationTag::all(),
+    return view('app_tag', [
+        'tags' => \App\Models\AppTag::all(),
         'tag' => $tag,
         'categories' => \App\Models\Category::all(),
         'news' =>  \App\Models\App::all()
             ->sortByDesc('created_at'),
         'posts' => \App\Models\App::query()
-            ->whereHas('app_tags',function ($q)  use($tag){
+            ->whereHas('tags',function ($q)  use($tag){
                 $q->where('app_tags.id',$tag->id);
             })
             ->orderByDesc('created_at')
