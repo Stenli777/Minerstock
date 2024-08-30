@@ -18,7 +18,7 @@ class App extends Model implements Sitemapable
 
     public function save(array $options = []): bool
     {
-        $this->alias = Str::slug($this->title);
+        $this->alias = Str::slug($this->name);
         $this->hashed_link = Str::random();
 
         return parent::save($options);
