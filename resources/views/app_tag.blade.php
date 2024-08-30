@@ -28,13 +28,20 @@
                 @endforeach
             </div>
             <div class="col-md-8">
-                <h2 class="mb-3">Записи по тегу: {{$tag->name}}</h2>
                 <div class="row">
-                    @foreach($posts as $post)
-                        <div class="col-md-4">
-                            @include('blocks.app')
+                    <div class="col-md-12">
+                        <h2 class="mb-3">Записи по тегу: {{$tag->name}}</h2>
+                        <div class="row">
+                            @foreach($posts as $post)
+                                <div class="col-md-4">
+                                    @include('blocks.app')
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-md-12">
+                    {!! $tag->text !!}
+                    </div>
                 </div>
             </div>
             <div class="col-md-2">
@@ -44,7 +51,11 @@
                             @include('blocks.sidebar_article')
                         </div>
                     @endforeach
+
+
             </div>
+
         </div>
+
     </div>
 @stop
