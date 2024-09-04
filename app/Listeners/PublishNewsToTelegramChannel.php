@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\NewsPublished;
+use App\Models\Post;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
@@ -28,13 +29,14 @@ class PublishNewsToTelegramChannel
      * @param  \App\Events\NewsPublished  $event
      * @return void
      */
-    public function handle(NewsPublished $event)
+    public function handle(NewsPublished $event = null)
     {
-
         $post = $event->post;
+        $post->content = preg_replace('/<h4>Оглавление:<\/h4>\s*<ul>.*?<\/ul>/is', '', $post->content);
 
         $plainTextContent = htmlspecialchars_decode(strip_tags($post->content));
         $excerpt = mb_substr($plainTextContent, 0, 400) . "...";
+
         if($post->is_news === 1){
             $message = "⚡⚡⚡*{$post->title}*\n\n{$excerpt}\n\n[" . "Читайте новость на сайте..." . "](" . url('/new/' . $post->alias) . ")";
         } else {

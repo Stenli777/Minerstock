@@ -26,8 +26,6 @@ class CreateAppAppTagsTable extends Migration
 
             $table->foreign('app_id','app_tag_app_fk')->on('apps')->references('id');
             $table->foreign('app_tag_id','app_tag_tag_fk')->on('app_tags')->references('id');
-
-
         });
     }
 
