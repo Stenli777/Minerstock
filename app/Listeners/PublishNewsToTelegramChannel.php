@@ -43,8 +43,6 @@ class PublishNewsToTelegramChannel
             $message = "🔥🔥🔥*{$post->title}*\n\n{$excerpt}\n\n[" . "Читайте статью на сайте..." . "](" . url('/post/' . $post->alias) . ")";
         }
 
-        dd($message);
-
         $imagePath = public_path("/storage/".$post->img);
         $absoluteImagePath = realpath($imagePath);
 
