@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class NewController extends Controller
 {
 
     /**
@@ -17,7 +17,7 @@ class PostController extends Controller
     public function show(Request $request, $alias)
     {
         $model = Post::with('category')->where('alias', $alias)->first();
-        if($model->is_news == 1){
+        if($model->is_news == 0){
             return abort(404);
         }
         return view('post', [
@@ -27,4 +27,5 @@ class PostController extends Controller
             'avgRating' => $model->avgRating()
         ]);
     }
+
 }
