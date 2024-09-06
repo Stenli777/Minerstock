@@ -13,6 +13,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Artisan;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 
@@ -37,27 +38,6 @@ class sitemap implements ShouldQueue
      */
     public function handle()
     {
-        \Spatie\Sitemap\Sitemap::create()
-            ->add(Url::create('/')
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                ->setPriority(1.0))
-            ->add(Url::create('/catalog')
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                ->setPriority(1.0))
-            ->add(Asic::all())
-            ->add(Url::create('/coin')
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                ->setPriority(1.0))
-            ->add(Url::create('/articles')
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                ->setPriority(1.0))
-            ->add(Category::all())
-            ->add(Post::all())
-            ->add(Tag::all())
-            ->add(Url::create('/mining-pools')
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                ->setPriority(0.9))
-            ->add(MiningPool::all())
-            ->writeToFile(public_path('sitemap.xml'));
+        Artisan::call('sitemap:generate');
     }
 }
