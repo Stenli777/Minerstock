@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Events\NewsPublished;
+use App\Jobs\PublishJob;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -20,7 +22,9 @@ class App extends Model implements Sitemapable
     {
         $this->alias = Str::slug($this->name);
         $this->hashed_link = Str::random();
-
+        $moscowTime = 'Europe/Moscow';
+        $this->created_at = Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at, $moscowTime)
+            ->setTimezone('UTC');
         return parent::save($options);
     }
     public function toSitemapTag(): Url|string|array
@@ -36,6 +40,17 @@ class App extends Model implements Sitemapable
         } else {
             return null;
         }
+    }
+
+    protected static function booted()
+    {
+        static::created(function ($post) {
+            if ($post->created_at > now()) {
+                PublishJob::dispatch($post)->delay($post->created_at);
+            } else {
+                event(new \App\Events\NewsPublished($post));
+            }
+        });
     }
 
 
