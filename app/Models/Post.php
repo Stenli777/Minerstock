@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Events\NewsPublished;
+use App\Jobs\PublishJob;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -27,7 +29,9 @@ class Post extends Model implements Sitemapable
     public function save(array $options = []): bool
     {
         $this->alias = Str::slug($this->title);
-
+        $moscowTime = 'Asia/Aden';
+        $this->created_at = Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at, $moscowTime)
+            ->setTimezone('UTC');
         return parent::save($options);
     }
 
@@ -52,8 +56,10 @@ class Post extends Model implements Sitemapable
     protected static function booted()
     {
         static::created(function ($post) {
-            if ($post->wasRecentlyCreated || $post->wasChanged()) {
-                event(new NewsPublished($post));
+            if ($post->created_at > now()) {
+                PublishJob::dispatch($post)->delay($post->created_at);
+            } else {
+                event(new \App\Events\NewsPublished($post));
             }
         });
     }
