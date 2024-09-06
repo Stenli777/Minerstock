@@ -30,6 +30,7 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-12">
+                        <h1 class="mb-3">{{$tag->title}}</h1>
                         <h2 class="mb-3">Записи по тегу: {{$tag->name}}</h2>
                         <div class="row">
                             @foreach($posts as $post)
@@ -40,7 +41,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                    {!! $tag->text !!}
+                    {!! $tag->description !!}
                     </div>
                 </div>
             </div>

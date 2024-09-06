@@ -218,12 +218,11 @@ Route::resource('/app',
 Route::get('/app/link/{hash}', [\App\Http\Controllers\AppController::class, 'link'])->name('app.link');
 
 Route::resource('/new',
-    \App\Http\Controllers\PostController::class)
+    \App\Http\Controllers\NewController::class)
     ->middleware([\App\Http\Middleware\Breadcrumbs::class])
     ->names('new');
 
 Route::get('/link/{id_internal_link}', [\App\Http\Controllers\PartnerLinkController::class, 'show']);
-Route::post('/api/gerwin/callback', [\App\Http\Controllers\GerwinController::class, 'callback']);
 Route::post('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'create']);
 Route::get('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'show']);
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');

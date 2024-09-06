@@ -28,22 +28,30 @@
                 @endforeach
             </div>
             <div class="col-md-8">
-                <h2 class="mb-3">Записи по тегу: {{$tag->name}}</h2>
                 <div class="row">
-                    @foreach($posts as $post)
-                        <div class="col-md-4">
-                            @include('blocks.article')
+                    <div class="col-md-12">
+                        <h1 class="mb-3">{{$tag->title}}</h1>
+                        <h2 class="mb-3">Записи по тегу: {{$tag->name}}</h2>
+                        <div class="row">
+                            @foreach($posts as $post)
+                                <div class="col-md-4">
+                                    @include('blocks.article')
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-md-12">
+                        {!! $tag->description !!}
+                    </div>
                 </div>
             </div>
             <div class="col-md-2">
-                    <h2 class="mb-3">Новости</h2>
-                    @foreach($news as $post)
-                        <div class="col p-0">
-                            @include('blocks.sidebar_article')
-                        </div>
-                    @endforeach
+                <h2 class="mb-3">Новости</h2>
+                @foreach($news as $post)
+                    <div class="col p-0">
+                        @include('blocks.sidebar_article')
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
