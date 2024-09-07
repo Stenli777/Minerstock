@@ -29,7 +29,7 @@ class Post extends Model implements Sitemapable
     public function save(array $options = []): bool
     {
         $this->alias = Str::slug($this->title);
-        $moscowTime = 'Europe/Moscow';
+        $moscowTime = 'Asia/Aden';
         $this->created_at = Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at, $moscowTime)
             ->setTimezone('UTC');
         return parent::save($options);

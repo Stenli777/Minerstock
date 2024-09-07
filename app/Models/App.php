@@ -22,7 +22,7 @@ class App extends Model implements Sitemapable
     {
         $this->alias = Str::slug($this->name);
         $this->hashed_link = Str::random();
-        $moscowTime = 'Europe/Moscow';
+        $moscowTime = 'Asia/Aden';
         $this->created_at = Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at, $moscowTime)
             ->setTimezone('UTC');
         return parent::save($options);
