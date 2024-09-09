@@ -34,30 +34,29 @@ class wtm_parse_coins implements ShouldQueue
      */
     public function handle()
     {
-        $response = Http::get('https://whattomine.com/asic.json');
-//        Log::info(var_export($response->json(),true));
-        $coinsAsic = $response->json('coins');
-        foreach ($coinsAsic as $key => $coin) {
-//            Log::info($coin);
-            $coin['name'] = $key;
-            $coin['coin_id'] = $coin['id'];
-            unset($coin['id']);
-            $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format('Y-m-d H:i:s');
-            $data = new WtmCoin($coin);
-            $data->save();
-        }
+        $responseAsic = Http::get('https://whattomine.com/asic.json');
+        $coinsAsic = $responseAsic->json('coins');
 
-        $response = Http::get('https://whattomine.com/coins.json');
-//        Log::info(var_export($response->json(),true));
-        $coinsCoin = $response->json('coins');
-        foreach ($coinsCoin as $key => $coin) {
-//            Log::info($coin);
+        $responseCoin = Http::get('https://whattomine.com/coins.json');
+        $coinsCoin = $responseCoin->json('coins');
+
+        $allCoins = array_merge($coinsAsic, $coinsCoin);
+
+        foreach ($allCoins as $key => $coin) {
+            // Преобразование данных
             $coin['name'] = $key;
             $coin['coin_id'] = $coin['id'];
             unset($coin['id']);
             $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format('Y-m-d H:i:s');
-            $data = new WtmCoin($coin);
-            $data->save();
+
+            // Найти или создать запись
+            $existingCoin = WtmCoin::where('coin_id', $coin['coin_id'])->first();
+
+            if ($existingCoin) {
+                $existingCoin->update($coin);
+            } else {
+                WtmCoin::create($coin);
+            }
         }
 
     }

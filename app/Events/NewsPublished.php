@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\App;
 use App\Models\Post;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -23,7 +24,7 @@ class NewsPublished
      */
     public $post;
 
-    public function __construct(Post $post)
+    public function __construct(Post|App $post)
     {
         $this->post = $post;
     }

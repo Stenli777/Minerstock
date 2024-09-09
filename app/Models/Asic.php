@@ -56,6 +56,10 @@ class Asic extends Model implements Sitemapable
     public function coins(){
         return $this->hasMany(Coin::class,'algorythm_id','algorythm_id');
     }
+    public function wtm_coins(){
+        $algorithmName = $this->algorythm->name;
+        return WtmCoin::where('algorithm', $algorithmName)->get();
+    }
     public function save(array $options = []){
         $hash = implode($this->shortHashrate());
         $this->name=str_replace(['А','Р','о','Т','е'],['A','P,','o','T','e'],$this->name);

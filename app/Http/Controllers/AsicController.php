@@ -56,6 +56,7 @@ class AsicController extends Controller
             return redirect("/asic/{$model->alias}", 301);
         }
         $model = Asic::with('producer', 'algorythm', 'coins')->where('alias', $id)->first();
+        //dd($model);
         $usd = Cbrf::query()->latest()->first('usdrub')->usdrub;
         return view('asic', [
             'asic' => $model,

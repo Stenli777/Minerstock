@@ -35,15 +35,19 @@ class cbfr implements ShouldQueue
     public function handle()
     {
         $response = Http::get('https://www.cbr-xml-daily.ru/daily_json.js');
-//        Log::info($response);
+        Log::info($response);
         $valute = $response->json('Valute');
-        Log::info($valute);
-        if ($valute['USD']) {
-            $cbrf = [];
-            $cbrf['usdrub'] = $valute['USD']['Value'];
-            $data = new Cbrf($cbrf);
-            $data->save();
-//            $cbrf['created_at'] = $response['Timestamp'];
+
+        if (isset($valute['USD'])) {
+            $usdrubValue = $valute['USD']['Value'];
+
+            $cbrf = Cbrf::first();
+
+            if ($cbrf) {
+                $cbrf->update(['usdrub' => $usdrubValue]);
+            } else {
+                Cbrf::create(['usdrub' => $usdrubValue]);
+            }
         }
     }
 }

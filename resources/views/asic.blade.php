@@ -182,7 +182,7 @@
                             @endforeach
                         </div>
                         <div class="tab-content" id="nav-tabContent">
-                            @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
+                            @foreach($asic->wtm_coins() as $k=>$coin)
                                 <div class="table-responsive tab-pane fade show {{$k==0?'active':''}}"
                                      id="nav-{{$coin->short_name}}"
                                      role="tabpanel" aria-labelledby="nav-{{$coin->short_name}}-tab">
@@ -218,24 +218,24 @@
                                                 День
                                             </td>
                                             <td>
-                                                {{$coin->name}} ({{$coin->short_name}})
+                                                {{$coin->name}} {{$coin->short_name}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate),8,',',' ')}}
+                                                {{number_format($coin->estimated_rewards,8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()),8,',',' ')}}
+                                                {{number_format($coin->btc_revenue*$asic->hashrate/1_000_000_000_000_000,8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd,2,',',' ')}}
+                                                {{number_format($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate/1_000_000_000_000_000 * $usd,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
                                                 {{number_format($asic->expenses($expenses),2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format(($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses),2,',',' ')}}
+                                                {{number_format(($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate/1_000_000_000_000_000 * $usd) - $asic->expenses($expenses),2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>
@@ -244,24 +244,24 @@
                                                 Месяц
                                             </td>
                                             <td>
-                                                {{$coin->name}} ({{$coin->short_name}})
+                                                {{ $coin->name }} ({{$coin->short_name}})
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,',',' ')}}
+                                                {{number_format($coin->estimated_rewards * 30.5,8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->priceBtc()) * 30.5,8,',',' ')}}
+                                                {{number_format($coin->btc_revenue*$asic->hashrate * 30.5,8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd * 30.5,2,',',' ')}}
+                                                {{number_format($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate * $usd * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
                                                 {{number_format($asic->expenses($expenses) * 30.5,2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format((($coin->minePerDay($asic->hashrate) * ($coin->price()) * $usd) - $asic->expenses($expenses)) * 30.5,2,',',' ')}}
+                                                {{number_format((($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate * $usd) - $asic->expenses($expenses)) * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>

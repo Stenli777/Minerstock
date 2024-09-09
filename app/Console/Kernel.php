@@ -20,9 +20,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->job(new wtm_parse_coins)->hourly();
-        $schedule->job(new binance)->daily();
-        $schedule->job(new cbfr)->hourly();
+        $schedule->job(new wtm_parse_coins)->everyMinute();
+        //$schedule->job(new binance)->daily();
+        $schedule->job(new cbfr)->everyMinute();
         $schedule->job(new sitemap)->hourly();
     }
 
