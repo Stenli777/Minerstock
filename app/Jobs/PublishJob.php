@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\App;
 use App\Models\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -21,7 +22,7 @@ class PublishJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(Post $post)
+    public function __construct(Post|App $post)
     {
         $this->post = $post;
     }
