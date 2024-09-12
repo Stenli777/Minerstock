@@ -28,7 +28,7 @@
                 <h2>Приложения</h2>
                 <div class="row">
                     @foreach($news as $post)
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             @include('blocks.app')
                         </div>
                     @endforeach

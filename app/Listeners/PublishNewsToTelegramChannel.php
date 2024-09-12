@@ -36,12 +36,14 @@ class PublishNewsToTelegramChannel
 
         $plainTextContent = htmlspecialchars_decode(strip_tags($post->content));
         $excerpt = mb_substr($plainTextContent, 0, 400) . "...";
-
-        if($post->is_news === 1){
+        if($post::class === 'App\Models\App'){
+            $message = "⚡⚡⚡*{$post->title}*\n\n{$excerpt}\n\n[" . "Читайте новость на сайте..." . "](" . url('/app/' . $post->alias) . ")";
+        } else if($post->is_news === 1){
             $message = "⚡⚡⚡*{$post->title}*\n\n{$excerpt}\n\n[" . "Читайте новость на сайте..." . "](" . url('/new/' . $post->alias) . ")";
         } else {
             $message = "🔥🔥🔥*{$post->title}*\n\n{$excerpt}\n\n[" . "Читайте статью на сайте..." . "](" . url('/post/' . $post->alias) . ")";
         }
+        Log::debug($message);
 
         $imagePath = public_path("/storage/".$post->img);
         $absoluteImagePath = realpath($imagePath);
