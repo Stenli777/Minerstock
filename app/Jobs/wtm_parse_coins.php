@@ -4,9 +4,7 @@ namespace App\Jobs;
 
 use App\Models\WtmCoin;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
@@ -34,29 +32,53 @@ class wtm_parse_coins implements ShouldQueue
      */
     public function handle()
     {
-        $responseAsic = Http::get('https://whattomine.com/asic.json');
+        $agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36';
+        $responseAsic = Http::withHeaders([
+            'User-Agent' => $agent
+        ])->get('https://whattomine.com/asic.json');
         $coinsAsic = $responseAsic->json('coins');
-
-        $responseCoin = Http::get('https://whattomine.com/coins.json');
+        sleep(rand(5, 12));
+        $responseCoin = Http::withHeaders([
+            'User-Agent' => $agent
+        ])->get('https://whattomine.com/coins.json');
         $coinsCoin = $responseCoin->json('coins');
 
         $allCoins = array_merge($coinsAsic, $coinsCoin);
+        foreach ($allCoins as $key => $coin)
+            $allCoins[$key]['name'] = $key;
+        usort($allCoins, function ($a, $b){
+           return -($a['exchange_rate'] <=> $b['exchange_rate']);
+        });
 
-        foreach ($allCoins as $key => $coin) {
-            // Преобразование данных
-            $coin['name'] = $key;
-            $coin['coin_id'] = $coin['id'];
-            unset($coin['id']);
-            $coin['timestamp'] = (new \DateTime())->setTimestamp($coin['timestamp'])->format('Y-m-d H:i:s');
+        foreach ($allCoins as $key => $coinFromList) {
+            sleep(rand(5, 12));
+            $response = Http::withHeaders([
+                'User-Agent' => $agent
+            ])->get("https://whattomine.com/coins/{$coinFromList['id']}.json?hr=1.0&p=0.0&fee=0.0&cost=0.0&cost_currency=USD&hcost=0.0&span_br=&span_d=24");
+            $coin = $response->json();
+            if(isset($coin['id'])) {
 
-            // Найти или создать запись
-            $existingCoin = WtmCoin::where('coin_id', $coin['coin_id'])->first();
+                $coin['name'] = $coinFromList['name'];
+                $coin['coin_id'] = $coin['id'];
+                unset($coin['id']);
+                $coin['estimated_rewards'] = str_replace(',', '', $coin['estimated_rewards']);
+                if (isset($coin['estimated_rewards']) && is_numeric($coin['estimated_rewards'])) {
+                    $coin['estimated_rewards'] = (float)$coin['estimated_rewards'];
+                } else {
+                    $coin['estimated_rewards'] = null;
+                }
+                $existingCoin = WtmCoin::where('coin_id', $coin['coin_id'])->first();
 
-            if ($existingCoin) {
-                $existingCoin->update($coin);
-            } else {
-                WtmCoin::create($coin);
+                if ($existingCoin) {
+                    if($key != $existingCoin['name']) {
+                        continue;
+                    }
+                    $existingCoin->update($coin);
+                } else {
+                    WtmCoin::create($coin);
+                }
             }
+
         }
 
     }
