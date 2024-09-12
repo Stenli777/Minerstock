@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
+
 class CommentController extends Controller
 {
 //    public function index($entity, $alias) {
@@ -42,6 +43,7 @@ class CommentController extends Controller
             'app' => 'App'
         ];
         $entity_model = 'App\\Models\\' . $entity_types[$entity];
+
         $id = $entity_model::aliasToId($alias);
         $model = $entity_model::find($id);
         return response()->json($model->comments());

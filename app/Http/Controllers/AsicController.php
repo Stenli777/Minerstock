@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Asic;
 use App\Models\Cbrf;
 use App\Models\Coin;
+use App\Models\WtmCoin;
 use Illuminate\Http\Request;
 
 class AsicController extends Controller
@@ -58,6 +59,7 @@ class AsicController extends Controller
         $model = Asic::with('producer', 'algorythm', 'coins')->where('alias', $id)->first();
         //dd($model);
         $usd = Cbrf::query()->latest()->first('usdrub')->usdrub;
+        $btcCoin = WtmCoin::where('name', 'Bitcoin')->first();
         return view('asic', [
             'asic' => $model,
             'comments' => $model->comments(),
@@ -67,6 +69,7 @@ class AsicController extends Controller
                 ['id', '!=', $model->id]
             ])->inRandomOrder()->paginate(4),
             'usd' => $usd,
+            'btcCoin' => $btcCoin,
             'expenses' => (float)str_replace(',', '.', $request->input('expenses', 4.0)),
             'simular' => Asic::where([
                 ['name', $model->name],

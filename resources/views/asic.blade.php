@@ -155,7 +155,7 @@
             <h3 class="font-weight-bold mt-3 mb-3">Добыча асика</h3>
         </div>
         <div class="col">
-            @if(count($asic->coins()->where('coin_active',true)->orderBy('order')->get()) > 1)
+            @if(count($asic->wtm_coins()) > 1)
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-link active" href="#view_tabs" id="nav_tabs" data-toggle="tab" role="tab"
@@ -170,22 +170,22 @@
                 <div class="tab-pane fade show active" id="nav-tabs" role="tabpanel" aria-labelledby="nav-tabs-tab">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
-                                @if($coin->price() !== 0)
+                            @foreach($asic->wtm_coins() as $k=>$coin)
+                                @if($coin->exchange_rate !== 0)
                                     <a class="nav-item nav-link {{$k==0?'active':''}}"
-                                       id="nav-{{$coin->short_name}}-tab" data-toggle="tab"
-                                       href="#nav-{{$coin->short_name}}" role="tab"
-                                       aria-controls="nav-{{$coin->short_name}}"
-                                       aria-selected="{{$k==0?'true':'false'}}">{{$coin->name}}({{$coin->short_name}}
-                                        )</a>
+                                       id="nav-{{$coin->tag}}-tab" data-toggle="tab"
+                                       href="#nav-{{$coin->tag}}" role="tab"
+                                       aria-controls="nav-{{$coin->tag}}"
+                                       aria-selected="{{$k==0?'true':'false'}}">{{$coin->name}}({{$coin->tag}})
+                                    </a>
                                 @endif
                             @endforeach
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                             @foreach($asic->wtm_coins() as $k=>$coin)
                                 <div class="table-responsive tab-pane fade show {{$k==0?'active':''}}"
-                                     id="nav-{{$coin->short_name}}"
-                                     role="tabpanel" aria-labelledby="nav-{{$coin->short_name}}-tab">
+                                     id="nav-{{$coin->tag}}"
+                                     role="tabpanel" aria-labelledby="nav-{{$coin->tag}}-tab">
                                     <table class="table table-hover text-center" data-mobile-responsive="true">
                                         <thead>
                                         <tr>
@@ -218,24 +218,24 @@
                                                 День
                                             </td>
                                             <td>
-                                                {{$coin->name}} {{$coin->short_name}}
+                                                {{$coin->name}} ({{$coin->tag}})
                                             </td>
                                             <td>
-                                                {{number_format($coin->estimated_rewards,8,',',' ')}}
+                                                {{number_format((($coin->tag=='BTC')?$coin->btc_revenue:$coin->estimated_rewards) * ($asic->hashrate/1_000_000_000_000),8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->btc_revenue*$asic->hashrate/1_000_000_000_000_000,8,',',' ')}}
+                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000),8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate/1_000_000_000_000_000 * $usd,2,',',' ')}}
+                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
                                                 {{number_format($asic->expenses($expenses),2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format(($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate/1_000_000_000_000_000 * $usd) - $asic->expenses($expenses),2,',',' ')}}
+                                                {{number_format(($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd) - $asic->expenses($expenses),2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>
@@ -244,24 +244,24 @@
                                                 Месяц
                                             </td>
                                             <td>
-                                                {{ $coin->name }} ({{$coin->short_name}})
+                                                {{ $coin->name }} ({{$coin->tag}})
                                             </td>
                                             <td>
-                                                {{number_format($coin->estimated_rewards * 30.5,8,',',' ')}}
+                                                {{number_format((($coin->tag=='BTC')?$coin->btc_revenue:$coin->estimated_rewards) * ($asic->hashrate/1_000_000_000_000) * 30.5,8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->btc_revenue*$asic->hashrate * 30.5,8,',',' ')}}
+                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * 30.5,8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate * $usd * 30.5,2,',',' ')}}
+                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
                                                 {{number_format($asic->expenses($expenses) * 30.5,2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format((($coin->estimated_rewards * $coin->exchange_rate * $asic->hashrate * $usd) - $asic->expenses($expenses)) * 30.5,2,',',' ')}}
+                                                {{number_format((($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd) - $asic->expenses($expenses)) * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>
@@ -292,20 +292,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($asic->coins()->where('coin_active',true)->orderBy('order')->get() as $k=>$coin)
-                            @if($coin->price() !== 0)
+                        @foreach($asic->wtm_coins() as $k=>$coin)
+                            @if($coin->exchange_rate !== 0)
                                 <tr>
                                     <td>
-                                        {{$coin->name}} ({{$coin->short_name}})
+                                        {{$coin->name}} ({{$coin->tag}})
                                     </td>
                                     <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * 30.5,8,',',' ')}}
+                                        {{number_format($coin->estimated_rewards * $asic->hashrate/1_000_000_000_000 * 30.5,8,',',' ')}}
                                     </td>
                                     <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->priceBtc() * 30.5,8,',',' ')}}
+                                        {{number_format($coin->btc_revenue * $asic->hashrate/1_000_000_000_000 * 30.5,8,',',' ')}}
                                     </td>
                                     <td>
-                                        {{number_format($coin->minePerDay($asic->hashrate) * $coin->price() * $usd * 30.5,2,',',' ')}}
+                                        {{number_format($coin->btc_revenue * $asic->hashrate/1_000_000_000_000 * $btcCoin->exchange_rate * $usd * 30.5,2,',',' ')}}
                                         ₽
                                     </td>
                                 </tr>
