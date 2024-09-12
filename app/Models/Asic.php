@@ -58,7 +58,7 @@ class Asic extends Model implements Sitemapable
     }
     public function wtm_coins(){
         $algorithmName = $this->algorythm->name;
-        return WtmCoin::where('algorithm', $algorithmName)->get();
+        return WtmCoin::where('algorithm', $algorithmName)->where('exchange_rate', '!=', 0)->orderBy('exchange_rate', 'desc')->get();
     }
     public function save(array $options = []){
         $hash = implode($this->shortHashrate());

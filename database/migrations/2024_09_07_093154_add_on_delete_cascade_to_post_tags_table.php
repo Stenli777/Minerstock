@@ -14,7 +14,7 @@ class AddOnDeleteCascadeToPostTagsTable extends Migration
     public function up()
     {
         Schema::table('post_tags', function (Blueprint $table) {
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            //$table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
@@ -26,7 +26,7 @@ class AddOnDeleteCascadeToPostTagsTable extends Migration
     public function down()
     {
         Schema::table('post_tags', function (Blueprint $table) {
-            $table->dropColumn('post_id');
+            //$table->dropColumn('post_id');
         });
     }
 }

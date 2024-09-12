@@ -35,7 +35,6 @@ class cbfr implements ShouldQueue
     public function handle()
     {
         $response = Http::get('https://www.cbr-xml-daily.ru/daily_json.js');
-        Log::info($response);
         $valute = $response->json('Valute');
 
         if (isset($valute['USD'])) {
