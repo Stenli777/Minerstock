@@ -74,7 +74,7 @@
                                 <div id="collapseOne" class="collapse" aria-labelledby="coinFilter"
                                      data-parent="#coinAccordion">
 
-                                    @foreach(\App\Models\Coin::where('coin_active',true)->orderBy('order','ASC')->get() as $coin)
+                                    @foreach(\App\Models\Coin::with('wtm_coin')->where('coin_active', true)->orderBy('order', 'ASC')->get() as $coin)
                                         @if($coin->price() != 0)
                                             <div class="custom-control custom-checkbox">
                                                 <input name="coin[]" type="checkbox" class="custom-control-input"

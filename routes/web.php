@@ -53,7 +53,7 @@ Route::resource('/asic',
 
 //Каталог асиков
 Route::get('/catalog', function (Illuminate\Http\Request $request) {
-    $asics = \App\Models\Asic::with('producer')
+    $asics = \App\Models\Asic::with('producer', 'algorythm', 'coins')
         ->orderByDesc('order');
 
     if ($request->input('producer_id')) {
@@ -88,7 +88,12 @@ Route::get('/catalog', function (Illuminate\Http\Request $request) {
 
 //Каталог монет
 Route::get('/coins', function () {
-    return view('coins', ['coins' => \App\Models\Coin::with('algorythm')->where('coin_active', true)->orderBy('order')->paginate(100)]);
+    return view('coins', [
+        'coins' => \App\Models\Coin::with('algorythm', 'wtm_coin')
+            ->where('coin_active', true)
+            ->orderBy('order')
+            ->paginate(100),
+        ]);
 });
 
 //Каталог майнинг компаний
