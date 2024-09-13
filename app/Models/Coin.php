@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Services\BtcExchangeRateService;
 
 class Coin extends Model
 {
@@ -40,12 +41,18 @@ class Coin extends Model
         return $this->where('coin_active',1);
     }
 
-    private function binance(){
+    public function binance(){
         return $this->hasMany(Binance::class);
-//        return $this->hasMany(Binance::class)->latest()->first()->avg_price;
     }
-    public function price(){
-        return $this->binance()->latest()->first()?$this->binance()->latest()->first()->avg_price:0;
+    public function price()
+    {
+        $wtm_coin = $this->wtm_coin;
+        if($wtm_coin && $this->tag != 'BTC'){
+            $btcService = app(BtcExchangeRateService::class);
+            $btcRate = $btcService->getBtcExchangeRate();
+            return $wtm_coin->exchange_rate*$btcRate;
+        }
+        return 0;
     }
     public function priceBtc(){
         return $this->price() / Binance::query()->where('coin_id',25)->latest()->first()->avg_price;
