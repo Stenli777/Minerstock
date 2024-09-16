@@ -9,6 +9,8 @@ class Algorythm extends Model
 {
     use HasFactory;
 
+    protected $guarded = false;
+
     public function coins(){
         return $this->hasMany(Coin::class);
     }
