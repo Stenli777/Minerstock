@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Algorythm;
 use App\Models\WtmCoin;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -44,8 +45,18 @@ class wtm_parse_coins implements ShouldQueue
         $coinsCoin = $responseCoin->json('coins');
 
         $allCoins = array_merge($coinsAsic, $coinsCoin);
-        foreach ($allCoins as $key => $coin)
+        $algorithms = [];
+        foreach ($allCoins as $key => $coin) {
             $allCoins[$key]['name'] = $key;
+            $algorithms[] = $coin['algorithm'];
+        }
+        $algorithms = array_unique($algorithms);
+        foreach ($algorithms as $algorithmName) {
+            $algorithmName = trim($algorithmName);
+            if (!empty($algorithmName)) {
+                Algorythm::firstOrCreate(['name' => $algorithmName]);
+            }
+        }
         usort($allCoins, function ($a, $b){
            return -($a['exchange_rate'] <=> $b['exchange_rate']);
         });
