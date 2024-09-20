@@ -57,6 +57,7 @@
     <script>window.yaContextCb=window.yaContextCb||[]</script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
     <!-- /Yandex.RTB -->
+
 </head>
 <body class="antialiased {{$_SERVER['REQUEST_URI'] === '/'?"main-page":""}}">
 @include('parts.header')
