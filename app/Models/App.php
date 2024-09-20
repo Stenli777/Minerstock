@@ -58,4 +58,9 @@ class App extends Model implements Sitemapable
     {
         return $this->belongsToMany(AppTag::class,'app_app_tags');
     }
+
+    public function blockchains()
+    {
+        return $this->belongsToMany(Blockchain::class, 'app_blockchain');
+    }
 }

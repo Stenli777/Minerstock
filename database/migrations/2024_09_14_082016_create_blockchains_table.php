@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddOnDeleteCascadeToPostTagsTable extends Migration
+class CreateBlockchainsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddOnDeleteCascadeToPostTagsTable extends Migration
      */
     public function up()
     {
-        Schema::table('post_tags', function (Blueprint $table) {
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+        Schema::create('blockchains', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddOnDeleteCascadeToPostTagsTable extends Migration
      */
     public function down()
     {
-        Schema::table('post_tags', function (Blueprint $table) {
-            $table->dropColumn('post_id');
-        });
+        Schema::dropIfExists('blockchains');
     }
 }
