@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 @section('og-tags')
     <!-- Open Graph -->
@@ -31,6 +32,16 @@
                     {!! $app->content !!}
                 </div>
                 <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">{{ $app->link_title }}</a></p>
+                <!-- Yandex.RTB R-A-2404949-14 -->
+                <div id="yandex_rtb_R-A-2404949-14"></div>
+                <script>
+                    window.yaContextCb.push(() => {
+                        Ya.Context.AdvManager.render({
+                            "blockId": "R-A-2404949-14",
+                            "renderTo": "yandex_rtb_R-A-2404949-14"
+                        })
+                    })
+                </script>
             @if ($app && count($app->tags))
                 <div>Теги:
                     @foreach($app->tags as $tag)
