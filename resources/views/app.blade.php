@@ -33,7 +33,7 @@
                 </div>
                 <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">{{ $app->link_title }}</a></p>
                 <!-- Yandex.RTB R-A-2404949-14 -->
-                <div id="yandex_rtb_R-A-2404949-14"></div>
+                <div id="yandex_rtb_R-A-2404949-14" class="mb-4"></div>
                 <script>
                     window.yaContextCb.push(() => {
                         Ya.Context.AdvManager.render({
