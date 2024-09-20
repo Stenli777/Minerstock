@@ -110,7 +110,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 <script src="/js/jquery-3.6.1.min.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
-<script src="extensions/mobile/bootstrap-table-mobile.js"></script>
+{{--<script src="/extensions/mobile/bootstrap-table-mobile.js"></script>--}}
+@yield('script')
 <script src="/js/app.js"></script>
 </body>
 </html>

@@ -16,6 +16,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/coins">Монеты</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/apps">Приложения</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="usefulDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Полезное
@@ -23,7 +26,6 @@
                         <div class="dropdown-menu" aria-labelledby="usefulDropdown">
                             <a class="dropdown-item" href="/articles">Статьи</a>
                             <a class="dropdown-item" href="/news">Новости</a>
-                            <a class="dropdown-item" href="/apps">Приложения</a>
                             <a class="dropdown-item" href="/mining-pools">Майнинг пулы</a>
                             <a class="dropdown-item" href="/cryptowiki">Криптословарь</a>
                             <a class="dropdown-item disabled" href="#">Персоны</a>
@@ -56,6 +58,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/coins">Монеты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/apps">Приложения</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/mining-pools">Майнинг пулы</a>
