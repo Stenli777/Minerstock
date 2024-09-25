@@ -74,7 +74,10 @@ class wtm_parse_coins implements ShouldQueue
                 unset($coin['id']);
                 $coin['estimated_rewards'] = str_replace(',', '', $coin['estimated_rewards']);
                 if (isset($coin['estimated_rewards']) && is_numeric($coin['estimated_rewards'])) {
-                    $coin['estimated_rewards'] = (float)$coin['estimated_rewards'];
+                    //$coin['estimated_rewards'] = (float)$coin['estimated_rewards'];
+                    $coin['estimated_rewards'] =
+                        (1000000000/(float)$coin['nethash'])*
+                        86400/(float)$coin['block_time']*(float)$coin['block_reward'];
                 } else {
                     $coin['estimated_rewards'] = null;
                 }

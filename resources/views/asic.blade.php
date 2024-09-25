@@ -221,21 +221,21 @@
                                                 {{$coin->name}} ({{$coin->tag}})
                                             </td>
                                             <td>
-                                                {{number_format((($coin->tag=='BTC')?$coin->btc_revenue:$coin->estimated_rewards) * ($asic->hashrate/1_000_000_000_000),8,',',' ')}}
+                                                {{number_format($coin->estimated_rewards * ($asic->hashrate/1_000_000_000),8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000),8,',',' ')}}
+                                                {{number_format((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards  * ($asic->hashrate/1_000_000_000),8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd,2,',',' ')}}
+                                                {{number_format((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards * ($asic->hashrate/1_000_000_000) * $btcCoin->exchange_rate * $usd,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
                                                 {{number_format($asic->expenses($expenses),2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format(($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd) - $asic->expenses($expenses),2,',',' ')}}
+                                                {{number_format(((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards * ($asic->hashrate/1_000_000_000) * $btcCoin->exchange_rate * $usd) - $asic->expenses($expenses),2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>
@@ -247,21 +247,21 @@
                                                 {{ $coin->name }} ({{$coin->tag}})
                                             </td>
                                             <td>
-                                                {{number_format((($coin->tag=='BTC')?$coin->btc_revenue:$coin->estimated_rewards) * ($asic->hashrate/1_000_000_000_000) * 30.5,8,',',' ')}}
+                                                {{number_format(($coin->estimated_rewards) * ($asic->hashrate/1_000_000_000) * 30.5,8,',',' ')}}
                                             </td>
                                             <td>
-                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * 30.5,8,',',' ')}}
+                                                {{number_format((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards * ($asic->hashrate/1_000_000_000) * 30.5,8,',',' ')}}
                                                 ₿
                                             </td>
                                             <td>
-                                                {{number_format($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd * 30.5,2,',',' ')}}
+                                                {{number_format((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards * ($asic->hashrate/1_000_000_000) * $btcCoin->exchange_rate * $usd * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                             <td>
                                                 {{number_format($asic->expenses($expenses) * 30.5,2,',',' ')}} ₽
                                             </td>
                                             <td>
-                                                {{number_format((($coin->btc_revenue * ($asic->hashrate/1_000_000_000_000) * $btcCoin->exchange_rate * $usd) - $asic->expenses($expenses)) * 30.5,2,',',' ')}}
+                                                {{number_format((((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards * ($asic->hashrate/1_000_000_000) * $btcCoin->exchange_rate * $usd) - $asic->expenses($expenses)) * 30.5,2,',',' ')}}
                                                 ₽
                                             </td>
                                         </tr>
@@ -299,13 +299,13 @@
                                         {{$coin->name}} ({{$coin->tag}})
                                     </td>
                                     <td>
-                                        {{number_format($coin->estimated_rewards * $asic->hashrate/1_000_000_000_000 * 30.5,8,',',' ')}}
+                                        {{number_format($coin->estimated_rewards * $asic->hashrate/1_000_000_000 * 30.5,8,',',' ')}}
                                     </td>
                                     <td>
-                                        {{number_format($coin->btc_revenue * $asic->hashrate/1_000_000_000_000 * 30.5,8,',',' ')}}
+                                        {{number_format((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards * $asic->hashrate/1_000_000_000 * 30.5,8,',',' ')}}
                                     </td>
                                     <td>
-                                        {{number_format($coin->btc_revenue * $asic->hashrate/1_000_000_000_000 * $btcCoin->exchange_rate * $usd * 30.5,2,',',' ')}}
+                                        {{number_format((($coin->tag === "BTC")?1:$coin->exchange_rate) * $coin->estimated_rewards * $asic->hashrate/1_000_000_000 * $btcCoin->exchange_rate * $usd * 30.5,2,',',' ')}}
                                         ₽
                                     </td>
                                 </tr>
