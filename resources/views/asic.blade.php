@@ -40,101 +40,110 @@
                 </div>
 
             </div>
-            <div class="col-sm-5">
-                {{--                <h2>Характеристики асика</h2>--}}
+            <div class="col-sm-8">
                 <div class="row">
-                    {{--                    <p>Курс доллара: {{$asic->usd()}}</p>--}}
-                    <div class="col-8">Хэшрейт:</div>
-                    <div class="col">{{$asic->humanHashrate()}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-8">Энергоэффективность:</div>
-                    <div class="col">{{$asic->countEfficiency()}}</div>
-                </div>
-                <div class="row" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
-                    <meta itemprop="name" content="{{$asic->producer->name}}"/>
-                    <div class="col-8">Производитель:</div>
-                    <div class="col">{{$asic->producer->name}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-8">Алгоритм:</div>
-                    <div class="col">{{$asic->algorythm->name}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-8">Потребление:</div>
-                    <div class="col">{{number_format($asic->consumption,0,'',' ')}} Вт</div>
-                </div>
-                @if($asic->sales_data_start!= null)
-                    <div class="row">
-                        <div class="col-8">Старт продаж:</div>
-                        <div class="col">{{$asic->sales_data_start}}</div>
-                    </div>
-                @endif
-                @if ($asic->packing_size != null)
-                    <div class="row">
-                        <div class="col-8">Габариты с упаковкой:</div>
-                        <div class="col">{{$asic->packing_size}}</div>
-                    </div>
-                @endif
-                @if ($asic->weight_brutto != null)
-                    <div class="row">
-                        <div class="col-8">Вес с упаковкой:</div>
-                        <div class="col">{{$asic->weight_brutto}} кг.</div>
-                    </div>
-                @endif
-                @if ($asic->dimensions != 'NA')
-                    <div class="row">
-                        <div class="col-8">Габариты асика:</div>
-                        <div class="col">{{$asic->dimensions}}</div>
-                    </div>
-                @endif
-                @if($asic->weight_netto != 0)
-                    <div class="row">
-                        <div class="col-8">Вес асика:</div>
-                        <div class="col">{{$asic->weight_netto}} кг.</div>
-                    </div>
-                @endif
-                @if ($asic->noise!=0)
-                    <div class="row">
-                        <div class="col-8">Шум:</div>
-                        <div class="col">{{$asic->noise}} Дб</div>
-                    </div>
-                @endif
-                @if($asic->chips != 0)
-                    <div class="row">
-                        <div class="col-8">Количество чипов:</div>
-                        <div class="col">{{$asic->chips}}</div>
-                    </div>
-                @endif
-                @if($asic->cooling != null)
-                    <div class="row">
-                        <div class="col-8">Охлаждение:</div>
-                        <div class="col">{{$asic->cooling}}</div>
-                    </div>
-                @endif
-
-            </div>
-            <div class="col-sm-3">
-                <div class="row">
-                    <form action="{{url()->current()}}" method="get" class="col">
-
-                        <h5 class="mb-3">Калькулятор доходности</h5>
-                        <p>Чтобы определить расходы, доходы и прибыль от майнера укажите стоимость электроэнергии в
-                            вашей локации за 1 кВтч и нажмите кнопку "Рассчитать"</p>
-                        <p>Введите стоимость кВт/ч:</p>
+                    <div class="col-sm-7">
+                        {{--                <h2>Характеристики асика</h2>--}}
                         <div class="row">
-                            <div class="col-4">
-                                <input name="expenses" value="{{$expenses}}" type="float" class="form-control"
-                                       placeholder="{{$expenses}} руб">
-                            </div>
-                            <div class="col-8">
-                                <input type="submit" class="btn btn-primary btn-sm btn-block mt-1"
-                                       value="Рассчитать"></input>
-                            </div>
+                            {{--                    <p>Курс доллара: {{$asic->usd()}}</p>--}}
+                            <div class="col-8">Хэшрейт:</div>
+                            <div class="col">{{$asic->humanHashrate()}}</div>
                         </div>
+                        <div class="row">
+                            <div class="col-8">Энергоэффективность:</div>
+                            <div class="col">{{$asic->countEfficiency()}}</div>
+                        </div>
+                        <div class="row" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
+                            <meta itemprop="name" content="{{$asic->producer->name}}"/>
+                            <div class="col-8">Производитель:</div>
+                            <div class="col">{{$asic->producer->name}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8">Алгоритм:</div>
+                            <div class="col">{{$asic->algorythm->name}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8">Потребление:</div>
+                            <div class="col">{{number_format($asic->consumption,0,'',' ')}} Вт</div>
+                        </div>
+                        @if($asic->sales_data_start!= null)
+                            <div class="row">
+                                <div class="col-8">Старт продаж:</div>
+                                <div class="col">{{$asic->sales_data_start}}</div>
+                            </div>
+                        @endif
+                        @if ($asic->packing_size != null)
+                            <div class="row">
+                                <div class="col-8">Габариты с упаковкой:</div>
+                                <div class="col">{{$asic->packing_size}}</div>
+                            </div>
+                        @endif
+                        @if ($asic->weight_brutto != null)
+                            <div class="row">
+                                <div class="col-8">Вес с упаковкой:</div>
+                                <div class="col">{{$asic->weight_brutto}} кг.</div>
+                            </div>
+                        @endif
+                        @if ($asic->dimensions != 'NA')
+                            <div class="row">
+                                <div class="col-8">Габариты асика:</div>
+                                <div class="col">{{$asic->dimensions}}</div>
+                            </div>
+                        @endif
+                        @if($asic->weight_netto != 0)
+                            <div class="row">
+                                <div class="col-8">Вес асика:</div>
+                                <div class="col">{{$asic->weight_netto}} кг.</div>
+                            </div>
+                        @endif
+                        @if ($asic->noise!=0)
+                            <div class="row">
+                                <div class="col-8">Шум:</div>
+                                <div class="col">{{$asic->noise}} Дб</div>
+                            </div>
+                        @endif
+                        @if($asic->chips != 0)
+                            <div class="row">
+                                <div class="col-8">Количество чипов:</div>
+                                <div class="col">{{$asic->chips}}</div>
+                            </div>
+                        @endif
+                        @if($asic->cooling != null)
+                            <div class="row">
+                                <div class="col-8">Охлаждение:</div>
+                                <div class="col">{{$asic->cooling}}</div>
+                            </div>
+                        @endif
+
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="row">
+                            <form action="{{url()->current()}}" method="get" class="col">
+
+                                <h5 class="mb-3">Калькулятор доходности</h5>
+                                <p>Чтобы определить расходы, доходы и прибыль от майнера укажите стоимость электроэнергии в
+                                    вашей локации за 1 кВтч и нажмите кнопку "Рассчитать"</p>
+                                <p>Введите стоимость кВт/ч:</p>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <input name="expenses" value="{{$expenses}}" type="float" class="form-control"
+                                               placeholder="{{$expenses}} руб">
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="submit" class="btn btn-primary btn-sm btn-block mt-1"
+                                               value="Рассчитать"></input>
+                                    </div>
+                                </div>
 
 
-                    </form>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mt-4">
+                        <button type="button" class="btn btn-primary mt-4 float-right" data-toggle="modal" data-target="#applicationModal">
+                            Оставить заявку
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -393,7 +402,6 @@
 
     </div>
 
-    </div>
     <div class="separator">
         <h2 class="pt-5 pb-5">Другое оборудование на {{$asic->algorythm->name}}</h2>
     </div>

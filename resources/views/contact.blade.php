@@ -32,6 +32,9 @@
                         <p>{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <div id="captcha-container" class="smart-captcha" data-sitekey="{{ config('services.yandex_captcha.sitekey') }}"></div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
             </div>

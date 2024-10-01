@@ -228,10 +228,10 @@ Route::resource('/new',
     ->names('new');
 
 Route::get('/link/{id_internal_link}', [\App\Http\Controllers\PartnerLinkController::class, 'show']);
-Route::post('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'create']);
+Route::post('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'create'])->middleware('yandex.captcha');
 Route::get('/{entity}/{alias}/comment', [\App\Http\Controllers\CommentController::class, 'show']);
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
-Route::post('/contact', [ContactController::class, 'sendContactForm'])->name('contact.submit');
+Route::post('/contact', [ContactController::class, 'sendContactForm'])->name('contact.submit')->middleware('yandex.captcha');
 Route::get('/contact/success', function () {
     return view('contact-success');
 })->name('contact.success');
@@ -291,3 +291,7 @@ Route::resource('/deal',
     ->names('deal');
 
 
+Route::post('/asic-application',
+    [\App\Http\Controllers\AsicApplicationController::class, 'submitApplication'])
+    ->middleware('yandex.captcha')
+    ->name('asic-application');
