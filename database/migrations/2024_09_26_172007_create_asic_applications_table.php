@@ -16,6 +16,7 @@ class CreateAsicApplicationsTable extends Migration
         Schema::create('asic_applications', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('asic_name');
             $table->string('phone');
             $table->string('telegram')->nullable();
             $table->boolean('processed')->default(false);

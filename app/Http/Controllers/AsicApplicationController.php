@@ -15,16 +15,9 @@ class AsicApplicationController extends Controller
     public function submitApplication(AsicApplicationRequest $request)
     {
         $validatedData = $request->validated();
-
         $application = AsicApplication::create($validatedData);
+        $adminEmail = 'alekseysten777@yandex.ru';
 
-        $adminEmail = 'bigmichael1922@gmail.com';
-
-//
-//        $admins = User::all();
-//
-//        Notification::send($admins, new NewAsicApplicationNotification($application));
-//
         Notification::route('mail', $adminEmail)
             ->notify(new NewAsicApplicationNotification($application));
 

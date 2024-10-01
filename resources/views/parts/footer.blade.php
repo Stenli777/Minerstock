@@ -100,6 +100,7 @@
     </div>
     <!-- Модальные окна -->
     @extends('contact')
+    <script src="https://captcha-api.yandex.ru/captcha.js" defer></script>
 
 </footer>
 

@@ -27,6 +27,7 @@ class AsicApplicationRequest extends FormRequest
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
             'telegram' => 'nullable|string|max:255',
+            'asic_name' => 'required|string',
             'smart-token' => 'nullable|string',
         ];
     }

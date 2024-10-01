@@ -402,7 +402,6 @@
 
     </div>
 
-    </div>
     <div class="separator">
         <h2 class="pt-5 pb-5">Другое оборудование на {{$asic->algorythm->name}}</h2>
     </div>

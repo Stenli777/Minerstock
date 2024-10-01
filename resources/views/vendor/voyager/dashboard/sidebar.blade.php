@@ -30,9 +30,25 @@
 
         </div>
         <div id="adminmenu">
+
             @php
-                $unprocessedAsicApplicationsCount = \App\Models\AsicApplication::where('processed', false)->count();
+                $unprocessedCount = \App\Models\AsicApplication::where('processed', false)->count();
+                $menuItems = menu('admin', '_json');
+                function modifyMenuItems($items, $unprocessedCount) {
+                    foreach ($items as &$item) {
+                        if ($item->title == 'Заявки') {
+                            $item->title .= ' (' . $unprocessedCount . ')';
+                        }
+
+                        if (!empty($item->children)) {
+                            $item->children = modifyMenuItems($item->children, $unprocessedCount);
+                        }
+                    }
+                    return $items;
+                }
+
+                $menuItems = modifyMenuItems($menuItems, $unprocessedCount);
             @endphp
-            <admin-menu :items="{{ menu('admin', '_json') }}" :unprocessed-count="{{ $unprocessedAsicApplicationsCount }}"></admin-menu>        </div>
+            <admin-menu :items='@json($menuItems)'></admin-menu>        </div>
     </nav>
 </div>

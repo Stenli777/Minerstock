@@ -13,5 +13,5 @@ class AsicApplication extends Model
 
     protected $table = 'asic_applications';
 
-    protected $fillable = ['name', 'phone', 'telegram', 'processed'];
+    protected $fillable = ['name', 'phone', 'telegram', 'processed', 'asic_name'];
 }

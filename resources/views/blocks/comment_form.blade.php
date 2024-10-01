@@ -94,6 +94,9 @@
                             <label for="comment">Комментарий:</label>
                             <textarea class="form-control" name="content" id="comment" rows="5" placeholder="Введите ваш комментарий" required></textarea>
                         </div>
+                        <div class="form-group">
+                            <div id="captcha-container" class="smart-captcha" data-sitekey="{{ config('services.yandex_captcha.sitekey') }}"></div>
+                        </div>
                         <button type="submit" class="btn btn-primary">Отправить</button>
                     </form>
                 </div>
@@ -114,6 +117,7 @@
             <div class="modal-body">
                 <form action="{{ route('asic-application') }}" method="POST">
                     @csrf
+                    <input type="hidden" name="asic_name" value="{{ isset($asic->name)?$asic->name." ".$asic->humanHashrate():"" }}">
                     <div class="form-group">
                         <label for="name">Имя:</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Введите ваше имя" required>
@@ -137,7 +141,6 @@
     </div>
 </div>
 
-<script src="https://captcha-api.yandex.ru/captcha.js" defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const stars = document.querySelectorAll('.star-rating span');

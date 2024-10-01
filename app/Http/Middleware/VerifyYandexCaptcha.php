@@ -19,7 +19,6 @@ class VerifyYandexCaptcha
             return back()->withErrors(['captcha' => 'Капча не пройдена.'])->withInput();
         }
 
-
         $captchaResponse = $request->input('smart-token');
 
         try {
