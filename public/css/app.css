@@ -10010,3 +10010,48 @@ privacy {
   color: #333 !important;
   transition: all 0.3s;
 }
+.star-rating {
+    display: inline-flex;
+    direction: ltr;
+}
+
+.star-rating span {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star-rating span:hover,
+.star-rating span.active,
+.star-rating span.selected {
+    color: gold;
+}
+.star-rating {
+    display: inline-flex;
+}
+
+.star {
+    font-size: 2rem;
+    color: gold;
+    position: relative;
+    cursor: pointer;
+}
+
+.star.empty {
+    color: #ddd;
+}
+
+.star.half {
+    color: #ddd;
+    position: relative;
+}
+
+.star.half::before {
+    content: '\2605';
+    color: gold;
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
