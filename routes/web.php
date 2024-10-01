@@ -291,3 +291,7 @@ Route::resource('/deal',
     ->names('deal');
 
 
+Route::post('/asic-application',
+    [\App\Http\Controllers\AsicApplicationController::class, 'submitApplication'])
+    ->middleware('yandex.captcha')
+    ->name('asic-application');

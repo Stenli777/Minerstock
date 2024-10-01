@@ -100,6 +100,44 @@
             </div>
         </div>
     </div>
+
+<!-- Модальное окно для отправки заявки -->
+<div class="modal" id="applicationModal" tabindex="-1" role="dialog" aria-labelledby="applicationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="applicationModalLabel" class="modal-title">Оставить заявку</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('asic-application') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Введите ваш телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telegram">Telegram:</label>
+                        <input type="text" class="form-control" name="telegram" id="telegram" placeholder="Ваш Telegram (не обязательно)">
+                    </div>
+                    <!-- Капча от Яндекса -->
+                    <div class="form-group">
+                        <div id="captcha-container" class="smart-captcha" data-sitekey="{{ config('services.yandex_captcha.sitekey') }}"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://captcha-api.yandex.ru/captcha.js" defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const stars = document.querySelectorAll('.star-rating span');
