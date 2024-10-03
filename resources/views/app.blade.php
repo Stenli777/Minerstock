@@ -25,39 +25,32 @@
 {{--            {{$app->is_news === 1?Breadcrumbs::render('new',$app):Breadcrumbs::render('post',$app) }}--}}
 {{--        </div>--}}
 {{--    </div>--}}
+<div class="container">
+    <div class="row justify-content-center">
+        <article class="col-sm-8 mb-3" itemscope itemtype="{{$app->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">
+            <header>
+                <h1 itemprop="headline">{{$app->name}}</h1>
+                {!!"<p><time itemprop=\"datePublished\" datetime=\"".$app->created_at."\">".$app->publicDate()."</time></p>"!!}
+                <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">{{ $app->link_title }}</a></p>
+            </header>
+        </article>
+    </div>
+</div>
 
-    @if(is_array(json_decode($app->mobile_images)))
-    <div class="owl-carousel" id="mobileImagesCarousel">
+@if(is_array(json_decode($app->mobile_images)))
+    <div class="image-gallery" id="mobileImagesGallery">
         @foreach(json_decode($app->mobile_images) as $imageName)
-            <div class="item">
+            <div class="image-item">
                 <img src="{{ asset('storage/' . $imageName) }}" alt="Image">
             </div>
         @endforeach
     </div>
+@endif
 
-    <style>
-        #mobileImagesCarousel .item {
-            text-align: center;
-        }
-        #mobileImagesCarousel .item img {
-            display: inline-block;
-            max-width: 94%;
-            margin: 3%;
-            max-height: 600px;
-            width: auto;
-            height: auto;
-        }
-    </style>
 
-    @endif
     <div class="container">
         <div class="row justify-content-center">
             <article class="col-sm-8 mb-3" itemscope itemtype="{{$app->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">
-                <header>
-                    <h1 itemprop="headline">{{$app->name}}</h1>
-                    {!!"<p><time itemprop=\"datePublished\" datetime=\"".$app->created_at."\">".$app->publicDate()."</time></p>"!!}
-                    <p><a href="{{ route('app.link', ['hash'=>$app->hashed_link]) }}" target="_blank">{{ $app->link_title }}</a></p>
-                </header>
                 <div itemprop="articleBody">
                     {!! $app->content !!}
 
