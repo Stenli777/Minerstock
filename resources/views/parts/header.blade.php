@@ -30,7 +30,6 @@
                             <a class="dropdown-item" href="/cryptowiki">Криптословарь</a>
                             <a class="dropdown-item" href="/hotels">Майнинг-отели</a>
                             <a class="dropdown-item disabled" href="#">Персоны</a>
-                            <a class="dropdown-item disabled" href="/hotels">Майнинг-отели</a>
                         </div>
                     </li>
                 </ul>
