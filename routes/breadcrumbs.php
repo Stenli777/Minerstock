@@ -49,7 +49,13 @@ Breadcrumbs::for('new', function ($trail, $post) {
 });
 
 Breadcrumbs::for('apps', function ($trail) {
+    $trail->parent('home');
     $trail->push('Приложения', route('apps'));
+});
+
+Breadcrumbs::for('app', function ($trail, $app) {
+    $trail->parent('apps');
+    $trail->push($app->name, route('app.show', ['app' => $app->alias]));
 });
 
 Breadcrumbs::for('app_category', function ($trail, $category) {
@@ -88,4 +94,15 @@ Breadcrumbs::for('cryptowiki', function ($trail) {
 Breadcrumbs::for('calculator', function ($trail) {
     $trail->parent('home');
     $trail->push('Калькулятор Intelion Data Systems', route('calculator'));
+});
+
+
+Breadcrumbs::for('hotels', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Майнинг-отели', route('hotels'));
+});
+
+Breadcrumbs::for('hotels.show', function ($trail, $hotel) {
+    $trail->parent('hotels');
+    $trail->push('Отель '.$hotel->name, route('hotels.show', route('hotels.show', ['alias' => $hotel->alias])));
 });

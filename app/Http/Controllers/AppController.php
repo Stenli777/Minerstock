@@ -10,7 +10,6 @@ class AppController extends Controller
     public function show(Request $request, $alias)
     {
         $app = App::with('blockchains')->where('alias', $alias)->first();
-        //dd($app->comments());
         return view('app', [
             'app' => $app,
             'comments' => $app->comments(),

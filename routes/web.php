@@ -295,3 +295,13 @@ Route::post('/asic-application',
     [\App\Http\Controllers\AsicApplicationController::class, 'submitApplication'])
     ->middleware('yandex.captcha')
     ->name('asic-application');
+
+Route::get('/hotels/{alias}',
+    [\App\Http\Controllers\HotelController::class, 'show'])
+    ->middleware([\App\Http\Middleware\Breadcrumbs::class])
+    ->name('hotels.show');
+
+Route::get('/hotels',
+    [\App\Http\Controllers\HotelController::class, 'all'])
+    ->middleware([\App\Http\Middleware\Breadcrumbs::class])
+    ->name('hotels');
