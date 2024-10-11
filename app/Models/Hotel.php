@@ -11,6 +11,7 @@ class Hotel extends Model
     use HasFactory;
     protected $fillable = ['name', 'alias', 'location_id', 'price_per_month', 'max_devices', 'energy_capacity', 'energy_type_id', 'conditions', 'pictures'];
 
+
     public function save(array $options = []): bool
     {
         $this->alias = Str::slug($this->name);
