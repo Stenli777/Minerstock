@@ -20,11 +20,11 @@
 @endsection
 
 @section('main')
-{{--    <div class="container-fluid" style="background-color: #e9ecef">--}}
-{{--        <div class="container">--}}
-{{--            {{$app->is_news === 1?Breadcrumbs::render('new',$app):Breadcrumbs::render('post',$app) }}--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    <div class="container-fluid" style="background-color: #e9ecef">
+        <div class="container">
+          {{ Breadcrumbs::render('app',$app) }}
+        </div>
+    </div>
 <div class="container">
     <div class="row justify-content-center">
         <article class="col-sm-8 mb-3" itemscope itemtype="{{$app->is_news === 1 ? 'http://schema.org/NewsArticle' : 'http://schema.org/Article'}}">

@@ -28,6 +28,7 @@
                             <a class="dropdown-item" href="/news">Новости</a>
                             <a class="dropdown-item" href="/mining-pools">Майнинг пулы</a>
                             <a class="dropdown-item" href="/cryptowiki">Криптословарь</a>
+                            <a class="dropdown-item" href="/hotels">Майнинг-отели</a>
                             <a class="dropdown-item disabled" href="#">Персоны</a>
                         </div>
                     </li>

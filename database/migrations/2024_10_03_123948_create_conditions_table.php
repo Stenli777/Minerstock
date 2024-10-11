@@ -16,14 +16,20 @@ class CreateConditionsTable extends Migration
         Schema::create('conditions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
 
 
         Schema::create('condition_hotel', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('hotel_id')->constrained();
-            $table->foreignId('condition_id')->constrained();
+            $table->foreignId('hotel_id')
+                ->constrained('hotels')
+                ->onDelete('cascade');
+
+            $table->foreignId('condition_id')
+                ->constrained('conditions')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
