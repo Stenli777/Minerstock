@@ -24,6 +24,7 @@ class CreateHotelsTable extends Migration
             $table->decimal('power', 5, 2);
             $table->foreignId('energy_type_id')->constrained();
             $table->json('pictures');
+            $table->boolean('verified')->default(false);
             $table->timestamps();
         });
     }

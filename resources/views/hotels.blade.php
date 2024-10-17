@@ -16,27 +16,36 @@
                 <div class="container-fluid py-3">
                     <form action="{{ route('hotels') }}" method="GET">
                         @csrf
-                    <div class="d-flex align-items-center justify-content-between">
-                        <!-- Dropdown для выбора валюты -->
-                        <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownCurrency" data-toggle="dropdown" aria-expanded="false">
-                                RUB
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownCurrency">
-                                <li><a class="dropdown-item" href="#">USD</a></li>
-                                <li><a class="dropdown-item" href="#">EUR</a></li>
-                                <li><a class="dropdown-item" href="#">GBP</a></li>
-                                <li><a class="dropdown-item" href="#">RUB</a></li>
-                            </ul>
-                        </div>
+                        <input type="hidden" name="currency" id="currency" value="{{ $filters['currency'] }}">
+                        <input type="hidden" name="verified" id="verified" value="{{ $filters['verified'] }}">
+                        <input type="hidden" name="price_min" id="price_min" value="{{ $filters['price_min'] }}">
+                        <input type="hidden" name="price_max" id="price_max" value="{{ $filters['price_max'] }}">
+                        <input type="hidden" name="min_count_min" id="min_count_min" value="{{ $filters['min_count_min'] }}">
+                        <input type="hidden" name="min_count_max" id="min_count_max" value="{{ $filters['min_count_max'] }}">
+                        <input type="hidden" name="power_min" id="power_min" value="{{ $filters['power_min'] }}">
+                        <input type="hidden" name="power_max" id="power_max" value="{{ $filters['power_max'] }}">
 
-                        <!-- Чекбокс для проверенных -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="verifiedCheck">
-                            <label class="form-check-label" for="verifiedCheck">
-                                <i class="bi bi-check-circle"></i> Проверенные
-                            </label>
-                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <!-- Dropdown для выбора валюты -->
+{{--                            <div class="dropdown">--}}
+{{--                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownCurrency" data-toggle="dropdown" aria-expanded="false">--}}
+{{--                                    {{ $filters['currency'] }}--}}
+{{--                                </button>--}}
+{{--                                <ul class="dropdown-menu" aria-labelledby="dropdownCurrency">--}}
+{{--                                    <li><a class="dropdown-item currency-option" data-value="USD" href="#">USD</a></li>--}}
+{{--                                    <li><a class="dropdown-item currency-option" data-value="EUR" href="#">EUR</a></li>--}}
+{{--                                    <li><a class="dropdown-item currency-option" data-value="GBP" href="#">GBP</a></li>--}}
+{{--                                    <li><a class="dropdown-item currency-option" data-value="RUB" href="#">RUB</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+
+                            <!-- Чекбокс для проверенных -->
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" {{ $filters['verified'] ? 'checked' : '' }} id="verifiedCheck" >
+                                <label class="form-check-label" for="verifiedCheck">
+                                    <i class="bi bi-check-circle"></i> Проверенные
+                                </label>
+                            </div>
 
                         <!-- Фильтр Локации -->
                         <div class="dropdown">
@@ -46,7 +55,9 @@
                             <div class="dropdown-menu p-5" aria-labelledby="dropdownMenuButton">
                                 @foreach (\App\Models\Location::all() as $location)
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="locations[]" value="{{ $location->id }}" id="location-{{ $location->id }}">
+                                        <input class="form-check-input" type="checkbox" name="locations[]"
+                                               value="{{ $location->id }}" id="location-{{ $location->id }}"
+                                               {{ in_array($location->id, $filters['locations']) ? 'checked' : '' }}>
                                         <label class="form-check-label" for="location-{{ $location->id }}">
                                             {{ $location->name }}
                                         </label>
@@ -74,7 +85,9 @@
                             <div class="dropdown-menu p-3" aria-labelledby="dropdownEnergyType">
                                 @foreach(\App\Models\EnergyType::all() as $energy_type)
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="energy_types[]" value="{{ $energy_type->id }}" id="energy-type-{{ $energy_type->id }}">
+                                        <input class="form-check-input" type="checkbox" name="energy_types[]"
+                                               value="{{ $energy_type->id }}" id="energy-type-{{ $energy_type->id }}"
+                                            {{ in_array($energy_type->id, $filters['energy_types']) ? 'checked' : '' }}>
                                         <label class="form-check-label" for="energy-type-{{ $energy_type->id }}">
                                             {{ $energy_type->name }}
                                         </label>
@@ -114,7 +127,9 @@
                             <div class="dropdown-menu p-3" aria-labelledby="dropdownConditions">
                                 @foreach(\App\Models\Condition::all() as $condition)
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="conditions[]" value="{{ $condition->id }}" id="condition-{{ $condition->id }}">
+                                        <input class="form-check-input" type="checkbox" name="conditions[]"
+                                               value="{{ $condition->id }}" id="condition-{{ $condition->id }}"
+                                            {{ in_array($condition->id, $filters['conditions']) ? 'checked' : '' }}>
                                         <label class="form-check-label" for="condition-{{ $condition->id }}">
                                             {{ $condition->name }}
                                         </label>
@@ -147,7 +162,7 @@
         // Ползунок для Мин. Количества
         var minCountSlider = document.getElementById('minCountSlider');
         noUiSlider.create(minCountSlider, {
-            start: [0, 6],
+            start: [{{ $filters['min_count_min'] }}, {{ $filters['min_count_max'] }}],
             connect: true,
             step: 1,
             range: {
@@ -162,7 +177,7 @@
         // Ползунок для Мощности
         var powerSlider = document.getElementById('powerSlider');
         noUiSlider.create(powerSlider, {
-            start: [0, 87],
+            start: [{{ $filters['power_min'] }}, {{ $filters['power_max'] }}],
             connect: true,
             range: {
                 'min': 0,
@@ -176,11 +191,11 @@
         // Ползунок для Цены
         var priceSlider = document.getElementById('priceSlider');
         noUiSlider.create(priceSlider, {
-            start: [0, 7.21],
+            start: [{{ $filters['price_min'] }}, {{ $filters['price_max'] }}],
             connect: true,
             range: {
                 'min': 0,
-                'max': 7.21
+                'max': 10
             }
         });
         priceSlider.noUiSlider.on('update', function (values, handle) {
@@ -190,6 +205,35 @@
         // Предотвращаем закрытие dropdown при клике внутри него
         $('.dropdown-menu').on('click', function (e) {
             e.stopPropagation();
+        });
+
+        // Обновление валюты
+        $('.currency-option').on('click', function (e) {
+            e.preventDefault();
+            var selectedCurrency = $(this).data('value');
+            $('#currency').val(selectedCurrency);
+            $('#dropdownCurrency').text(selectedCurrency);
+        });
+
+        // Обновление состояния чекбокса "Проверенные"
+        $('#verifiedCheck').on('change', function () {
+            $('#verified').val(this.checked ? 1 : 0);
+        });
+
+        // Обновление значений ползунков
+        priceSlider.noUiSlider.on('update', function (values) {
+            $('#price_min').val(parseFloat(values[0]).toFixed(2));
+            $('#price_max').val(parseFloat(values[1]).toFixed(2));
+        });
+
+        minCountSlider.noUiSlider.on('update', function (values) {
+            $('#min_count_min').val(values[0]);
+            $('#min_count_max').val(values[1]);
+        });
+
+        powerSlider.noUiSlider.on('update', function (values) {
+            $('#power_min').val(values[0]);
+            $('#power_max').val(values[1]);
         });
     </script>
 @endsection
